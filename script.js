@@ -1,11 +1,20 @@
 import surveylist from "./surveylist.js";
 
-export function load() {
+window.survey = new Survey.Model(surveylist);
 
-    var survey = new Survey.Model(surveylist);
-    $("#surveyContainer").Survey({model:survey});
-}
+var myCss = {
+    matrix: {root: "table table-striped matrixtable"},
+};
 
-$(function() {
-    load();
+$("#surveyContainer").Survey({
+    model: survey,
+    css: myCss
 });
+
+survey
+    .onComplete
+    .add(function (sender) {
+        document
+            .querySelector('#surveyResult')
+            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+    });
