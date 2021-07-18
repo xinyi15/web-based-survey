@@ -411,6 +411,7 @@ export default
                     visibleIf: "{M11.length} > 0",
                     rowsVisibleIf: "{M11} contains {item}",
                     isRequired: true,
+                    isAllRowRequired: true,
                     columns: [
                         {
                             value: "S0",
@@ -569,6 +570,7 @@ export default
                     visibleIf: "{M12What} contains '0' or {M12What} contains '1' or {M12What} contains '2' or {M12What} contains '3' or {M12What} contains '4' or {M12What} contains '5' or {M12What} contains '6' or {M12What} contains '7' or {M12What} contains '8' or {M12What} contains '9'",
                     rowsVisibleIf: "{M12What} contains {item}",
                     isRequired: true,
+                    isAllRowRequired: true,
                     columns: [
                         {
                             value: "S0",
