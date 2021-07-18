@@ -33,3 +33,6 @@ defaultThemeColors["$body-container-background-color"] = "#f8f8f8";
 Survey
     .StylesManager
     .applyTheme();
+
+$(".sv_prev_btn").remove(); // hide the previous button
+
