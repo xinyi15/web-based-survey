@@ -1,1 +1,1 @@
-web: node ./script.js
+web: npx browser-sync start -sw
