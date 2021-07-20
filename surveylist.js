@@ -5,6 +5,7 @@ export default
     goNextPageAutomatic: false, // true
     showNavigationButtons: true, // false
     showQuestionNumbers: "off",
+    sendResultOnPageNext : true,
     focusFirstQuestionAutomatic: false,
     clearInvisibleValues: "onHidden",
     pages: [
