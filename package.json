@@ -1,0 +1,23 @@
+{
+  "name": "web-based-survey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "survey-jquery": "^1.8.55"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MincenLiu/web-based-survey.git"
+  },
+  "author": "Mincen Liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MincenLiu/web-based-survey/issues"
+  },
+  "homepage": "https://github.com/MincenLiu/web-based-survey#readme"
+}
