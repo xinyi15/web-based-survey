@@ -12,16 +12,29 @@ $("#surveyContainer").Survey({
 });
 
 survey
-    .onComplete
-    .add(function (sender) {
-        document
-            .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
-    });
+.onComplete
+.add(function (sender) {
+    document
+        .querySelector('#surveyResult')
+        .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+});
+
+function sendDataToTheServer(isComplete, data) {
+    var text = isComplete ? "The survey is completed" : "The survey is not completed";
+    document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
+}
+
+survey.onComplete.add(function(survey, options) {
+    sendDataToTheServer(true, survey.data);
+});
+
+survey.onPartialSend.add(function(survey, options) {
+    sendDataToTheServer(false, survey.data);
+});
 
 var defaultThemeColors = Survey
-    .StylesManager
-    .ThemeColors["default"];
+.StylesManager
+.ThemeColors["default"];
 defaultThemeColors["$main-color"] = "#4B9CD3";
 defaultThemeColors["$main-hover-color"] = "#4B9CD3";
 defaultThemeColors["$text-color"] = "#4a4a4a";
@@ -31,8 +44,7 @@ defaultThemeColors["$header-background-color"] = "#4a4a4a";
 defaultThemeColors["$body-container-background-color"] = "#f8f8f8";
 
 Survey
-    .StylesManager
-    .applyTheme();
+.StylesManager
+.applyTheme();
 
 $(".sv_prev_btn").remove(); // hide the previous button
-
