@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MincenLiu/web-based-survey/issues"
   },
-  "homepage": "https://github.com/MincenLiu/web-based-survey#readme"
+  "homepage": "https://github.com/MincenLiu/web-based-survey#readme",
+  "engines": {
+    "node": "14.15.1"
+  }
 }
