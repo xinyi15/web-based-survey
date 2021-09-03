@@ -4,10 +4,12 @@
   "description": "",
   "main": "script.js",
   "dependencies": {
+    "express": "^4.17.1",
     "survey-jquery": "^1.8.55"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
