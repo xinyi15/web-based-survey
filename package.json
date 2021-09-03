@@ -1,28 +1,32 @@
 {
   "name": "web-based-survey",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "survey-jquery": "^1.8.55"
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "14.x"
   },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.15.2",
+    "survey-jquery": "^1.8.64"
+  },
+  "devDependencies": {
+    "got": "^11.3.0",
+    "tape": "^4.7.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MincenLiu/web-based-survey.git"
   },
-  "author": "Mincen Liu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MincenLiu/web-based-survey/issues"
-  },
-  "homepage": "https://github.com/MincenLiu/web-based-survey#readme",
-  "engines": {
-    "node": "14.15.1"
-  }
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
