@@ -63,5 +63,5 @@ pool.query('SELECT NOW()', (err, res) => {
 })
 
 // sql insert table value
-INSERT INTO answer
- ()
+// INSERT INTO answer
+//  ()
