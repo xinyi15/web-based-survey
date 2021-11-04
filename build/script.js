@@ -1,4 +1,6 @@
 import surveylist from "/surveylist.js";
+import * as pg from 'pg'
+const { Pool } = pg
 
 window.survey = new Survey.Model(surveylist);
 
@@ -24,7 +26,7 @@ survey
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
-        const { Pool } = require('pg');
+        // const { Pool } = require('pg');
         const pool = new Pool({
         user: 'jovttytttjkoaw',
         host: 'ec2-52-23-45-36.compute-1.amazonaws.com',
