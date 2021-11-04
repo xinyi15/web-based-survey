@@ -1,6 +1,5 @@
 import surveylist from "/surveylist.js";
-import * as pg from 'pg';
-
+import Pool from 'pg-pool';
 
 window.survey = new Survey.Model(surveylist);
 
@@ -22,7 +21,7 @@ survey
     });
 
     function sendDataToTheServer(isComplete, data) {
-        const { Pool } = pg;
+        //ßconst { Pool } = pg;
         var timeNow = new Date();
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
