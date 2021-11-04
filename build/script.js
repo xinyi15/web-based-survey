@@ -23,7 +23,7 @@ survey
         var timeNow = new Date();
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
-        document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(a[0]);
+        document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data[a[0]]);
         // const { Pool } = require('pg')
         // const pool = new Pool({
         // user: 'jovttytttjkoaw',
