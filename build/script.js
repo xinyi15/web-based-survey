@@ -24,22 +24,20 @@ survey
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
-        const { Pool } = require('express');
+        const pool = new Pool({
+        user: 'jovttytttjkoaw',
+        host: 'ec2-52-23-45-36.compute-1.amazonaws.com',
+        database: 'de369o7l6fqn9p',
+        password: '77d7812505f2328350b04d9fb5bb45ade034c24a216d4ac59682c55fcce5941b',
+        port: 5432,
+        });
+        pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES (999,'+ timeNow +','+"'Morning',"+a[a.length-1]+"," +data[a[a.length-1]]+","+"10)", (err, res) => {
+        console.log(err, res);
+        pool.end();
+        });
     }
 
     // const { Pool } = require('pg');
-        // const pool = new Pool({
-        // user: 'jovttytttjkoaw',
-        // host: 'ec2-52-23-45-36.compute-1.amazonaws.com',
-        // database: 'de369o7l6fqn9p',
-        // password: '77d7812505f2328350b04d9fb5bb45ade034c24a216d4ac59682c55fcce5941b',
-        // port: 5432,
-        // });
-        // pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES (999,'+ timeNow +','+"'Morning',"+a[a.length-1]+"," +data[a[a.length-1]]+","+"10)", (err, res) => {
-        // console.log(err, res);
-        // pool.end();
-        // });
-
     // data[a[0]]
     
     survey.onComplete.add(function(survey) {
