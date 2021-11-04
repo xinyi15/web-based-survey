@@ -1,5 +1,5 @@
 import surveylist from "/surveylist.js";
-import PG from 'pg';
+import PG from '/node_modules/pg';
 
 window.survey = new Survey.Model(surveylist);
 
