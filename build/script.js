@@ -22,7 +22,8 @@ survey
     function sendDataToTheServer(isComplete, data) {
         var timeNow = new Date();
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
-        document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data[0]);
+        var a=Object.keys(data);
+        document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(a[0]);
         // const { Pool } = require('pg')
         // const pool = new Pool({
         // user: 'jovttytttjkoaw',
