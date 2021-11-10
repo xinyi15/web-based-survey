@@ -17,7 +17,7 @@ var timeNow = new Date();
 const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
-app.post('/answer',function(req,res){
+app.get('/answer',function(req,res){
     // console.log(req.body);
     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
        // console.log(err, res);
