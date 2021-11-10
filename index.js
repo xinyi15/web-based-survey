@@ -18,7 +18,7 @@ const pool = new Pool({
 //     port: 5432,
 //     });
 var timeNow = new Date();
-const app = express()
+//const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
