@@ -14,7 +14,7 @@ $("#surveyContainer").Survey({
 });
 
 survey
-    .onComplete
+    .onCompleteres
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
@@ -39,8 +39,8 @@ survey
             }),
             headers:{'Content-Type':'application/json'}
         });
-        const data=await response.json();
-        console.log(data);
+        const result=await response.json();
+        console.log(result);
    
     }
 
