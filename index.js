@@ -19,7 +19,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.post('/answer',function(req,res){
     console.log("asssss",req.body.id);
-    pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ('+ req.body.id+','+ req.body.time+','+req.body.survey+','+req.body.question +","+req.body.answer+","+"10)", (err, res) => {
+    pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
         console.log(err, res);
         pool.end();
         res.send("sss");
