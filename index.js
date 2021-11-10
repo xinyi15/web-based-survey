@@ -23,9 +23,9 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('body-parser').json());
 app.post('/answer',async function(req,res){
-    console.log(req.body);
+    console.log(req.id);
 const client = await pool.connect();
-var result = await client.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
+var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
 //pool.end();
  client.release();
