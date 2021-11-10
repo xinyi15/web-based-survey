@@ -1,6 +1,6 @@
 // import { response } from "express";
 import surveylist from "/surveylist.js";
- import fetch from 'node-fetch';
+//  import fetch from 'node-fetch';
 
 window.survey = new Survey.Model(surveylist);
 
