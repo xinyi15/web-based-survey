@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(require('body-parser').json());
 app.post('/answer',function(req,res){
     console.log(req.body);
-    const client = await pool.connect();
-const result = await client.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)");
+var client = pool.connect();
+var result = client.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)");
  client.release();
     res.send('WWWWWÍ');
 });
