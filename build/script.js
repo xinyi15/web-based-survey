@@ -39,8 +39,8 @@ async function sendDataToTheServer(isComplete, data) {
             }),
             headers:{'Content-Type':'application/json'}
         });
-        const t=await response.json();
-        console.log(t);
+        //const t=await response.json();
+       // console.log(t);
     }
 
     // const { Pool } = require('pg');
