@@ -22,10 +22,10 @@ const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('body-parser').json());
-app.post('/answer',function(req,res){
+app.post('/answer',async function(req,res){
     console.log(req.body);
-var client = pool.connect();
-var result = pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
+const client = await pool.connect();
+var result = await client.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
 //pool.end();
  client.release();
