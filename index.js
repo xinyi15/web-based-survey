@@ -2,14 +2,6 @@ const express = require('express');
 const { read } = require('fs');
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const app = express(),
-const  bodyParser = require('body-parser');
-
-// support parsing of application/json type post data
-app.use(bodyParser.json());
-
-//support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
 const { Pool, Client } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -30,6 +22,8 @@ const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('body-parser').json());
+//support parsing of application/x-www-form-urlencoded post data
+app.use(require('body-parser').urlencoded({ extended: true }));
 app.post('/answer',async (req,res)=>{
     console.log(req.body.id);
 const client = await pool.connect();
