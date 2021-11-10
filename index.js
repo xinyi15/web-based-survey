@@ -19,7 +19,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('body-parser').json());
 app.post('/answer',function(req,res){
-    console.log(req.id);
+    console.log(req.body);
     res.send('WWWWWÍ');
 });
 // app.get('/answer',function(req,res){
