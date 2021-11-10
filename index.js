@@ -27,8 +27,8 @@ app.post('/answer',function(req,res){
 var client = pool.connect();
 var result = pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
-pool.end();
- //client.release();
+//pool.end();
+ client.release();
     res.send('WWWWWÍ');
 });
 // app.get('/answer',function(req,res){
