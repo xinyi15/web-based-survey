@@ -21,7 +21,7 @@ survey
             .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
     });
 
-    function sendDataToTheServer(isComplete, data) {
+    async function sendDataToTheServer(isComplete, data) {
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
@@ -41,7 +41,6 @@ survey
         });
         const t=await response.json();
         console.log(t);
-   
     }
 
     // const { Pool } = require('pg');
