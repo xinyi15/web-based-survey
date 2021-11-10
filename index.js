@@ -2,7 +2,7 @@ const express = require('express');
 const { read } = require('fs');
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const { Pool } = require('pg');
+const { Pool, Client } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -25,8 +25,10 @@ app.use(require('body-parser').json());
 app.post('/answer',function(req,res){
     console.log(req.body);
 var client = pool.connect();
-var result = client.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)");
- client.release();
+var result = pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
+);
+pool.end();
+ //client.release();
     res.send('WWWWWÍ');
 });
 // app.get('/answer',function(req,res){
