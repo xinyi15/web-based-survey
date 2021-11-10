@@ -26,7 +26,8 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.post('/answer',async (req,res)=>{
-    console.log(req.body.id);
+  //  var postData = JSON.parse(req.body);
+    console.log(req.body);
 const client = await pool.connect();
 var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
