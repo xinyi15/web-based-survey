@@ -31,11 +31,11 @@ async function sendDataToTheServer(isComplete, data) {
             method:'POST',
             body: JSON.stringify({
                 id:1,
-                Time: timeNow, 
-                survey: "Morning", 
-                question: a[a.length-1], 
-                answer: data[a[a.length-1]], 
-                date: 10
+                // Time: timeNow, 
+                // survey: "Morning", 
+                // question: a[a.length-1], 
+                // answer: data[a[a.length-1]], 
+                // date: 10
             }),
             headers:{'Content-Type':'application/json'}
         });
