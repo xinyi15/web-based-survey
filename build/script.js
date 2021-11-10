@@ -39,8 +39,8 @@ survey
             }),
             headers:{'Content-Type':'application/json'}
         });
-        const result=await response.json();
-        console.log(result);
+        const t=await response.json();
+        console.log(t);
    
     }
 
