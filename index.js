@@ -39,7 +39,7 @@ var result = await client.query('INSERT INTO answer (id, time, survey, question,
 //pool.end();
  client.release();
     res.send('WWWWWÍ');
-});ß
+});
 // app.get('/answer',function(req,res){
 //      console.log(req.id);
 //     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
