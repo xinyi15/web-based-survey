@@ -30,12 +30,12 @@ survey
          fetch(url,{
             method:'post',
             body: JSON.stringify({
-                id:1,
+                id:2,
                 time: timeNow, 
                  survey: "Morning", 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: 10
+                 date: timeNow
             }),
             headers:{'Content-Type':'application/json'}
         });
