@@ -34,7 +34,7 @@ app.post('/answer',async (req,res)=>{
   //  var postData = JSON.parse(req.body);
   console.log(req.body.id);
 const client = await pool.connect();
-var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+req.body.date+'")'
+var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")'
 );
 //pool.end();
  client.release();
