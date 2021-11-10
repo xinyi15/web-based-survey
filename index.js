@@ -18,11 +18,11 @@ const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.post('/answer',function(req,res){
-    console.log("asssss",req.body.id);
+    console.log("asssss");
     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
        // console.log(err, res);
      //   pool.end();
-        res.send(req.body.id);
+        res.send(req.body);
         // });
 })
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
