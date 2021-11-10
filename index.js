@@ -2,6 +2,14 @@ const express = require('express');
 const { read } = require('fs');
 const path = require('path')
 const PORT = process.env.PORT || 5000
+const app = express(),
+const  bodyParser = require('body-parser');
+
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
 const { Pool, Client } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -22,15 +30,15 @@ const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(require('body-parser').json());
-app.post('/answer',async function(req,res){
-    console.log(req.id);
+app.post('/answer',async (req,res)=>{
+    console.log(req.body.id);
 const client = await pool.connect();
 var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
 //pool.end();
  client.release();
     res.send('WWWWWÍ');
-});
+});ß
 // app.get('/answer',function(req,res){
 //      console.log(req.id);
 //     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
