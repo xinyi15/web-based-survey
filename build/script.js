@@ -14,7 +14,7 @@ $("#surveyContainer").Survey({
 });
 
 survey
-    .onCompleteres
+    .onComplete
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
