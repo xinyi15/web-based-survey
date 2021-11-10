@@ -2,14 +2,13 @@ const express = require('express');
 const { read } = require('fs');
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const { Pool, Client } = require('pg');
+const { Pool} = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
 });
-//const bodyParser = require('body-parser');
 
 // var pool = new Pool({
 //     user: 'jovttytttjkoaw',
@@ -23,22 +22,13 @@ const app = express();
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
  app.use(express.json());
-// app.use(express.urlencoded({
-//   extended: trueß
-// }));
-//app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
 app.post('/answer',async (req,res)=>{
-  //  var postData = JSON.parse(req.body);
   console.log(req.body.id);
 const client = await pool.connect();
 var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")'
 );
-//pool.end();
  client.release();
-    res.send('WWWWWÍ');
+ res.send('WWWWWÍ');
 });
 // app.get('/answer',function(req,res){
 //      console.log(req.id);
