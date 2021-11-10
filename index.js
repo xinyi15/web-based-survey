@@ -9,6 +9,7 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
+const bodyParser = require('body-parser');
 
 // var pool = new Pool({
 //     user: 'jovttytttjkoaw',
