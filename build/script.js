@@ -35,7 +35,7 @@ survey
                  survey: "Morning", 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow
+                 date: timeNow.getDate()
             }),
             headers:{'Content-Type':'application/json'}
         });
