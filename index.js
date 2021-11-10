@@ -23,7 +23,7 @@ app.post('/answer',function(req,res){
         console.log(err, res);
      //   pool.end();
         res.send(req.body.id);
-        });
+        // });
 })
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
