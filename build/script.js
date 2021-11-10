@@ -27,18 +27,18 @@ survey
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/answer";
         var timeNow = new Date();
-        //  fetch(url,{
-        //     method:'post',
-        //     body: JSON.stringify({
-        //         id:1
-        //         // Time: timeNow, 
-        //         // survey: "Morning", 
-        //         // question: a[a.length-1], 
-        //         // answer: data[a[a.length-1]], 
-        //         // date: 10
-        //     }),
-        //     headers:{'Content-Type':'application/json'}
-        // });
+         fetch(url,{
+            method:'post',
+            body: JSON.stringify({
+                id:1
+                // Time: timeNow, 
+                // survey: "Morning", 
+                // question: a[a.length-1], 
+                // answer: data[a[a.length-1]], 
+                // date: 10
+            }),
+            headers:{'Content-Type':'application/json'}
+        });
         //const t=await response.json();
        // console.log(t);
     }
