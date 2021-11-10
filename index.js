@@ -21,9 +21,10 @@ var timeNow = new Date();
 const app = express()
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
-app.use(require('body-parser').json());
-//support parsing of application/x-www-form-urlencoded post data
-app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 app.post('/answer',async (req,res)=>{
     console.log(req.body.id);
 const client = await pool.connect();
