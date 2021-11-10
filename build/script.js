@@ -28,9 +28,9 @@ async function sendDataToTheServer(isComplete, data) {
         var url="https://web-based-survey.herokuapp.com/answer";
         var timeNow = new Date();
         const response=await fetch(url,{
-            method:'POST',
+            method:'post',
             body: JSON.stringify({
-                id:1,
+                id:1
                 // Time: timeNow, 
                 // survey: "Morning", 
                 // question: a[a.length-1], 
