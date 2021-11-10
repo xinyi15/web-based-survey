@@ -1,4 +1,4 @@
-import { response } from "express";
+// import { response } from "express";
 import surveylist from "/surveylist.js";
 import fetch from 'node-fetch';
 
@@ -27,7 +27,7 @@ survey
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/answer";
         var timeNow = new Date();
-        const response=fetch(url,{
+        const response=await fetch(url,{
             method:'POST',
             body: JSON.stringify({
                 id:1,
