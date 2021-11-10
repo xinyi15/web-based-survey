@@ -21,8 +21,12 @@ var timeNow = new Date();
 const app = express();
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
-app.use(express.json());
-app.use(express.urlencoded({
+// app.use(express.json());
+// app.use(express.urlencoded({
+//   extended: true
+// }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.post('/answer',async (req,res)=>{
