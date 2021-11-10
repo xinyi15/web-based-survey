@@ -1,6 +1,6 @@
 // import { response } from "express";
 import surveylist from "/surveylist.js";
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 
 window.survey = new Survey.Model(surveylist);
 
@@ -21,7 +21,7 @@ survey
             .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
     });
 
-function sendDataToTheServer(isComplete, data) {
+async function sendDataToTheServer(isComplete, data) {
         var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
