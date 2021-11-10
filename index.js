@@ -22,7 +22,7 @@ app.post('/answer',function(req,res){
     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
        // console.log(err, res);
      //   pool.end();
-        res.send(req.body);
+        res.send('WWWWWÍ');
         // });
 })
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
