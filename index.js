@@ -23,7 +23,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build'))); 
  app.use(express.json());
 app.post('/answer',async (req,res)=>{
-  console.log(req.body.id);
+  console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
 const client = await pool.connect();
 var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")'
 );
