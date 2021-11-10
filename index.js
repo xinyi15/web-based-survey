@@ -18,7 +18,7 @@ const pool = new Pool({
 //     port: 5432,
 //     });
 var timeNow = new Date();
-//const app = express()
+const app = express();
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
@@ -27,7 +27,7 @@ app.use(express.urlencoded({
 }));
 app.post('/answer',async (req,res)=>{
   //  var postData = JSON.parse(req.body);
-    console.log(req.body);
+  console.log(req.body);
 const client = await pool.connect();
 var result = await client.query('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)"
 );
