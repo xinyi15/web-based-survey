@@ -9,7 +9,7 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 // var pool = new Pool({
 //     user: 'jovttytttjkoaw',
@@ -22,14 +22,14 @@ var timeNow = new Date();
 const app = express();
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
-// app.use(express.json());
+ app.use(express.json());
 // app.use(express.urlencoded({
+//   extended: trueß
+// }));
+//app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
 //   extended: true
 // }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
 app.post('/answer',async (req,res)=>{
   //  var postData = JSON.parse(req.body);
   console.log(req.body);
