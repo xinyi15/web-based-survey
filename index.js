@@ -1,8 +1,7 @@
 const express = require('express');
-const { read } = require('fs');
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const { Pool} = require('pg');
+const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -17,29 +16,20 @@ const pool = new Pool({
 //     password: '77d7812505f2328350b04d9fb5bb45ade034c24a216d4ac59682c55fcce5941b',
 //     port: 5432,
 //     });
-var timeNow = new Date();
+
 const app = express();
 //app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
- app.use(express.json());
+app.use(express.json());
 app.post('/answer',async (req,res)=>{
   console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
 const client = await pool.connect();
 var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
  client.release();
- res.send('WWWWWÍ');
+ res.send('Success');
 });
-// app.get('/answer',function(req,res){
-//      console.log(req.id);
-//     //pool.query('INSERT INTO answer (id, Time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'",'+"10)", (err, res) => {
-//        // console.log(err, res);
-//      //   pool.end();
-//        // res.send('WWWWWÍ');
-//         // });
-// });
+
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
-
-
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

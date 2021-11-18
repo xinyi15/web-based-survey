@@ -1,6 +1,4 @@
-// import { response } from "express";
 import surveylist from "/surveylist.js";
-//  import fetch from 'node-fetch';
 
 window.survey = new Survey.Model(surveylist);
 
@@ -42,9 +40,6 @@ survey
         //const t=await response.json();
        // console.log(t);
     }
-
-    // const { Pool } = require('pg');
-    // data[a[0]]
     
     survey.onComplete.add(function(survey) {
         sendDataToTheServer(true, survey.data);
