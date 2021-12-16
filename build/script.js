@@ -11,10 +11,9 @@ if (surveyName === "uncTeenSurvey") {
         }
     }
     questions.pages = newPages;
+    window.survey = new Survey.Model(questions);
 } else if (surveyName === "uncTeen") {
 }
-
-window.survey = new Survey.Model(questions);
 
 
 var myCss = {
