@@ -6,8 +6,8 @@ let newPages = [];
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     for (let i = 0; i < uncTeenSurvey.pages.length; i++) {
-        if (uncTeenSurvey.pages.questions[i].name in questionList) {
-            newPages.push("{" + uncTeenSurvey.pages.questions[i] + "}");
+        if (uncTeenSurvey.pages[i].questions[0].name in questionList) {
+            newPages.push(uncTeenSurvey.pages[i]);
         }
     }
     questions.pages = newPages;
