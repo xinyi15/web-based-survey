@@ -1,4 +1,4 @@
-export default
+export const surveylist = 
 { 
     title: "UNC Teen Survey",
     showProgressBar: "bottom",

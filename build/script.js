@@ -1,4 +1,4 @@
-import surveylist from "/surveylist.js";
+import {surveylist} from "/surveylist.js";
 
 window.survey = new Survey.Model(surveylist);
 
