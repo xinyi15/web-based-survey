@@ -2,19 +2,22 @@ import {uncTeenSurvey} from "/surveylist.js";
 
 let surveyName = "uncTeenSurvey";
 let questionList = ["M1", "M2"];
-let newPages = [];
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
-    for (let i = 0; i < uncTeenSurvey.pages.length; i++) {
-        if (questionList.includes(uncTeenSurvey.pages[i].questions[0].name)) {
-            newPages.push(uncTeenSurvey.pages[i]);
+    insertQuestions(questions);
+} else if (surveyName === "uncTeen") {
+}
+
+function insertQuestions(questions) {
+    let newPages = [];
+    for (let i = 0; i < questions.pages.length; i++) {
+        if (questionList.includes(questions.pages[i].questions[0].name)) {
+            newPages.push(questions.pages[i]);
         }
     }
     questions.pages = newPages;
     window.survey = new Survey.Model(questions);
-} else if (surveyName === "uncTeen") {
 }
-
 
 var myCss = {
     matrix: {root: "table table-striped matrixtable"},
