@@ -1,9 +1,11 @@
-/*import {surveylist} from "/surveylist.js";*/
+import {uncTeenSurvey, uncTeen } from "/surveylist.js";
 
-let surveyName = "surveylist";
-let surveylist = require("/" + surveyName + ".js");
-
-window.survey = new Survey.Model(surveylist);
+let surveyName = "uncTeen";
+if (surveyName === "uncTeenSurvey") {
+    window.survey = new Survey.Model(uncTeenSurvey);
+} else if (surveyName === "uncTeen") {
+    window.survey = new Survey.Model(uncTeen);
+}
 
 var myCss = {
     matrix: {root: "table table-striped matrixtable"},
