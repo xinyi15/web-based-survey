@@ -1,6 +1,6 @@
-import {uncTeenSurvey, uncTeen } from "/surveylist.js";
+import {uncTeenSurvey} from "/surveylist.js";
 
-let surveyName = "uncTeen";
+let surveyName = "uncTeenSurvey";
 if (surveyName === "uncTeenSurvey") {
     window.survey = new Survey.Model(uncTeenSurvey);
 } else if (surveyName === "uncTeen") {
