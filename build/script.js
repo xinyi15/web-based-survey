@@ -1,4 +1,7 @@
-import {surveylist} from "/surveylist.js";
+/*import {surveylist} from "/surveylist.js";*/
+
+let surveyName = "surveylist";
+let surveylist = require("/" + surveyName + ".js");
 
 window.survey = new Survey.Model(surveylist);
 
