@@ -10,7 +10,7 @@ if (surveyName === "uncTeenSurvey") {
             newPages.push("{" + uncTeenSurvey.pages.questions[i] + "}");
         }
     }
-    question.pages = newPages;
+    questions.pages = newPages;
 } else if (surveyName === "uncTeen") {
 }
 
