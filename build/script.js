@@ -6,7 +6,7 @@ let newPages = [];
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     for (let i = 0; i < uncTeenSurvey.pages.length; i++) {
-        if (uncTeenSurvey.pages[i].questions[0].name in questionList) {
+        if (questionList.includes(uncTeenSurvey.pages[i].questions[0].name)) {
             newPages.push(uncTeenSurvey.pages[i]);
         }
     }
