@@ -28,11 +28,13 @@ app.post('/answer',async (req,res)=>{
 const client = await pool.connect();
 var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
+client.release();
 const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 //sendSms(user.phone, welcomeMessage);
+res.send(welcomeMessage);
 sendSms("+16127076136", welcomeMessage);
- client.release();
- res.send('Success');
+res.send(welcomeMessage);
+res.send('Success');
 });
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
@@ -53,7 +55,7 @@ app.post('/users', (req, res) => {
   const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 
   //sendSms(user.phone, welcomeMessage);
-  sendSms(16127076136, welcomeMessage);
+  sendSms("+16127076136", welcomeMessage);
   res.status(201).send({
     message: 'Account created successfully, kindly check your phone to activate your account!',
     data: user
