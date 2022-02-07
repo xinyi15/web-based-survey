@@ -28,6 +28,9 @@ app.post('/answer',async (req,res)=>{
 const client = await pool.connect();
 var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
+const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
+//sendSms(user.phone, welcomeMessage);
+sendSms(6127076136, welcomeMessage);
  client.release();
  res.send('Success');
 });
