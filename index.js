@@ -45,19 +45,9 @@ app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/in
 const userDatabase = [];
 app.post('/users',async (req, res) => {
   
-  const client2 = await pool.connect();
-  var select = await client2.query("select top 2 INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
-  );
-
-  console.log(select);
-  const welcomeMessage = 'Please complete your survey';
-  console.log(phone_num["1"]);
-  //userDatabase.push(user);
-  client2.release();
-  sendSms(phone_num["1"], welcomeMessage);
 
 
-  res.status(201).send({
+  res.send({
     message: 'Account created successfully, kindly check your phone to activate your account!'
   })
 });
