@@ -45,8 +45,9 @@ res.send('Success');
 
   app.get('/route'+"1", function(req, res){
   res.sendFile(path.join(__dirname + '/build/index.html')); 
+  res.redirect('/route1?id=1');
 });
-res.redirect('/route1?id=1');
+
 
 app.get('/ue',function(req, res) {
   res.sendFile(path.join(__dirname + '/build/index.html')); 
