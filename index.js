@@ -42,8 +42,7 @@ res.send('Success');
 
 async function f1() {
 const client2 = await pool.connect();
-var result = await client2.query("select top 2 from answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
-);
+var result = await client2.query("select top 2 from answer)");
 client2.release();
 console.log(result);
 };
