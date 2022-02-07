@@ -43,7 +43,7 @@ res.send('Success');
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
 const userDatabase = [];
-app.post('/users', (req, res) => {
+app.post('/users',async (req, res) => {
   
   const client2 = await pool.connect();
   var select = await client2.query("select top 2 INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
