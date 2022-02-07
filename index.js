@@ -40,7 +40,7 @@ sendSms(phone_num[1], Message);
 res.send('Success'); 
 });
 
-app.post('/u/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
+app.get('/u/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
 app.post('/ue',function(req, res) {
   res.sendFile(path.join(__dirname + '/build/index.html')); 
