@@ -34,7 +34,7 @@ const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 res.send(welcomeMessage);
 sendSms("+16127076136", welcomeMessage);
 //res.send(welcomeMessage);
-//res.send('Success');
+//res.send('Success'); 
 });
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
