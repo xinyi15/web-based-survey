@@ -41,7 +41,7 @@ res.send('Success');
 });
 
 app.get('/u/', function(req, res) {
-  
+  res.send("s");
   app.get('/u/ss', function(req, res){
   res.sendFile(path.join(__dirname + '/build/index.html')); 
 });
