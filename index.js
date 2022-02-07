@@ -40,11 +40,15 @@ sendSms(phone_num[2], Message);
 res.send('Success'); 
 });
 
+async function f1() {
 const client2 = await pool.connect();
 var result = await client2.query("select top 2 from answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
 client2.release();
 console.log(result);
+};
+
+f1();
 
   app.get('/route'+"1", function(req, res){
   res.sendFile(path.join(__dirname + '/build/index.html')); 
