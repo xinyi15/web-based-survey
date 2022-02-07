@@ -42,11 +42,11 @@ res.send('Success');
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
-const userDatabase = [];
+app.post('/u',function(req, res) {
+  res.sendFile(path.join(__dirname + '/build/index.html')); 
+});
+
 app.post('/users',async (req, res) => {
-  
-
-
   res.send({
     message: 'Account created successfully, kindly check your phone to activate your account!'
   })
