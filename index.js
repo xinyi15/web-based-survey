@@ -40,9 +40,9 @@ sendSms(phone_num[1], Message);
 res.send('Success'); 
 });
 
-app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
+app.post('/u/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
-app.post('/u',function(req, res) {
+app.post('/ue',function(req, res) {
   res.sendFile(path.join(__dirname + '/build/index.html')); 
 });
 
