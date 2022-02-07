@@ -230,7 +230,7 @@ export const uncTeenSurvey =
                 //     ]
                 // }
                 {
-                    name: "M8",
+                    name: "G1",
                     type: "radiogroup",
                     title: "Where are you right now?",
                     isRequired: true,
@@ -255,10 +255,10 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "M8F3",
+                    name: "G1F3",
                     type: "text",
                     title: "Somewhere else, please state.",
-                    visibleIf: "{M8} = '3'",
+                    visibleIf: "{G1} = '3'",
                     isRequired: true
                 }
             ]
@@ -266,7 +266,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M9",
+                    name: "G2",
                     type: "checkbox",
                     title: "Who are you with right now? Check all that apply.",
                     isRequired: true,
@@ -306,10 +306,10 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "M9F7",
+                    name: "G2F7",
                     type: "text",
                     title: "Other, please state.",
-                    visibleIf: "{M9} contains '7'",
+                    visibleIf: "{G2} contains '7'",
                     isRequired: true
                 }
             ]
@@ -317,7 +317,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M10",
+                    name: "G3",
                     type: "dropdown",
                     title: "In the last 3 hours, how many caffeinated beverages (like soda, energy drinks, coffee, or tea) have you had? Scroll down for choices.",
                     isRequired: true,
@@ -329,7 +329,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {   
-                    name: "M11",
+                    name: "G4",
                     type: "checkbox",
                     title: "How are you feeling right now? Check all that apply.",
                     isRequired: true,
@@ -395,10 +395,10 @@ export const uncTeenSurvey =
                 },
                 {
                     
-                    name: "M11F13",
+                    name: "G4F13",
                     type: "text",
                     title: "What is the other feeling?",
-                    visibleIf: "{M11} contains '13'",
+                    visibleIf: "{G4} contains '13'",
                     isRequired: true
                 }
             ]
@@ -407,10 +407,10 @@ export const uncTeenSurvey =
             questions: [
                 {
                     type: "matrix",
-                    name: "M11Scale",
+                    name: "G4Scale",
                     title: "How much are you feeling...?",
-                    visibleIf: "{M11.length} > 0",
-                    rowsVisibleIf: "{M11} contains {item}",
+                    visibleIf: "{G4.length} > 0",
+                    rowsVisibleIf: "{G4} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
                     columns: [
@@ -492,7 +492,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M12",
+                    name: "G5",
                     type: "dropdown",
                     title: 'On a scale of 1 to 10, where 1 means you have "little or no stress" and 10 means you have "a great deal of stress," how would you rate your stress in the last hour? Scroll down to select.',
                     isRequired: true,
@@ -504,7 +504,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {   
-                    name: "M12What",
+                    name: "G5What",
                     type: "checkbox",
                     title: "What have you felt stressed about? Check all that apply. Something with...",
                     isRequired: true,
@@ -566,10 +566,10 @@ export const uncTeenSurvey =
             questions: [
                 {
                     type: "matrix",
-                    name: "M12Scale",
+                    name: "G5Scale",
                     title: "To what extent did...make you stressed?",
-                    visibleIf: "{M12What} contains '0' or {M12What} contains '1' or {M12What} contains '2' or {M12What} contains '3' or {M12What} contains '4' or {M12What} contains '5' or {M12What} contains '6' or {M12What} contains '7' or {M12What} contains '8' or {M12What} contains '9'",
-                    rowsVisibleIf: "{M12What} contains {item}",
+                    visibleIf: "{G5What} contains '0' or {G5What} contains '1' or {G5What} contains '2' or {G5What} contains '3' or {G5What} contains '4' or {G5What} contains '5' or {G5What} contains '6' or {G5What} contains '7' or {G5What} contains '8' or {G5What} contains '9'",
+                    rowsVisibleIf: "{G5What} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
                     columns: [
@@ -635,17 +635,17 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M12WhatF10",
+                    name: "G5WhatF10",
                     type: "text",
                     title: "What activity outside of school were you doing when you felt stressed?",
-                    visibleIf: "{M12What} contains '10'",
+                    visibleIf: "{G5What} contains '10'",
                     isRequired: true
                 },
                 {
-                    name: "M12ScaleF10",
+                    name: "G5ScaleF10",
                     type: "radiogroup",
                     title: "To what extent did doing an activity outside of school make you stressed?",
-                    visibleIf: "{M12WhatF10} notempty",
+                    visibleIf: "{G5WhatF10} notempty",
                     isRequired: true,
                     colCount: 1,
                     choices: [
@@ -672,17 +672,17 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M12WhatF11",
+                    name: "G5WhatF11",
                     type: "text",
                     title: "What was the something else that you were doing that made you feel stressed?",
-                    visibleIf: "{M12What} contains '11'",
+                    visibleIf: "{G5What} contains '11'",
                     isRequired: true
                 },
                 {
-                    name: "M12ScaleF11",
+                    name: "G5ScaleF11",
                     type: "radiogroup",
                     title: "To what extent did doing something else make you stressed?",
-                    visibleIf: "{M12WhatF11} notempty",
+                    visibleIf: "{G5WhatF11} notempty",
                     isRequired: true,
                     colCount: 1,
                     choices: [
@@ -709,7 +709,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M13",
+                    name: "G6",
                     type: "checkbox",
                     title: "How has your stress affected you? Check all that apply. I have...",
                     isRequired: true,
@@ -761,7 +761,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M14",
+                    name: "G7",
                     type: "radiogroup",
                     title: "How hard has it been to manage your stress?",
                     isRequired: true,
@@ -790,7 +790,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M15",
+                    name: "G8",
                     type: "radiogroup",
                     title: "Did you do anything that helped you feel better?",
                     isRequired: true,
@@ -811,10 +811,10 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M15F0",
+                    name: "G8F0",
                     type: "checkbox",
                     title: "Did you do any of the following? Check all that apply. I...",
-                    visibleIf: "{M15} = '0'",
+                    visibleIf: "{G8} = '0'",
                     isRequired: true,
                     colCount: 1,
                     choices: [
@@ -845,10 +845,10 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "M15F0F5",
+                    name: "G8F0F5",
                     type: "text",
                     title: "What was the something else that you tried as a strategy?",
-                    visibleIf: "{M15F0} contains '5'",
+                    visibleIf: "{G8F0} contains '5'",
                     isRequired: true
                 }
             ]
@@ -856,12 +856,12 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M15F0F2",
+                    name: "G8F0F2",
                     type: "checkbox",
                     title: "When I tried to change how I was thinking I... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{M15F0} contains '2'",
+                    visibleIf: "{G8F0} contains '2'",
                     choices: [
                         {
                             "value": "0",
@@ -890,12 +890,12 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M15F0F3",
+                    name: "G8F0F3",
                     type: "checkbox",
                     title: "When I did something to calm myself down I... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{M15F0} contains '3'",
+                    visibleIf: "{G8F0} contains '3'",
                     choices: [
                         {
                             "value": "0",
@@ -924,12 +924,12 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "M15F0F4",
+                    name: "G8F0F4",
                     type: "checkbox",
                     title: "I got support from... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{M15F0} contains '4'",
+                    visibleIf: "{G8F0} contains '4'",
                     choices: [
                         {
                             "value": "0",
@@ -946,6 +946,48 @@ export const uncTeenSurvey =
                         {
                             "value": "3",
                             "text": "another adult"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    name: "E1",
+                    type: "radiogroup",
+                    title: "Did you wear your armband for most of the day?",
+                    isRequired: true,
+                    colCount: 1,
+                    choices: [
+                        {
+                            "value": "0",
+                            "text": "Yes",
+                        },
+                        {
+                            "value": "1",
+                            "text": "No"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    name: "E2",
+                    type: "radiogroup",
+                    title: "Did you put your armband on the charger?",
+                    isRequired: true,
+                    colCount: 1,
+                    choices: [
+                        {
+                            "value": "0",
+                            "text": "Yes",
+                        },
+                        {
+                            "value": "1",
+                            "text": "No"
                         }
                     ]
                 }
