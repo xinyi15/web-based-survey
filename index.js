@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path')
 const sendSms = require('./twilio');
 const bodyParser = require('body-parser');
+const phone_num= require('./phone.json');
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -29,12 +30,8 @@ const client = await pool.connect();
 var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
 client.release();
-const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
-//sendSms(user.phone, welcomeMessage);
-console.log(welcomeMessage);
+const welcomeMessage = 'Please complete your survey';
 sendSms("+16127076136", welcomeMessage);
-console.log(welcomeMessage);
-//res.send(welcomeMessage);
 res.send('Success'); 
 });
 
@@ -56,7 +53,7 @@ app.post('/users', (req, res) => {
   const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 
   //sendSms(user.phone, welcomeMessage);
-  sendSms("+16127076136", welcomeMessage);
+  sendSms(phone_num["1"], welcomeMessage);
   res.status(201).send({
     message: 'Account created successfully, kindly check your phone to activate your account!',
     data: user
