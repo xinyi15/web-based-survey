@@ -31,10 +31,11 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 client.release();
 const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 //sendSms(user.phone, welcomeMessage);
-res.send(welcomeMessage);
+console.log(welcomeMessage);
 sendSms("+16127076136", welcomeMessage);
+console.log(welcomeMessage);
 //res.send(welcomeMessage);
-//res.send('Success'); 
+res.send('Success'); 
 });
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
