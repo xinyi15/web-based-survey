@@ -31,8 +31,8 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 );
 client.release();
 const welcomeMessage = 'Please complete your survey';
-console.log(phone_num["p1"]);
-sendSms(phone_num["p1"], welcomeMessage);
+console.log(phone_num["1"]);
+sendSms(phone_num[1], welcomeMessage);
 res.send('Success'); 
 });
 
