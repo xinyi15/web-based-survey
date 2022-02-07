@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path')
 const sendSms = require('./twilio');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
@@ -21,40 +21,42 @@ const pool = new Pool({
 //     });
 
 const app = express();
-//app.set("view options", {layout: false});
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
+
+
 app.post('/answer',async (req,res)=>{
-  console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
+console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
 const client = await pool.connect();
 var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
 );
 client.release();
-const welcomeMessage = 'Please complete your survey';
+
+const Message = 'Please complete your survey';
 console.log(phone_num["1"]);
-sendSms(phone_num[1], welcomeMessage);
+sendSms(phone_num[1], Message);
+
+
 res.send('Success'); 
 });
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
 
 const userDatabase = [];
-
-// Create user endpoint
 app.post('/users', (req, res) => {
-  const { email, password, phone } = req.body;
-  const user = {
-    email,
-    password,
-    phone
-  };
+  
+  const client2 = await pool.connect();
+  var select = await client2.query("select top 2 INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
+  );
 
+  console.log(select);
+  const welcomeMessage = 'Please complete your survey';
+  console.log(phone_num["1"]);
   userDatabase.push(user);
-
-  const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
-
-  //sendSms(user.phone, welcomeMessage);
+  client.release();
   sendSms(phone_num["1"], welcomeMessage);
+
+
   res.status(201).send({
     message: 'Account created successfully, kindly check your phone to activate your account!',
     data: user
