@@ -30,7 +30,7 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 );
 const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 //sendSms(user.phone, welcomeMessage);
-sendSms(16127076136, welcomeMessage);
+sendSms("+16127076136", welcomeMessage);
  client.release();
  res.send('Success');
 });
