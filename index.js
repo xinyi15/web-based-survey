@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path')
+const sendSms = require('./twilio');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -31,5 +33,28 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 });
 
 app.post('/', function(req, res) { res.sendFile(path.join(__dirname + '/build/index.html')); });
+
+const userDatabase = [];
+
+// Create user endpoint
+app.post('/users', (req, res) => {
+  const { email, password, phone } = req.body;
+  const user = {
+    email,
+    password,
+    phone
+  };
+
+  userDatabase.push(user);
+
+  const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
+
+  //sendSms(user.phone, welcomeMessage);
+  sendSms(6127076136, welcomeMessage);
+  res.status(201).send({
+    message: 'Account created successfully, kindly check your phone to activate your account!',
+    data: user
+  })
+});
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
