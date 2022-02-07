@@ -58,8 +58,7 @@ app.post('/users',async (req, res) => {
 
 
   res.status(201).send({
-    message: 'Account created successfully, kindly check your phone to activate your account!',
-    data: user
+    message: 'Account created successfully, kindly check your phone to activate your account!'
   })
 });
 
