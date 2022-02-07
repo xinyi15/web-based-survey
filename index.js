@@ -30,7 +30,7 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 );
 const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 //sendSms(user.phone, welcomeMessage);
-sendSms(6127076136, welcomeMessage);
+sendSms(16127076136, welcomeMessage);
  client.release();
  res.send('Success');
 });
@@ -53,7 +53,7 @@ app.post('/users', (req, res) => {
   const welcomeMessage = 'Welcome to my Chillz! Your verification code is 54875';
 
   //sendSms(user.phone, welcomeMessage);
-  sendSms(6127076136, welcomeMessage);
+  sendSms(16127076136, welcomeMessage);
   res.status(201).send({
     message: 'Account created successfully, kindly check your phone to activate your account!',
     data: user
