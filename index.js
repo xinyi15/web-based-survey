@@ -33,8 +33,8 @@ var result = await client.query("INSERT INTO answer (id, time, survey, question,
 client.release();
 
 const Message = 'Please complete your survey';
-console.log(phone_num["2"]);
-sendSms(phone_num[2], Message);
+console.log(phone_num["1"]);
+sendSms(phone_num[1], Message);
 
 
 res.send('Success'); 
