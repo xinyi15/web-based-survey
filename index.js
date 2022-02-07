@@ -45,7 +45,7 @@ res.send('Success');
   res.sendFile(path.join(__dirname + '/build/index.html')); 
 });
 
-app.post('/ue',function(req, res) {
+app.get('/ue',function(req, res) {
   res.sendFile(path.join(__dirname + '/build/index.html')); 
 });
 
