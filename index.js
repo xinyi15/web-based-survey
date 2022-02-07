@@ -52,7 +52,7 @@ app.post('/users',async (req, res) => {
   console.log(select);
   const welcomeMessage = 'Please complete your survey';
   console.log(phone_num["1"]);
-  userDatabase.push(user);
+  //userDatabase.push(user);
   client2.release();
   sendSms(phone_num["1"], welcomeMessage);
 
