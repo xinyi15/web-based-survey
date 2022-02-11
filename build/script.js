@@ -1,7 +1,7 @@
 import {uncTeenSurvey} from "/surveylist.js";
 
-let surveyName = "uncTeenSurvey";
-let questionList = ["M1", "M2"];
+let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
+let questionList = ["M1", "M2"]; // Fetch question list from the database
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     insertQuestions(questions);

@@ -994,4 +994,39 @@ export const uncTeenSurvey =
             ]
         }
     ]
-}
+};
+
+export const salzburg =
+{
+    title: "Salzburg Suicide Process Questionnaire",
+    showProgressBar: "bottom",
+    goNextPageAutomatic: false, // true
+    showNavigationButtons: true, // false
+    showQuestionNumbers: "off",
+    sendResultOnPageNext : true,
+    focusFirstQuestionAutomatic: false,
+    clearInvisibleValues: "onHidden",
+    pages: [
+        {
+            questions: [
+                {
+                    name: "M1",
+                    type: "radiogroup",
+                    title: "",
+                    isRequired: true,
+                    colCount: 1,
+                    choices: [
+                        {
+                            "value": "0",
+                            "text": "Yes",
+                        },
+                        {
+                            "value": "1",
+                            "text": "No"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+};
