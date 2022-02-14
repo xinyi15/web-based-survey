@@ -8,8 +8,7 @@ if (surveyName === "uncTeenSurvey") {
 } else if (surveyName === "uncTeen") {
 }
 
-var name = "{{id}}";
-console.log("DDDD",name);
+console.log(id);
 
 function insertQuestions(questions) {
     let newPages = [];
