@@ -73,7 +73,7 @@ const client = await pool.connect();
     const client2 = await pool.connect();
     var result2 = await client2.query('Select * from question where id='+req.params.id );
     client2.release();
-    res.send(result2.rows.id);
+    res.send(result2.rows[0].id);
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
