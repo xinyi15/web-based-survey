@@ -8,12 +8,10 @@ if (surveyName === "uncTeenSurvey") {
 } else if (surveyName === "uncTeen") {
 }
 
-
+ console.log(surveyName);
 
 function insertQuestions(questions) {
     let newPages = [];
-    var name = "{{id}}";
-console.log("DDDD",name);
     for (let i = 0; i < questions.pages.length; i++) {
         if (questionList.includes(questions.pages[i].questions[0].name)) {
             newPages.push(questions.pages[i]);
