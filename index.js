@@ -27,6 +27,8 @@ app.use(express.json());
 app.set('views', path.join(__dirname, 'build'))
 app.set('view engine', 'ejs')
 
+app.get('/', (req, res) => res.render('index'))
+
 app.post('/answer',async (req,res)=>{
 console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
 const client = await pool.connect();
