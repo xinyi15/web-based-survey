@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
 const sendSms = require('./twilio');
 //const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
@@ -21,7 +21,7 @@ const pool = new Pool({
 //     });
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
 
 
