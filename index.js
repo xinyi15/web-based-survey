@@ -83,9 +83,9 @@ const client = await pool.connect();
        }else{
          res.render('pages/survey',{
            id: result2.rows[0].id,
-           surveyname:  result2.rows[0].surveyname,
+           surveyname:  result2.rows[0].survey,
            time: result2.rows[0].time,
-           qlist:  result2.rows[0].qlist
+           qlist:  result2.rows[0].q_list
          });
        } 
 
