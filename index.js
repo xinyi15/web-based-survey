@@ -43,13 +43,29 @@ const client = await pool.connect();
  res.send('Success'); 
  });
 
-  app.get('/survey/:id/:surveyname/:time/:qlist', function(req, res){
+
+ function is_expired(start,end){
+  let date_ob = new Date();
+  let hours = date_ob.getHours();
+    if((hours>=start)&(hours<end)){
+      return false;
+    }else{
+      return true;
+    }
+ }
+
+  app.get('/survey/:id/:surveyname/:time/:qlist/:start/:end', function(req, res){
+
+    if (is_expired(req.params.start,req.params.end)) {
+    res.send('Sorry your link has expired');
+    }else{
       res.render('pages/survey',{
         id: req.params.id,
         surveyname: req.params.surveyname,
         time: req.params.time,
         qlist: req.params.qlist
       });
+    }
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
