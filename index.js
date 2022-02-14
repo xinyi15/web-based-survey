@@ -88,7 +88,7 @@ const client = await pool.connect();
            qlist:  result2.rows[0].q_list
          });
        } 
-
   });
 
+  app.get('/test', (req, res) => res.render('pages/test'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
