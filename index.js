@@ -39,7 +39,6 @@ const client = await pool.connect();
 //  const Message = 'Please complete your survey';
 //  console.log(phone_num["1"]);
 //  sendSms(phone_num[1], Message);
-
  res.send('Success'); 
  });
 
@@ -66,6 +65,16 @@ const client = await pool.connect();
         qlist: req.params.qlist
       });
     }
+  });
+
+
+  
+  app.get('/surveynew/:id', function(req, res){
+
+    const client2 = await pool.connect();
+    var result2 = await client2.query("Select * from qlist where id="+ '"'+ req.params.id +'"' );
+    client2.release();
+    res.send(result2.rows);
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
