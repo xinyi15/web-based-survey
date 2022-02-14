@@ -42,7 +42,7 @@ sendSms(phone_num[2], Message);
 res.send('Success'); 
 });
 
- app.get('/survey', function(req, res){
+ app.get('/survey/:id', function(req, res){
      res.render('survey',{ name: req.params.id});
    //  res.sendFile(path.join(__dirname + '/build/index.html')); 
  });
