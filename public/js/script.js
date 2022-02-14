@@ -10,7 +10,7 @@ if (surveyName === "uncTeenSurvey") {
 
 
 var getTest = "<%= id  %>"; 
-console.log(id); 
+console.log(getTest); 
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {
