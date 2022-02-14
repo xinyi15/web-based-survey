@@ -21,7 +21,7 @@ const pool = new Pool({
 //     });
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'build'))); 
+//app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
 
 app.set('views', path.join(__dirname, 'build'))
@@ -43,7 +43,7 @@ res.send('Success');
 });
 
  app.get('/survey/:id', function(req, res){
-     res.render('survey',{name: req.params.id});
+     res.render('survey',{id: req.params.id});
  });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
