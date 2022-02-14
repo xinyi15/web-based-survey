@@ -71,7 +71,7 @@ const client = await pool.connect();
   
   app.get('/surveynew/:id',async (req,res)=>{
     const client2 = await pool.connect();
-    var result2 = await client2.query('Select * from question where id="'+ 1 +'"' );
+    var result2 = await client2.query('Select * from question where id=1' );
     client2.release();
     res.send(result2.rows);
   });
