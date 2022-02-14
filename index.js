@@ -36,20 +36,15 @@ const client = await pool.connect();
  );
  client.release();
 
- const Message = 'Please complete your survey';
- console.log(phone_num["1"]);
- sendSms(phone_num[1], Message);
-
+//  const Message = 'Please complete your survey';
+//  console.log(phone_num["1"]);
+//  sendSms(phone_num[1], Message);
 
  res.send('Success'); 
  });
 
   app.get('/survey/:id', function(req, res){
-      res.render('pages/survey');//,{id: req.params.id}
+      res.render('pages/survey',{id: req.params.id});//,{id: req.params.id}
   });
-
-  app.get('/survey', function(req, res){
-    res.render('pages/survey');//,{id: req.params.id}
-});
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
