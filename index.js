@@ -48,4 +48,8 @@ const client = await pool.connect();
       res.render('pages/survey');//,{id: req.params.id}
   });
 
+  app.get('/survey', function(req, res){
+    res.render('pages/survey');//,{id: req.params.id}
+});
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
