@@ -40,29 +40,29 @@ sendSms(phone_num[2], Message);
 res.send('Success'); 
 });
 
-async function f1() {
-const client2 = await pool.connect();
-var result = await client2.query("select top (2) * from answer)");
-client2.release();
-console.log(result);
-};
+// async function f1() {
+// const client2 = await pool.connect();
+// var result = await client2.query("select top (2) * from answer)");
+// client2.release();
+// console.log(result);
+// };
 
-f1();
+// f1();
 
-  app.get('/route'+"1", function(req, res){
-  res.sendFile(path.join(__dirname + '/build/index.html')); 
-  res.set({'id':1});
-});
+//   app.get('/route'+"1", function(req, res){
+//   res.sendFile(path.join(__dirname + '/build/index.html')); 
+//   res.set({'id':1});
+// });
 
 
-app.get('/ue',function(req, res) {
-  res.sendFile(path.join(__dirname + '/build/index.html')); 
-});
+// app.get('/ue',function(req, res) {
+//   res.sendFile(path.join(__dirname + '/build/index.html')); 
+// });
 
-app.post('/users',async (req, res) => {
-  res.send({
-    message: 'Account created successfully, kindly check your phone to activate your account!'
-  })
-});
+// app.post('/users',async (req, res) => {
+//   res.send({
+//     message: 'Account created successfully, kindly check your phone to activate your account!'
+//   })
+// });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
