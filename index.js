@@ -21,7 +21,7 @@ const pool = new Pool({
 //     });
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'build'))); 
+//app.use(express.static(path.join(__dirname, 'build'))); 
 app.use(express.json());
 
 app.set('views', path.join(__dirname, 'build'))
@@ -40,6 +40,10 @@ sendSms(phone_num[2], Message);
 
 
 res.send('Success'); 
+});
+
+app.get('/', function(req, res) {
+  res.render('index', { title: 'Home Page' } );
 });
 
  app.get('/survey/:id', function(req, res){
