@@ -1,4 +1,4 @@
-import {uncTeenSurvey} from "/surveylist.js";
+import {uncTeenSurvey} from "./surveylist.js";
 
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let questionList = ["M1", "M2"]; // Fetch question list from the database
