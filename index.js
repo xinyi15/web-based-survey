@@ -73,7 +73,22 @@ const client = await pool.connect();
     const client2 = await pool.connect();
     var result2 = await client2.query('Select * from question where id='+req.params.id );
     client2.release();
-    res.send(result2.rows[0].id);
+    console.log(result2.rows);
+    console.log(result2.rows[0]);
+    console.log(result2.rows[0].id);
+    res.send("s");
+
+    // if (is_expired(1,24)) {
+    //   res.send('Sorry your link has expired');
+    //   }else{
+    //     res.render('pages/survey',{
+    //       id: req.params.id,
+    //       surveyname: req.params.surveyname,
+    //       time: req.params.time,
+    //       qlist: req.params.qlist
+    //     });
+    //   }
+
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
