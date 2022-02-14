@@ -21,7 +21,7 @@ const pool = new Pool({
 //     });
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'build'))); 
+app.use(express.static(path.join(__dirname, 'public'))); 
 app.use(express.json());
 
 
@@ -49,10 +49,9 @@ res.send('Success');
 
 // f1();
 
-//   app.get('/route'+"1", function(req, res){
-//   res.sendFile(path.join(__dirname + '/build/index.html')); 
-//   res.set({'id':1});
-// });
+ app.get('/', function(req, res){
+     res.sendFile(path.join(__dirname + '/build/index.html')); 
+ });
 
 
 // app.get('/ue',function(req, res) {
