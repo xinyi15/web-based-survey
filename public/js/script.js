@@ -9,8 +9,8 @@ if (surveyName === "uncTeenSurvey") {
 }
 
 
-var getTest = "<%= id  %>"; 
-console.log(getTest); 
+var variableJSON = JSON.parse($('#variableJSON').text());
+console.log( variableJSON ); 
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {
