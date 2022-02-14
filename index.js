@@ -43,8 +43,13 @@ const client = await pool.connect();
  res.send('Success'); 
  });
 
-  app.get('/survey/:id', function(req, res){
-      res.render('pages/survey',{id: req.params.id});//,{id: req.params.id}
+  app.get('/survey/:id/:surveyname/:time/:qlist', function(req, res){
+      res.render('pages/survey',{
+        id: req.params.id,
+        surveyname: req.params.surveyname,
+        time: req.params.time,
+        qlist: req.params.qlist
+      });
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
