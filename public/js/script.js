@@ -9,8 +9,15 @@ if (surveyName === "uncTeenSurvey") {
 }
 
 
-var variableJSON = JSON.parse($('#variableJSON').text());
-console.log( variableJSON ); 
+var idJSON = JSON.parse($('#idJSON').text());
+var timeJSON = JSON.parse($('#timeJSON').text());
+var surveynameJSON = JSON.parse($('#surveynameJSON').text());
+var qlistJSON = JSON.parse($('#qlistJSON').text());
+
+console.log( idJSON ); 
+console.log( surveynameJSON ); 
+console.log( timeJSON ); 
+console.log( qlistJSON ); 
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {

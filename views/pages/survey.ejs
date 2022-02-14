@@ -25,10 +25,11 @@
 </head>
 
 <body>
-  <span id='variableJSON' hidden>
-    <%=JSON.stringify(id);
-    %>
-</span>
+  <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
+  <span id='timeJSON' hidden><%=JSON.stringify(time); %></span>
+  <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
+  <span id='qlistJSON' hidden><%=JSON.stringify(qlist); %></span>
+
     <div class="content">
     <script src="/js/script.js" type="module"></script>
     <div id="surveyResults"></div>
