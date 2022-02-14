@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based Survey</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/survey-jquery"></script>
+    <link href="https://unpkg.com/survey-jquery/survey.min.css" type="text/css" rel="stylesheet"/>
+
+    <style>
+        body {
+          background: #D3D3D3;
+        }
+        
+        .content {
+          max-width: 550px;
+          margin: auto;
+          background:white;
+          padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <script src="./script.js" type="module"></script>
+    <div id="surveyResults"></div>
+    <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
+    <div id="surveyResult"></div>
+    </div>
+</body>
+</html>
