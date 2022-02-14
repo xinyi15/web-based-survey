@@ -3,21 +3,23 @@ import {uncTeenSurvey} from "/js/surveylist.js";
 //let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 //let questionList = ["M1", "M2"]; // Fetch question list from the database
 
-
 var idJSON = JSON.parse($('#idJSON').text());
 var timeJSON = JSON.parse($('#timeJSON').text());
 var surveynameJSON = JSON.parse($('#surveynameJSON').text());
 var qlistJSON = JSON.parse($('#qlistJSON').text());
 
-console.log( idJSON ); 
-console.log( surveynameJSON ); 
-console.log( timeJSON ); 
-console.log( qlistJSON );
+
 
 var surveyName=surveynameJSON;
 var id=idJSON;
 var questionList=qlistJSON.split("_");
 var time=timeJSON;
+
+
+console.log( idJSON ); 
+console.log( surveynameJSON ); 
+console.log( timeJSON ); 
+console.log( qlistJSON );
 console.log(questionList);
 
 if (surveyName === "uncTeenSurvey") {
