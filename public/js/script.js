@@ -8,8 +8,9 @@ if (surveyName === "uncTeenSurvey") {
 } else if (surveyName === "uncTeen") {
 }
 
-console.log(id);
 
+var getTest = "<%= id  %>"; 
+console.log(id); 
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {
