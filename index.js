@@ -41,11 +41,11 @@ const client = await pool.connect();
  sendSms(phone_num[1], Message);
 
 
-// res.send('Success'); 
-// });
+ res.send('Success'); 
+ });
 
-//  app.get('/survey/:id', function(req, res){
-//      res.render('survey',{id: req.params.id});
-//  });
+  app.get('/survey/:id', function(req, res){
+      res.render('pages/survey',{id: req.params.id});
+  });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
