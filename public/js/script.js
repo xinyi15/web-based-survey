@@ -8,19 +8,8 @@ if (surveyName === "uncTeenSurvey") {
 } else if (surveyName === "uncTeen") {
 }
 
-function getParams() {
-    var url = window.location.href
-      .slice(window.location.href.indexOf("/") + 1)
-      .split("&");
-    var result = {};
-    url.forEach(function(item) {
-      var param = item.split("=");
-      result[param[0]] = param[1];
-    });
-    return result;
-  }
-
-  console.log(getParams());
+var name = "{{id}}";
+console.log(name);
 
 function insertQuestions(questions) {
     let newPages = [];
