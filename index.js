@@ -3,6 +3,8 @@ const path = require('path');
 const sendSms = require('./twilio');
 //const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
+const bodyParser = require('body-parser');
+
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool({
