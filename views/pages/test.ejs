@@ -9,15 +9,15 @@
 
 	<script type="text/javascript">
 		$(document).ready(() => {
-			$("form1").submit((event) => {
+			$("#form1").submit((event) => {
 				event.preventDefault();
 				$.ajax({
 					type: 'POST',
 					url: '/test',
-					data: $('form1').serialize(),
+					data: {'id':1},//$('#form1').serialize(),
 					dataType: "json",
 					success: (response) => {
-						$('form1')[0].reset();
+						$('#form1')[0].reset();
 						document.getElementById("check").innerHTML = response.Success;
 						//ADD THIS CODE
 						setTimeout(() => {
