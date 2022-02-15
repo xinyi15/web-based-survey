@@ -7,18 +7,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
 
-
 	<script type="text/javascript">
 		$(document).ready(() => {
-			$("#form1").submit((event) => {
+			$("form1").submit((event) => {
 				event.preventDefault();
 				$.ajax({
 					type: 'POST',
 					url: '/test',
-					data: $('#form1').serialize(),
+					data: $('form1').serialize(),
 					dataType: "json",
 					success: (response) => {
-						$('#form1')[0].reset();
+						$('form1')[0].reset();
 						document.getElementById("check").innerHTML = response.Success;
 						//ADD THIS CODE
 						setTimeout(() => {
