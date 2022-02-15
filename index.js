@@ -90,5 +90,8 @@ const client = await pool.connect();
        } 
   });
 
-  app.get('/test', (req, res) => res.render('pages/test'))
+  app.get('/test', (req, res) => 
+  res.render('pages/test')
+  )
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
