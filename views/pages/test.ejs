@@ -22,6 +22,7 @@
 					url: '/test',
 					data: {"id":"1"},//$('#form1').serialize(),
 					dataType: "json",
+                    contentType : 'application/json',
 					success: (response) => {
 						$('#form1')[0].reset();
 						document.getElementById("check").innerHTML = response.Success;
