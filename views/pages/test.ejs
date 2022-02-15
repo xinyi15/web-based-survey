@@ -23,7 +23,7 @@
 					data: {"id":"1"},//$('#form1').serialize(),
 					dataType: "json",
                     contentType : 'application/json',
-                    headers: { 'Cache-Control': 'max-age=1000' },
+                    cache: false, 
 					success: (response) => {
 						$('#form1')[0].reset();
 						document.getElementById("check").innerHTML = response.Success;
