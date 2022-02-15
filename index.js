@@ -101,7 +101,7 @@ const client = await pool.connect();
 
   app.post('/test',async (req,res)=>{
     let personInfo = req.body;
-     console.log(personInfo);
+     console.log(personInfo.id);
      res.send({ "Success": "Email is already used." });
 
   });
