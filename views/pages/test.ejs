@@ -8,13 +8,18 @@
 	<link rel="stylesheet" href="./css/main.css">
 
 	<script type="text/javascript">
+        var markers = { "markers": [
+  { "position": "128.3657142857143", "markerPosition": "7" },
+  { "position": "235.1944023323615", "markerPosition": "19" },
+  { "position": "42.5978231292517", "markerPosition": "-3" }
+]};
 		$(document).ready(() => {
 			$("#form1").submit((event) => {
 				event.preventDefault();
 				$.ajax({
 					type: 'POST',
 					url: '/test',
-					data: {'id':1},//$('#form1').serialize(),
+					data:  {markers: JSON.stringify(markers)},//$('#form1').serialize(),
 					dataType: "json",
 					success: (response) => {
 						$('#form1')[0].reset();
@@ -23,9 +28,6 @@
 						setTimeout(() => {
 							document.getElementById("check").innerHTML = "";
 						}, 3000);
-						if (response.Success == "You are regestered.") {
-							document.getElementById("aa").click();
-						};
 					},
 					error: () => {
 					}
