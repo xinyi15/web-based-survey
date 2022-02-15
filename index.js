@@ -94,4 +94,24 @@ const client = await pool.connect();
   res.render('pages/test')
   )
 
+
+
+
+
+
+  app.post('/test_save',async (req,res)=>{
+
+    let personInfo = req.body;
+    
+     res.send(personInfo);
+
+  });
+
+
+
+
+
+
+
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
