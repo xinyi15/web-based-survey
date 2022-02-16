@@ -76,7 +76,7 @@ const client = await pool.connect();
     let time_=time_ref[req.params.time];
     let qlist_=translate_ql(req.params.qlist);
 
-    res.send(surveyname_);
+    res.send(req.params.surveyname);
     
     // if (is_expired(req.params.start,req.params.end)) {
     // res.send('Sorry your link has expired');
