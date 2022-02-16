@@ -51,8 +51,8 @@ const client = await pool.connect();
 
 
  function is_expired(start,end){
-   let start=hour_ref[start];
-   let end=hour_ref[end];
+ //  let start=hour_ref[start];
+  // let end=hour_ref[end];
    let start=0;
    let end=24;
   let date_ob = new Date();
