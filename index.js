@@ -4,10 +4,10 @@ const sendSms = require('./twilio');
 //const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
 const id_ref= require('./UniqueId.json');
-const time_ref= require('./phone.json');
-const ql_ref= require('./phone.json');
-const survey_ref= require('./phone.json');
-const hour_ref= require('./phone.json');
+const time_ref= require('./UniqueTime.json');
+const ql_ref= require('./UniqueQeuestionList.json');
+const survey_ref= require('./UniqueSurvey.json');
+const hour_ref= require('./UniqueHour.json');
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5000
