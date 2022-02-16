@@ -22,7 +22,7 @@ console.log( qlistJSON );
 console.log(questionList);
 
 
-let questionList = ["M1", "M2"]; 
+let questionList = ["Q1", "Q2"]; 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     insertQuestions(questions);
