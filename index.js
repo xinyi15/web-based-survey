@@ -101,7 +101,7 @@ const client = await pool.connect();
     //console.log(result2.rows[0].id);
     //res.send("s");
 
-   if (is_expired(1,24)) {
+   if (is_expired(req.params.start,req.params.end)) {
        res.send('Sorry your link has expired');
        }else{
          res.render('pages/survey',{
