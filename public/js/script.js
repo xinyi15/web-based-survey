@@ -8,11 +8,9 @@ var timeJSON = JSON.parse($('#timeJSON').text());
 var surveynameJSON = JSON.parse($('#surveynameJSON').text());
 var qlistJSON = JSON.parse($('#qlistJSON').text());
 
-
-
 var surveyName=surveynameJSON;
 var id=idJSON;
-var questionList=qlistJSON
+var questionList=qlistJSON;
 //var questionList=qlistJSON.split("_");
 var time=timeJSON;
 
@@ -23,6 +21,8 @@ console.log( timeJSON );
 console.log( qlistJSON );
 console.log(questionList);
 
+
+let questionList = ["M1", "M2"]; 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     insertQuestions(questions);
