@@ -50,7 +50,7 @@ const client = await pool.connect();
  });
 
 
- function is_expired(start,end){
+ function is_expired(start_,end_){
  //  let start=hour_ref[start];
   // let end=hour_ref[end];
    let start=0;
