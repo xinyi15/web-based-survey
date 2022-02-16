@@ -12,7 +12,8 @@ var qlistJSON = JSON.parse($('#qlistJSON').text());
 
 var surveyName=surveynameJSON;
 var id=idJSON;
-var questionList=qlistJSON.split("_");
+var questionList=qlistJSON
+//var questionList=qlistJSON.split("_");
 var time=timeJSON;
 
 

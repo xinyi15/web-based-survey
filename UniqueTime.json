@@ -1,10 +1,4 @@
-[
-  {
-    "time": "Morning",
-    "UniqueTime": "ESO184"
-  },
-  {
-    "time": "Evening",
-    "UniqueTime": "EYY552"
-  }
-]
+{
+  "ESO184": "Morning",
+  "EYY552": "Evening"
+}

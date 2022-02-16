@@ -3,6 +3,11 @@ const path = require('path');
 const sendSms = require('./twilio');
 //const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
+const id_ref= require('./UniqueId.json');
+const time_ref= require('./phone.json');
+const ql_ref= require('./phone.json');
+const survey_ref= require('./phone.json');
+const hour_ref= require('./phone.json');
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5000
@@ -46,6 +51,8 @@ const client = await pool.connect();
 
 
  function is_expired(start,end){
+   let start=hour_ref[start];
+   let end=hour_ref[end];
   let date_ob = new Date();
   let hours = date_ob.getHours();
     if((hours>=start)&(hours<end)){
@@ -55,16 +62,28 @@ const client = await pool.connect();
     }
  }
 
+
+  function translate_ql(qlistJSON){
+    var questionList=qlistJSON.split("_");
+    var result = questionList.map(x => ql_ref[x]);
+    return result;
+}
+
+
   app.get('/survey/:id/:surveyname/:time/:qlist/:start/:end', function(req, res){
 
+    let surveyname_=survey_ref[req.params.surveyname];
+    let time_=time_ref[req.params.time];
+    let qlist_=translate_ql(req.params.qlist);
+    
     if (is_expired(req.params.start,req.params.end)) {
     res.send('Sorry your link has expired');
     }else{
       res.render('pages/survey',{
         id: req.params.id,
-        surveyname: req.params.surveyname,
-        time: req.params.time,
-        qlist: req.params.qlist
+        surveyname: surveyname_,
+        time: time_,
+        qlist:qlist_
       });
     }
   });
