@@ -91,8 +91,9 @@ let x= merged.reduce(function(a, e, i) {
         a.push(i);
     return a;
 }, []);
-console.log();
-    resultx=["Q1","Q2","Q3","Q4"];
+console.log(x);
+let resultx= x.map(el => 'Q' + el)
+   // resultx=["Q1","Q2","Q3","Q4"];
     return resultx;
 }
 
