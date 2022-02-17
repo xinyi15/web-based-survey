@@ -55,6 +55,7 @@ const client = await pool.connect();
    let end=hour_ref[end_];
  //  let start=0;
   // let end=24;
+  //process.env.TZ = 
   let date_ob = new Date();
   let hours = date_ob.getHours();
   console.log(hours);
