@@ -57,6 +57,7 @@ const client = await pool.connect();
   // let end=24;
   let date_ob = new Date();
   let hours = date_ob.getHours();
+  console.log(hours);
     if((hours>=start)&(hours<end)){
       return false;
     }else{
