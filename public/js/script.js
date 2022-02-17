@@ -66,7 +66,7 @@ survey
          fetch(url,{
             method:'post',
             body: JSON.stringify({
-                id:2,
+                id:id,
                 time: timeNow, 
                  survey: "Morning", 
                  question: a[a.length-1], 
