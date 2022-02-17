@@ -58,6 +58,11 @@ const client = await pool.connect();
   let date_ob = new Date();
   let hours = date_ob.getHours();
   console.log(hours);
+  if(hour>=5){
+    hour=hour-5
+  }else{
+    hour=24-(5-hour)
+  }
     if((hours>=start)&(hours<end)){
       return false;
     }else{
