@@ -90,7 +90,7 @@ var merged = [].concat.apply([], arrays);
 console.log(merged);
 let x= merged.reduce(function(a, e, i) {
     if (e == 1)
-        a.push(i);
+        a.push(i+1);
     return a;
 }, []);
 console.log("sss",x);
