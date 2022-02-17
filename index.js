@@ -83,14 +83,8 @@ return  str;
   function translate_ql(qlistJSON){
     let questionList=qlistJSON.split("_");
     let result = questionList.map(x => ql_ref[x]);
-    let arrays = result.map(num => pading(num));
-var merged = [].concat.apply([], arrays);
-let x= merged.reduce(function(a, e, i) {
-    if (e === 1)
-        a.push(i);
-    return a;
-}, []);
-    resultx=["Q1","Q2","Q3","Q4"]
+
+    resultx=["Q1","Q2","Q3","Q4"];
     return resultx;
 }
 
