@@ -85,6 +85,7 @@ return  str;
     let questionList=qlistJSON.split("_");
     let result = questionList.map(x => ql_ref[x]);
     let arrays = result.map(num => pading(num));
+    console.log( arrays);
 var merged = [].concat.apply([], arrays);
 console.log(merged);
 let x= merged.reduce(function(a, e, i) {
@@ -92,7 +93,7 @@ let x= merged.reduce(function(a, e, i) {
         a.push(i);
     return a;
 }, []);
-console.log(x);
+console.log("sss",x);
 let resultx= x.map(el => 'Q' + el)
    // resultx=["Q1","Q2","Q3","Q4"];
     return resultx;
@@ -118,26 +119,26 @@ let resultx= x.map(el => 'Q' + el)
 
 
   
-  app.get('/surveynew/:id',async (req,res)=>{
-    const client2 = await pool.connect();
-    var result2 = await client2.query('Select * from question where id='+req.params.id );
-    client2.release();
-    //console.log(result2.rows);
-    //console.log(result2.rows[0]);
-    //console.log(result2.rows[0].id);
-    //res.send("s");
+  // app.get('/surveynew/:id',async (req,res)=>{
+  //   const client2 = await pool.connect();
+  //   var result2 = await client2.query('Select * from question where id='+req.params.id );
+  //   client2.release();
+  //   //console.log(result2.rows);
+  //   //console.log(result2.rows[0]);
+  //   //console.log(result2.rows[0].id);
+  //   //res.send("s");
 
-   if (is_expired(req.params.start,req.params.end)) {
-       res.send('Sorry your link has expired');
-       }else{
-         res.render('pages/survey',{
-           id: result2.rows[0].id,
-           surveyname:  result2.rows[0].survey,
-           time: result2.rows[0].time,
-           qlist:  result2.rows[0].q_list
-         });
-       } 
-  });
+  //  if (is_expired(req.params.start,req.params.end)) {
+  //      res.send('Sorry your link has expired');
+  //      }else{
+  //        res.render('pages/survey',{
+  //          id: result2.rows[0].id,
+  //          surveyname:  result2.rows[0].survey,
+  //          time: result2.rows[0].time,
+  //          qlist:  result2.rows[0].q_list
+  //        });
+  //      } 
+  // });
 
   app.get('/test', (req, res) => 
   res.render('pages/test')
