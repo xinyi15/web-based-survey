@@ -97,7 +97,6 @@ let resultx= x.map(el => 'Q' + el)
     return resultx;
 }
 
-
   app.get('/survey/:id/:surveyname/:time/:qlist/:start/:end', function(req, res){
 
     let surveyname_=survey_ref[req.params.surveyname];
