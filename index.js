@@ -86,8 +86,9 @@ return  str;
     let result = questionList.map(x => ql_ref[x]);
     let arrays = result.map(num => pading(num));
 var merged = [].concat.apply([], arrays);
+console.log(merged);
 let x= merged.reduce(function(a, e, i) {
-    if (e === 1)
+    if (e == 1)
         a.push(i);
     return a;
 }, []);
