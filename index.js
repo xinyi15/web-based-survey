@@ -56,14 +56,14 @@ const client = await pool.connect();
   //let start=0;
   //let end=24;
   //process.env.TZ = 
-  let date_ob = new Date();
+  let date_ob = new Date().toLocaleString();
   let hours = date_ob.getHours();
   console.log(hours);
-  if(hours>=5){
-    hours=hours-5
-  }else{
-    hours=24-(5-hours)
-  }
+  // if(hours>=5){
+  //   hours=hours-5
+  // }else{
+  //   hours=24-(5-hours)
+  // }
     if((hours>=start)&(hours<end)){
       return false;
     }else{
@@ -85,9 +85,9 @@ return  str;
     let questionList=qlistJSON.split("_");
     let result = questionList.map(x => ql_ref[x]);
     let arrays = result.map(num => pading(num));
-    console.log( arrays);
+  //  console.log( arrays);
 var merged = [].concat.apply([], arrays);
-console.log(merged);
+//console.log(merged);
 let x= merged.reduce(function(a, e, i) {
     if (e == 1)
         a.push(i+1);
@@ -95,7 +95,6 @@ let x= merged.reduce(function(a, e, i) {
 }, []);
 console.log("sss",x);
 let resultx= x.map(el => 'Q' + el)
-   // resultx=["Q1","Q2","Q3","Q4"];
     return resultx;
 }
 
