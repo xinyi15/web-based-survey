@@ -66,7 +66,7 @@ const client = await pool.connect();
 
 
   function translate_ql(qlistJSON){
-    var questionList=qlistJSON.split("_");
+    //var questionList=qlistJSON.split("_");
     var result = questionList.map(x => ql_ref[x]);
     return result;
 }
