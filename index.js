@@ -53,8 +53,8 @@ const client = await pool.connect();
  function is_expired(start_,end_){
   let start=hour_ref[start_];
    let end=hour_ref[end_];
-  let start=0;
-  let end=24;
+  //let start=0;
+  //let end=24;
   //process.env.TZ = 
   let date_ob = new Date();
   let hours = date_ob.getHours();
@@ -80,10 +80,18 @@ var str=binaryStr.split('');
 return  str;
 }
 
+
   function translate_ql(qlistJSON){
     let questionList=qlistJSON.split("_");
     let result = questionList.map(x => ql_ref[x]);
-
+    let arrays = result.map(num => pading(num));
+var merged = [].concat.apply([], arrays);
+let x= merged.reduce(function(a, e, i) {
+    if (e === 1)
+        a.push(i);
+    return a;
+}, []);
+console.log();
     resultx=["Q1","Q2","Q3","Q4"];
     return resultx;
 }
