@@ -108,7 +108,7 @@ let resultx= x.map(el => 'Q' + el)
     res.send('Sorry your link has expired');
      }else{
       res.render('pages/survey',{
-         id: req.params.id,
+         id: id_ref[req.params.id],
         surveyname: surveyname_,
         time: time_,
         qlist:qlist_
