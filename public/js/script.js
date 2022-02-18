@@ -62,8 +62,8 @@ survey
         var a=Object.keys(data);
         // document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/answer";
-        var timeNow = new Date();
-        var timeNow1 = new Date();
+        let timeNow = new Date();
+        let  timeNow1 = new Date();
         console.log("sssss",timeNow.getFullYear().toLocaleString() + "-" + timeNow.getMonth().toLocaleString() + "-" + timeNow.getDate()//.toLocaleString()
 
        )
