@@ -87,7 +87,7 @@ survey
     
     survey.onPartialSend.add(function(survey) {
         let  timeNow1 = new Date();
-        console.log("ssddds", timeNow1.getMonth());
+        console.log("ssddds", timeNow1.getMonth().toLocaleString);
         sendDataToTheServer(false, survey.data);
     });
 
