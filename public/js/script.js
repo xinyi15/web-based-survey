@@ -74,7 +74,7 @@ survey
                  survey: time, 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow.getFullYear()+ "-" + timeNow.getMonth() + "-" + timeNow.getDate().toLocaleString()
+                 date: timeNow.getFullYear()+ "-" + timeNow.getMonth().toLocaleString() + "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
