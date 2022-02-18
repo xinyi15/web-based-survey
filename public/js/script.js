@@ -70,11 +70,11 @@ survey
             method:'post',
             body: JSON.stringify({
                 id:id,
-                time: timeNow, 
+                time: timeNow.toLocaleString(), 
                  survey: time, 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow.getFullYear()+ "-" + timeNow.getMonth() + "-" + timeNow.getDate()
+                 date: timeNow.getFullYear()+ "-" + timeNow.getMonth() + "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
