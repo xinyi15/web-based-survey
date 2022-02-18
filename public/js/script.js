@@ -73,7 +73,7 @@ survey
                  survey: time, 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow1.getFullYear()+ "-" + timeNow1.getMonth() + "-" + timeNow.getDate().toLocaleString()
+                 date: timeNow1.getFullYear()+ "-" + timeNow1.getMonth()+ 1 + "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
@@ -86,8 +86,8 @@ survey
     });
     
     survey.onPartialSend.add(function(survey) {
-        let  timeNow1 = new Date();
-        console.log("ssddds", timeNow1.getMonth().toLocaleString);
+    //    let  timeNow1 = new Date();
+        //console.log("ssddds", timeNow1.getMonth());
         sendDataToTheServer(false, survey.data);
     });
 
