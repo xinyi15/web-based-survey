@@ -63,6 +63,7 @@ survey
         // document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/answer";
         var timeNow = new Date();
+        var timeNow1 = new Date();
         console.log(timeNow.getFullYear().toLocaleString() + "-" + timeNow.getMonth().toLocaleString() + "-" + timeNow.getDate()//.toLocaleString()
         ,timeNow.toLocaleString()
        )
@@ -74,7 +75,7 @@ survey
                  survey: time, 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow.getFullYear()+ "-" + timeNow.getMonth().toLocaleString() + "-" + timeNow.getDate().toLocaleString()
+                 date: timeNow1.getFullYear()+ "-" + timeNow1.getMonth() + "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
