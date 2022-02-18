@@ -64,6 +64,7 @@ survey
         var url="https://web-based-survey.herokuapp.com/answer";
         let timeNow = new Date();
         let  timeNow1 = new Date();
+        let a=timeNow1.getMonth()+ 1 ;
           console.log("ssddds", timeNow1.getMonth());
          fetch(url,{
             method:'post',
@@ -73,7 +74,7 @@ survey
                  survey: time, 
                  question: a[a.length-1], 
                  answer: data[a[a.length-1]], 
-                 date: timeNow1.getFullYear()+ "-" + timeNow1.getMonth()+ 1 + "-" + timeNow.getDate().toLocaleString()
+                 date: timeNow1.getFullYear()+ "-" +a + "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
