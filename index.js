@@ -58,7 +58,7 @@ const client = await pool.connect();
   //process.env.TZ = 
   let date_ob = new Date();
   let hours = date_ob.getHours().toLocaleString();
-  console.log(hours);
+  console.log(,"ss",hours);
   // if(hours>=5){
   //   hours=hours-5
   // }else{
