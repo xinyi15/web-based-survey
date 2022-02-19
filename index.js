@@ -106,6 +106,7 @@ let resultx= x.map(el => 'Q' + el)
     let time_=time_ref[req.params.time];
     let qlist_=translate_ql(req.params.qlist);
     
+    console.log(qlist_);
      if (is_expired(req.params.start,req.params.end)) {
     res.send('Sorry your link has expired');
      }else{
@@ -144,9 +145,6 @@ let resultx= x.map(el => 'Q' + el)
   app.get('/test', (req, res) => 
   res.render('pages/test')
   )
-
-
-
 
 
 
