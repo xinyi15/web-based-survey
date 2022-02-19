@@ -568,7 +568,7 @@ export const uncTeenSurvey =
                     type: "matrix",
                     name: "Q16",
                     title: "To what extent did...make you stressed?",
-                    visibleIf: "{Q15} contains '0' or {G5What} contains '1' or {G5What} contains '2' or {G5What} contains '3' or {G5What} contains '4' or {G5What} contains '5' or {G5What} contains '6' or {G5What} contains '7' or {G5What} contains '8' or {G5What} contains '9'",
+                    visibleIf: "{Q15} contains '0' or {Q15} contains '1' or {Q15} contains '2' or {Q15} contains '3' or {Q15} contains '4' or {Q15} contains '5' or {Q15} contains '6' or {Q15} contains '7' or {Q15} contains '8' or {Q15} contains '9'",
                     rowsVisibleIf: "{Q15} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
