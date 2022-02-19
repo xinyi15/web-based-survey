@@ -675,7 +675,7 @@ export const uncTeenSurvey =
                     name: "Q18",
                     type: "text",
                     title: "What was the something else that you were doing that made you feel stressed?",
-                    visibleIf: "{G5What} contains '11'",
+                    visibleIf: "{Q15} contains '11'",
                     isRequired: true
                 },
                 {
