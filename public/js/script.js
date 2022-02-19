@@ -39,7 +39,7 @@ function insertQuestions(questions) {
         }
     }
     questions.pages = newPages;
-    console.log("sss",2,newPages);
+    console.log("sss",2,JSON.stringify(questions));
     window.survey = new Survey.Model(questions);
 }
 
