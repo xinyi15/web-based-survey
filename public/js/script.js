@@ -39,6 +39,7 @@ function insertQuestions(questions) {
         }
     }
     questions.pages = newPages;
+    console.log("sss",2,newPages);
     window.survey = new Survey.Model(questions);
 }
 
