@@ -32,7 +32,9 @@ if (surveyName === "uncTeenSurvey") {
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {
+        console.log("ssswhy",i)
         if (questionList.includes(questions.pages[i].questions[0].name)) {
+            console.log("sss",i);
             newPages.push(questions.pages[i]);
         }
     }
