@@ -1,7 +1,7 @@
 import {uncTeenSurvey} from "/js/surveylist.js";
 
 //let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
-//let questionList = ["M1", "M2"]; // Fetch question list from the database
+//let questionList = ["Q1", "Q2"]; // Fetch question list from the database
 
 var idJSON = JSON.parse($('#idJSON').text());
 var timeJSON = JSON.parse($('#timeJSON').text());
@@ -11,7 +11,6 @@ var qlistJSON = JSON.parse($('#qlistJSON').text());
 var surveyName=surveynameJSON;
 var id=idJSON;
 var questionList=qlistJSON;
-//var questionList=qlistJSON.split("_");
 var time=timeJSON;
 
 
@@ -22,7 +21,6 @@ console.log( qlistJSON );
 console.log(questionList);
 
 
-//let questionList = ["Q1", "Q2"]; 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
     insertQuestions(questions);
@@ -32,14 +30,11 @@ if (surveyName === "uncTeenSurvey") {
 function insertQuestions(questions) {
     let newPages = [];
     for (let i = 0; i < questions.pages.length; i++) {
-        console.log("ssswhy",i)
         if (questionList.includes(questions.pages[i].questions[0].name)) {
-            console.log("sss",i);
             newPages.push(questions.pages[i]);
         }
     }
     questions.pages = newPages;
-    console.log("sss",2,JSON.stringify(questions));
     window.survey = new Survey.Model(questions);
 }
 
@@ -68,7 +63,6 @@ survey
         let timeNow = new Date();
         let  timeNow1 = new Date();
         let aa=timeNow1.getMonth()+ 1 ;
-          console.log("ssddds", timeNow1.getMonth());
          fetch(url,{
             method:'post',
             body: JSON.stringify({
@@ -81,8 +75,6 @@ survey
             }),
             headers:{'Content-Type':'application/json'}
         });
-        //const t=await response.json();
-       // console.log(t);
     }
     
     survey.onComplete.add(function(survey) {
@@ -90,8 +82,6 @@ survey
     });
     
     survey.onPartialSend.add(function(survey) {
-    //    let  timeNow1 = new Date();
-        //console.log("ssddds", timeNow1.getMonth());
         sendDataToTheServer(false, survey.data);
     });
 

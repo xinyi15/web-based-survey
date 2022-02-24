@@ -1,7 +1,5 @@
 const express = require('express');
 const path = require('path');
-const sendSms = require('./twilio');
-//const bodyParser = require('body-parser');
 const phone_num= require('./phone.json');
 const id_ref= require('./UniqueId.json');
 const time_ref= require('./UniqueTime.json');
@@ -30,10 +28,8 @@ const pool = new Pool({
 const app = express();
 app.use(express.static(path.join(__dirname, 'public'))); 
 app.use(express.json());
-
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-
 app.get('/', (req, res) => res.render('pages/survey'))
 
  app.post('/answer',async (req,res)=>{
@@ -42,30 +38,21 @@ const client = await pool.connect();
  var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
  );
  client.release();
-
-//  const Message = 'Please complete your survey';
-//  console.log(phone_num["1"]);
-//  sendSms(phone_num[1], Message);
  res.send('Success'); 
  });
 
 
  function is_expired(start_,end_){
   let start=hour_ref[start_];
-   let end=hour_ref[end_];
-  //let start=0;
-  //let end=24;
-  //process.env.TZ = 
+  let end=hour_ref[end_];
   let date_ob = new Date();
   let hours = date_ob.getHours();
-  //let ss=date_ob.getHours().toLocaleString();
  
   if(hours>=5){
     hours=hours-5
    }else{
      hours=24-(5-hours)
    } 
-   console.log("sshour",hours);
     if((hours>=start)&(hours<end)){
       return false;
     }else{
