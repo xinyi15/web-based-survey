@@ -82,7 +82,7 @@ let x= merged.reduce(function(a, e, i) {
         a.push(i+1);
     return a;
 }, []);
-console.log("sss",x);
+//console.log("sss",x);
 let resultx= x.map(el => 'Q' + el)
     return resultx;
 }
@@ -105,7 +105,6 @@ let resultx= x.map(el => 'Q' + el)
        });
      }  
   });
-
 
   
   // app.get('/surveynew/:id',async (req,res)=>{
