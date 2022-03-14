@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
-const phone_num= require('./phone.json');
 const id_ref= require('./UniqueId.json');
 const time_ref= require('./UniqueTime.json');
 const ql_ref= require('./UniqueQeuestionList.json');
 const survey_ref= require('./UniqueSurvey.json');
 const hour_ref= require('./UniqueHour.json');
-const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
@@ -48,10 +46,10 @@ const client = await pool.connect();
   let date_ob = new Date();
   let hours = date_ob.getHours();
  
-  if(hours>=5){
-    hours=hours-5
+  if(hours>=4){
+    hours=hours-4
    }else{
-     hours=24-(5-hours)
+     hours=24-(4-hours)
    } 
     if((hours>=start)&(hours<end)){
       return false;
