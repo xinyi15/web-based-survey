@@ -47,7 +47,7 @@ const client = await pool.connect();
   
   let hours = date_ob.getHours();
 
-  console.log(Time.zone.now );
+  //console.log(Time.zone.now );
   if(hours>=4){
     hours=hours-4
    }else{
