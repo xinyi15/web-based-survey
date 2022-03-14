@@ -45,7 +45,7 @@ const client = await pool.connect();
   let end=hour_ref[end_];
   let date_ob = new Date();
   let hours = date_ob.getHours();
- 
+  print(hours)
   if(hours>=4){
     hours=hours-4
    }else{
