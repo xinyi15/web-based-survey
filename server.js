@@ -128,7 +128,7 @@ let resultx= x.map(el => 'Q' + el)
   //      } 
   // });
 
-  app.get('/test', (req, res) => 
+  app.get('/', (req, res) => 
   res.render('pages/test')
   )
 
