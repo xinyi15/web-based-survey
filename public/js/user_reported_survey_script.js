@@ -52,7 +52,7 @@ function insertQuestions(questions) {
 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
-    let qeustionnames=insertQuestions(questions);
+    var qeustionnames=insertQuestions(questions);
 } else if (surveyName === "uncTeen") {
 }
 
