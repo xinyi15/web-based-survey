@@ -1,6 +1,12 @@
-Survey
-    .StylesManager
-    .applyTheme("modern");
+import {uncTeenSurvey} from "/js/surveylist.js";
+
+let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
+let id=10;
+
+//var idJSON = JSON.parse($('#idJSON').text());
+//var surveynameJSON = JSON.parse($('#surveynameJSON').text());
+//var surveyName=surveynameJSON;
+//var id=idJSON;
 
 var json = {
     "checkErrorsMode": "onValueChanged",
@@ -10,22 +16,15 @@ var json = {
             "elements": [
                 {
                     "type": "matrixdynamic",
-                    "name": "relatives",
-                    "title": "Please enter all blood relatives you know",
+                    "name": "userreportedsurvey",
+                    "title": "Please create custom question survey.",
                     "columns": [
                         {
                             "name": "relativeType",
                             "title": "Relative",
                             "cellType": "dropdown",
                             "isRequired": true,
-                            "choices": [
-                                "father",
-                                "mother",
-                                "brother",
-                                "sister",
-                                "son",
-                                "daughter"
-                            ]
+                            "choices": []
                         }
                     ],
                     "detailPanelMode": "underRow",
@@ -38,6 +37,32 @@ var json = {
     ]
 };
 
+
+function insertQuestions(questions) {
+    let qeustiondescriptions = [];
+    let qeustionnames = [];
+    for (let i = 0; i < questions.pages.length; i++) {
+        qeustiondescriptions.push(questions.pages[i].questions[0].title);
+        qeustionnames.push(questions.pages[i].questions[0].name);
+    }
+    json.pages.elements.columns.choices = qeustiondescriptions;
+  return(qeustionnames)
+}
+
+if (surveyName === "uncTeenSurvey") {
+    let questions = uncTeenSurvey;
+    let qeustionnames=insertQuestions(questions);
+} else if (surveyName === "uncTeen") {
+}
+
+
+
+
+
+Survey
+    .StylesManager
+    .applyTheme("modern");
+
 window.survey = new Survey.Model(json);
 
 survey
@@ -48,15 +73,15 @@ survey
             .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
     });
 
-survey.data = {
-    'relatives': [
-        {
-            'relativeType': 'father'
-        }, {
-            'relativeType': 'mother'
-        }
-    ]
-};
+// survey.data = {
+//     'relatives': [
+//         {
+//             'relativeType': 'father'
+//         }, {
+//             'relativeType': 'mother'
+//         }
+//     ]
+// };
 
 function onAngularComponentInit() {
     Survey
