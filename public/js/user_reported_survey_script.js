@@ -68,7 +68,7 @@ function savequestionlist(survey,data) {
     surveyQlist=survey.pages[0].elements[0].columns[0].choices;
     console.log(surveyQlist);
     let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
-        if (surveyQlist.includes(e.questionType))
+        if (surveyQlist.includes(e.QuestionsType))
             a.push(qeustionnames[i]);
         return a;
     }, []);
