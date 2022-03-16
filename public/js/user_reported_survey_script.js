@@ -20,8 +20,8 @@ var json = {
                     "title": "Please create custom question survey.",
                     "columns": [
                         {
-                            "name": "relativeType",
-                            "title": "Relative",
+                            "name":  "QuestionsType",
+                            "title": "Questions",
                             "cellType": "dropdown",
                             "isRequired": true,
                             "choices": []
@@ -29,8 +29,8 @@ var json = {
                     ],
                     "detailPanelMode": "underRow",
                     "rowCount": 1,
-                    "addRowText": "Add a blood relative",
-                    "removeRowText": "Remove the relative"
+                    "addRowText": "Add a question",
+                    "removeRowText": "Remove the question"
                 }
             ]
         }
