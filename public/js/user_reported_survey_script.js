@@ -80,7 +80,7 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(savequestionlist(survey,sender.data), null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
         
     });
 
