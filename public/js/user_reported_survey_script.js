@@ -67,14 +67,16 @@ window.survey = new Survey.Model(json);
 function savequestionlist(surveytmp,data) {
     console.log(surveytmp);
     surveyQlist=surveytmp.pages[0].elements[0].columns[0].choices;
-    console.log(surveyQlist);
-    let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
-        if (surveyQlist.includes(e.QuestionsType))
-            a.push(qeustionnames[i]);
-        return a;
-    }, []);
-console.log( usersurveyQlist);
-    return( usersurveyQlist );
+    return( surveyQlist );
+
+//     console.log(surveyQlist);
+//     let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
+//         if (surveyQlist.includes(e.QuestionsType))
+//             a.push(qeustionnames[i]);
+//         return a;
+//     }, []);
+// console.log( usersurveyQlist);
+    // return( usersurveyQlist );
 }
 
 
@@ -83,10 +85,10 @@ console.log( usersurveyQlist);
 survey
     .onComplete
     .add(function (sender) {
-      //  let cc=savequestionlist(sender, sender.data);
+        let cc=savequestionlist(sender, sender.data);
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
         
     });
 
