@@ -66,17 +66,13 @@ window.survey = new Survey.Model(json);
 
 function savequestionlist(surveytmp,data) {
     console.log(surveytmp);
-    let surveyQlist=surveytmp//.pages[0].elements[0].columns[0].choices;
-    return( surveytmp );
-
-//     console.log(surveyQlist);
-//     let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
-//         if (surveyQlist.includes(e.QuestionsType))
-//             a.push(qeustionnames[i]);
-//         return a;
-//     }, []);
-// console.log( usersurveyQlist);
-    // return( usersurveyQlist );
+    let surveyQlist=surveytmp.pages[0].elements[0].columns[0].choices;
+    let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
+        if (surveyQlist.includes(e.QuestionsType))
+             a.push(qeustionnames[i]);
+         return a;
+    }, []);
+     return( usersurveyQlist );
 }
 
 
