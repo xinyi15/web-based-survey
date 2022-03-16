@@ -75,7 +75,7 @@ function savequestionlist(datatmp) {
              a.push(qeustionnames_save[i]);
          return a;
     }, []);
-     return( usersurveyQlist);
+     return( surveyQlist);
 }
 
 
