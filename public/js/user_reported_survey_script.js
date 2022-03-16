@@ -84,7 +84,7 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(survey.pages[0].elements[0].columns[0].choices, null, 3);
         
     });
 
