@@ -60,14 +60,9 @@ if (surveyName === "uncTeenSurvey") {
 
 function savequestionlist(survey,data) {
     let newPages = [];
-    surveyQlist=survey.pages[0].elements[0].columns[0]
-    for (let i = 0; i < surveyQlist.choices.length; i++) {
-        if (data.name.includes(surveyQlist.choices)) {
-            newPages.push(questions.pages[i]);
-        }
-    }
-    questions.pages = newPages;
-    window.survey = new Survey.Model(questions);
+    surveyQlist=survey.pages[0].elements[0].columns[0];
+    let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
+return(found );
 }
 
 
@@ -84,7 +79,7 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(savequestionlist(survey,sender.data), null, 3);
         
     });
 
