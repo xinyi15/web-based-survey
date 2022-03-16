@@ -83,10 +83,10 @@ console.log( usersurveyQlist);
 survey
     .onComplete
     .add(function (sender) {
-        let cc=savequestionlist(sender, sender.data);
+      //  let cc=savequestionlist(sender, sender.data);
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
         
     });
 
