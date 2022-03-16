@@ -66,10 +66,10 @@ window.survey = new Survey.Model(json);
 
 function savequestionlist(datatmp) {
     let surveyQlist2=json.pages[0].elements[0].columns[0].choices;
-    let surveyQlist = surveyQlist2.reduce(function(a, e, i) {
- a.push(e.value)
-  return a;
-}, []);
+    //let surveyQlist = surveyQlist2.reduce(function(a, e, i) {
+ //a.push(e.value)
+ /// return a;
+//}, []);
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e.QuestionsType))
              a.push(qeustionnames_save[i]);
