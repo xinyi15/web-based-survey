@@ -64,13 +64,13 @@ Survey
 
 window.survey = new Survey.Model(json);
 
-function savequestionlist(survey,data) {
-    surveyQlist=survey.pages[0].elements[0].columns[0];
-    console.log(surveyQlist);
-    let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
-    console.log(found );
-    return(found );
-}
+// function savequestionlist(survey,data) {
+//     surveyQlist=survey.pages[0].elements[0].columns[0];
+//     console.log(surveyQlist);
+//     let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
+//     console.log(found );
+//     return(found );
+// }
 
 
 
