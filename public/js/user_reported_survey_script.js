@@ -58,7 +58,7 @@ if (surveyName === "uncTeenSurvey") {
 
 
 
-function savequestionlist(data) {
+function savequestionlist(survey,data) {
     let newPages = [];
     for (let i = 0; i < questions.length; i++) {
         if (questionList.includes(questions.pages[i].questions[0].name)) {
@@ -83,7 +83,8 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(survey, null, 3);
+        
     });
 
 // survey.data = {
