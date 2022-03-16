@@ -31,7 +31,7 @@ app.set('view engine', 'ejs')
 //app.get('/', (req, res) => res.render('pages/survey'))
 app.get('/',async (req,res)=>{
   res.render('pages/user_reported_survey1');
-
+});
  app.post('/answer',async (req,res)=>{
  console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
 const client = await pool.connect();
