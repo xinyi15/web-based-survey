@@ -64,13 +64,17 @@ Survey
 
 window.survey = new Survey.Model(json);
 
-// function savequestionlist(survey,data) {
-//     surveyQlist=survey.pages[0].elements[0].columns[0];
-//     console.log(surveyQlist);
-//     let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
-//     console.log(found );
-//     return(found );
-// }
+function savequestionlist(survey,data) {
+    surveyQlist=survey.pages[0].elements[0].columns[0].choices;
+    console.log(surveyQlist);
+    let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
+        if (surveyQlist.includes(e.questionType))
+            a.push(qeustionnames[i]);
+        return a;
+    }, []);
+
+    return( usersurveyQlist );
+}
 
 
 
@@ -80,7 +84,7 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(savequestionlist(sender,sender.data) , null, 3);
         
     });
 
@@ -93,6 +97,8 @@ survey
 //         }
 //     ]
 // };
+
+
 
 function onAngularComponentInit() {
     Survey
