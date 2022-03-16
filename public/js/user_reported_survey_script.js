@@ -84,6 +84,7 @@ function savequestionlist(datatmp) {
     .add(function (sender) {
         let cc=savequestionlist(sender.data);//sender
         ///var parameter = $(this).val();
+        survey.showCompletedPage = false;
         window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
 
         //  document
