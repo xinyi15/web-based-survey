@@ -83,16 +83,17 @@ console.log( usersurveyQlist);
 survey
     .onComplete
     .add(function (sender) {
+        let cc=savequestionlist(sender, sender.data);
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.pages[0].elements[0].columns[0].choices, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
         
     });
 
-    survey.onComplete.add(function(survey) {
-        console.log(survey.pages[0].elements[0].columns[0].choices);
-        savequestionlist(survey, survey.data);
-    });
+    // survey.onComplete.add(function(survey) {
+    //     console.log(survey.pages[0].elements[0].columns[0].choices);
+    //     savequestionlist(survey, survey.data);
+    // });
 
 // survey.data = {
 //     'relatives': [
