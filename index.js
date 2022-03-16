@@ -29,9 +29,8 @@ app.use(express.json());
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 //app.get('/', (req, res) => res.render('pages/survey'))
-app.post('/',async (req,res)=>{
-  res.send({ "Success": "Email is already used." });
-
+app.get('/',async (req,res)=>{
+  res.render('pages/user_reported_survey1',{
 });
 
  app.post('/answer',async (req,res)=>{
@@ -44,6 +43,8 @@ const client = await pool.connect();
  });
 
 
+
+ 
  function is_expired(start_,end_){
   let start=hour_ref[start_];
   let end=hour_ref[end_];
