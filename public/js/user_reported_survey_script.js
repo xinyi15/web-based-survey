@@ -64,8 +64,9 @@ Survey
 
 window.survey = new Survey.Model(json);
 
-function savequestionlist(survey,data) {
-    surveyQlist=survey.pages[0].elements[0].columns[0].choices;
+function savequestionlist(surveytmp,data) {
+    console.log(surveytmp);
+    surveyQlist=surveytmp.pages[0].elements[0].columns[0].choices;
     console.log(surveyQlist);
     let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e.QuestionsType))
