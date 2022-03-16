@@ -132,7 +132,10 @@ let resultx= x.map(el => 'Q' + el)
   res.render('pages/test')
   )
 
+  app.post('/',async (req,res)=>{
+    res.send({ "Success": "Email is already used." });
 
+ });
 
   app.post('/test',async (req,res)=>{
      console.log(req.body);
