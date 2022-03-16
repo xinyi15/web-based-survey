@@ -24,13 +24,12 @@ var json = {
                             "title": "Questions",
                             "cellType": "dropdown",
                             "isRequired": true,
-                            "choices": [],
-                            "num":[]
+                            "choices": []
                         }
                     ],
                     "detailPanelMode": "underRow",
                     "rowCount": 1,
-                    "addRowText": "Add a question",
+                    "addRowText": "Add a questions",
                     "removeRowText": "Remove the question"
                 }
             ]
@@ -47,16 +46,28 @@ function insertQuestions(questions) {
         qeustionnames.push(questions.pages[i].questions[0].name);
     }
     json.pages[0].elements[0].columns[0].choices = qeustiondescriptions;
-    json.pages[0].elements[0].columns[0].num = qeustionnames;
     console.log(json)
+  return(qeustionnames)
 }
 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
-    insertQuestions(questions);
+    let qeustionnames=insertQuestions(questions);
 } else if (surveyName === "uncTeen") {
 }
 
+
+
+function savequestionlist(data) {
+    let newPages = [];
+    for (let i = 0; i < questions.length; i++) {
+        if (questionList.includes(questions.pages[i].questions[0].name)) {
+            newPages.push(questions.pages[i]);
+        }
+    }
+    questions.pages = newPages;
+    window.survey = new Survey.Model(questions);
+}
 
 
 
