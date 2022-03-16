@@ -79,17 +79,25 @@ function savequestionlist(datatmp) {
 }
 
 
-
-
-survey
-    .onComplete
+ survey
+     .onComplete
     .add(function (sender) {
         let cc=savequestionlist(sender.data);//sender
-        document
-            .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
+         document
+             .querySelector('#surveyResult')
+           .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
         
-    });
+     });
+
+// survey
+//     .onComplete
+//     .add(function (sender) {
+//         let cc=savequestionlist(sender.data);//sender
+//         document
+//             .querySelector('#surveyResult')
+//             .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
+        
+//     });
 
     // survey.onComplete.add(function(survey) {
     //     console.log(survey.pages[0].elements[0].columns[0].choices);
