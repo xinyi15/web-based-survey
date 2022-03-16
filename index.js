@@ -28,7 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/survey'))
+//app.get('/', (req, res) => res.render('pages/survey'))
+app.post('/',async (req,res)=>{
+  res.send({ "Success": "Email is already used." });
+
+});
 
  app.post('/answer',async (req,res)=>{
  console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
@@ -132,10 +136,6 @@ let resultx= x.map(el => 'Q' + el)
   res.render('pages/test')
   )
 
-  app.post('/',async (req,res)=>{
-    res.send({ "Success": "Email is already used." });
-
- });
 
   app.post('/test',async (req,res)=>{
      console.log(req.body);
