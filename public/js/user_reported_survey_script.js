@@ -64,14 +64,14 @@ Survey
 
 window.survey = new Survey.Model(json);
 
-function savequestionlist(surveytmp,data) {
+function savequestionlist(surveytmp,datatmp) {
     let surveyQlist=surveytmp.pages[0].elements[0].columns[0].choices;
-    let usersurveyQlist = data.userreportedsurvey.reduce(function(a, e, i) {
+    let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e.QuestionsType))
              a.push(qeustionnames_save[i]);
          return a;
     }, []);
-     return( usersurveyQlist );
+     return(  datatmp.userreportedsurvey );
 }
 
 
