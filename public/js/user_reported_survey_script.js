@@ -83,9 +83,12 @@ function savequestionlist(datatmp) {
      .onComplete
     .add(function (sender) {
         let cc=savequestionlist(sender.data);//sender
-         document
-             .querySelector('#surveyResult')
-           .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
+        ///var parameter = $(this).val();
+        window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
+
+        //  document
+        //      .querySelector('#surveyResult')
+        //    .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
         
      });
 
