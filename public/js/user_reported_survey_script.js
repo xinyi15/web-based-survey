@@ -64,9 +64,9 @@ Survey
 
 window.survey = new Survey.Model(json);
 
-function savequestionlist(surveytmp,datatmp) {
-    let surveyQlist=json.pages[0].elements[0].columns[0].choices;
-    let surveyQlist = surveyQlist.reduce(function(a, e, i) {
+function savequestionlist(datatmp) {
+    let surveyQlist2=json.pages[0].elements[0].columns[0].choices;
+    let surveyQlist = surveyQlist2.reduce(function(a, e, i) {
  a.push(e.value)
   return a;
 }, []);
@@ -84,7 +84,7 @@ function savequestionlist(surveytmp,datatmp) {
 survey
     .onComplete
     .add(function (sender) {
-        let cc=savequestionlist(sender, sender.data);
+        let cc=savequestionlist(sender.data);//sender
         document
             .querySelector('#surveyResult')
             .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
