@@ -58,21 +58,22 @@ if (surveyName === "uncTeenSurvey") {
 
 
 
-function savequestionlist(survey,data) {
-    let newPages = [];
-    surveyQlist=survey.pages[0].elements[0].columns[0];
-    let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
-return(found );
-}
-
-
-
-
 Survey
     .StylesManager
     .applyTheme("modern");
 
 window.survey = new Survey.Model(json);
+
+function savequestionlist(survey,data) {
+    surveyQlist=survey.pages[0].elements[0].columns[0];
+    console.log(surveyQlist);
+    let found = data.userreportedsurvey[0].findIndex(element.QuestionsType => element.QuestionsType.includes(surveyQlist.choices));
+    console.log(found );
+    return(found );
+}
+
+
+
 
 survey
     .onComplete
