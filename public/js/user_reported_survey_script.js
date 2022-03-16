@@ -72,7 +72,7 @@ function savequestionlist(survey,data) {
             a.push(qeustionnames[i]);
         return a;
     }, []);
-
+console.log( usersurveyQlist)
     return( usersurveyQlist );
 }
 
