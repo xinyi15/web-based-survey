@@ -24,7 +24,8 @@ var json = {
                             "title": "Questions",
                             "cellType": "dropdown",
                             "isRequired": true,
-                            "choices": []
+                            "choices": [],
+                            "num":[]
                         }
                     ],
                     "detailPanelMode": "underRow",
@@ -46,13 +47,13 @@ function insertQuestions(questions) {
         qeustionnames.push(questions.pages[i].questions[0].name);
     }
     json.pages[0].elements[0].columns[0].choices = qeustiondescriptions;
+    json.pages[0].elements[0].columns[0].num = qeustionnames;
     console.log(json)
-  return(qeustionnames)
 }
 
 if (surveyName === "uncTeenSurvey") {
     let questions = uncTeenSurvey;
-    let qeustionnames=insertQuestions(questions);
+    insertQuestions(questions);
 } else if (surveyName === "uncTeen") {
 }
 
@@ -71,7 +72,7 @@ survey
     .add(function (sender) {
         document
             .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(sender, null, 3);
     });
 
 // survey.data = {
