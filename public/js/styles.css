@@ -1,5 +1,9 @@
 
 .sv-item {
   margin-left: 30px;
-  font-size: 40px;
+  font-size: 30px;
+}
+.sv-checkbox{
+  width: 30px;
+  height: 30px;
 }
