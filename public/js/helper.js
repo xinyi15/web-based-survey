@@ -2,7 +2,7 @@ import {uncTeenSurvey} from "/js/surveylist.js";
 import {surveyref} from "/js/UniqueSurvey.js";
 export function GetSurvey(surveyName) {
     console.log(surveyref[surveyName]);
- if (surveyref[surveyName] === "uncTeenSurvey") {
+ if (surveyref[surveyName] == "uncTeenSurvey") {
         return(uncTeenSurvey);
     } else if (surveyref[surveyName] === "uncTeen") {
     }
