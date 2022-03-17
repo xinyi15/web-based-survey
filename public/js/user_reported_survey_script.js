@@ -1,10 +1,10 @@
-import * as utils from "../utils.js";
-var ql_ref = await utils.loadJSON("/js/surveylist.js");
+//import * as utils from "../utils.js";
+//var ql_ref = await utils.loadJSON("/js/surveylist.js");
 //import * as data from '/js/UniqueQeuestionList.json'  assert { type: `json` };
 //console.log(ql_ref)
 //const {ql_ref} = data;
 import {uncTeenSurvey} from "/js/surveylist.js";
-//import ql_ref from '../../UniqueQeuestionList.json';
+import ql_ref from '/js/UniqueQeuestionList.json';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
