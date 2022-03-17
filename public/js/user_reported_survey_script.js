@@ -38,11 +38,39 @@ function insertQuestions(questions) {
     var questions = GetSurvey(surveyName);
     var qeustionnames_save=insertQuestions(questions);
 
+    window.survey = new Survey.Model(json);
+    
+var myCss = {
+    matrix: {root: "table table-striped matrixtable"},
+};
+
+$("#surveyContainer").Survey({
+    model: survey,
+    css: myCss
+});
+
+// Survey
+//     .StylesManager
+//     .applyTheme("modern");//"defaultV2"
+
+    var defaultThemeColors = Survey
+    .StylesManager
+    .ThemeColors["default"];
+defaultThemeColors["$main-color"] = "#4B9CD3";
+defaultThemeColors["$main-hover-color"] = "#4B9CD3";
+defaultThemeColors["$text-color"] = "#4a4a4a";
+defaultThemeColors["$header-color"] = "#4B9CD3";
+
+defaultThemeColors["$header-background-color"] = "#4a4a4a";
+defaultThemeColors["$body-container-background-color"] = "#f8f8f8";
+
 Survey
     .StylesManager
-    .applyTheme("modern");//"defaultV2"
+    .applyTheme();
 
-window.survey = new Survey.Model(json);
+$(".sv_prev_btn").remove(); // hide the previous button
+
+
 
 function savequestionlist(datatmp) {
     let surveyQlist=json.elements[0].choices;
@@ -101,4 +129,4 @@ return(filtered.join('_'))
 
 
 
-     $("#surveyElement").Survey({model: survey});
+    // $("#surveyElement").Survey({model: survey});
