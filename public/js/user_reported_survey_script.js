@@ -133,8 +133,8 @@ return(filtered.join('_'))
         ///var parameter = $(this).val();
         let keys=generate_keys(questionlist_);
         //survey.showCompletedPage = false;
-        let url="https://web-based-survey.herokuapp.com/survey/"+id+"/"+ surveyName+"/"+time+"/"+
-        keys+getTime()+"/PAHH262545/TLAS903782";
+        let url="https://web-based-survey.herokuapp.com/survey/"+id+"/"+ surveyName+"/"+getTime()+"/"+
+        keys+"/PAHH262545/TLAS903782";
         //window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
 
           document
