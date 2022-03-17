@@ -1,4 +1,3 @@
-import {uncTeenSurvey} from "/js/surveylist.js";
 import qlref from '/js/UniqueQeuestionList.js';
 import { GetSurvey } from '/js/helper.js';
 
