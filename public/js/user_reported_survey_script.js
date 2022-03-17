@@ -54,6 +54,11 @@ function savequestionlist(datatmp) {
      return(usersurveyQlist);
 }
 
+function pading(num){
+    var binaryStr = num.toString(2);
+    while(binaryStr.length < 8) {
+      binaryStr = "0" + binaryStr;
+  }
 
 function generate_keys(questionlist){
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
@@ -71,6 +76,7 @@ Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
 })
 let str=""
 let res = chunked.map(x =>str+x);
+console.log("ss",res);
 Object.prototype.getKeyByValue = function( value ) {
     for( var prop in this ) {
         if( this.hasOwnProperty( prop ) ) {
@@ -79,7 +85,11 @@ Object.prototype.getKeyByValue = function( value ) {
         }
     }
 }
+
+console.log(res);
+console.log(res.map(x =>(parseInt(x.replaceAll(",",""),2))));
 let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
+
 let filtered = y.filter(x => x !== undefined);
 return(filtered.join('_'))
 }
