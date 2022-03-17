@@ -9,8 +9,17 @@ var surveynameJSON = JSON.parse($('#surveynameJSON').text());
 var surveyName=surveynameJSON;
 var id=idJSON;
 
-var json = {
-    "elements": [
+var json ={
+    title: "UNC Teen Survey",
+    showProgressBar: "bottom",
+    goNextPageAutomatic: false, // true
+    showNavigationButtons: true, // false
+    showQuestionNumbers: "off",
+    sendResultOnPageNext : true,
+    focusFirstQuestionAutomatic: false,
+    clearInvisibleValues: "onHidden",
+    pages: [
+        { questions: [
         {
             "type": "checkbox",
             "name": "userreportedsurvey",
@@ -21,6 +30,7 @@ var json = {
             "choices": []
         }
     ]
+}]
 };
 
 function insertQuestions(questions) {
@@ -73,7 +83,7 @@ $(".sv_prev_btn").remove(); // hide the previous button
 
 
 function savequestionlist(datatmp) {
-    let surveyQlist=json.elements[0].choices;
+    let surveyQlist=json.pages[0].questions[0].choices;
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e))
              a.push(qeustionnames_save[i]);
