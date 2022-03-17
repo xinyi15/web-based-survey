@@ -890,7 +890,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q23A",
+                    name: "Q23",
                     type: "checkbox",
                     title: "When I did something to calm myself down I... (Check all that apply)",
                     isRequired: true,

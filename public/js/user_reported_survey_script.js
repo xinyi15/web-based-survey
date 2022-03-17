@@ -57,7 +57,22 @@ function savequestionlist(datatmp) {
 
 
 function generate_keys(questionlist){
-    console.log("aq",questionlist);
+    12/13
+15161718
+22212324
+if(questionlist.includes("Q12")|questionlist.includes("Q13")){
+    questionlist.push("Q12","Q13");
+    questionlist =  [...new Set(questionlist)]  
+}
+if(questionlist.includes("Q15")|questionlist.includes("Q16")|questionlist.includes("Q17")|questionlist.includes("Q18")){
+    questionlist.push("Q15","Q16","Q17","Q18");
+    questionlist =  [...new Set(questionlist)]  
+}
+if(questionlist.includes("Q21")|questionlist.includes("Q22")|questionlist.includes("Q23")|questionlist.includes("Q24")){
+    questionlist.push("Q21","Q22","Q23","Q24");
+    questionlist =  [...new Set(questionlist)]  
+}
+
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
 //let questionlist=["Q26","Q4"]
 let questionlist2=questionlist.sort()
