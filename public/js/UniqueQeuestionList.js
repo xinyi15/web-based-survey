@@ -1,4 +1,4 @@
-export const uncTeenSurvey = {
+export const ql_ref  = {
   "FRXHC099559": 0,
   "SNVYC815187": 1,
   "HMIOG946604": 2,

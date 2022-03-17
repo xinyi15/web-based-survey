@@ -4,7 +4,7 @@
 //console.log(ql_ref)
 //const {ql_ref} = data;
 import {uncTeenSurvey} from "/js/surveylist.js";
-import ql_ref from '/js/UniqueQeuestionList.json';
+import ql_ref from '/js/UniqueQeuestionList.js';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
