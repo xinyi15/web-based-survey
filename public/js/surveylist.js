@@ -951,48 +951,48 @@ export const uncTeenSurvey =
                 }
             ]
         },
-        {
-            questions: [
-                {
-                    name: "Q25",
-                    type: "radiogroup",
-                    title: "Did you wear your armband for most of the day?",
-                    isRequired: true,
-                    colCount: 1,
-                    choices: [
-                        {
-                            "value": "0",
-                            "text": "Yes",
-                        },
-                        {
-                            "value": "1",
-                            "text": "No"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            questions: [
-                {
-                    name: "Q26",
-                    type: "radiogroup",
-                    title: "Did you put your armband on the charger?",
-                    isRequired: true,
-                    colCount: 1,
-                    choices: [
-                        {
-                            "value": "0",
-                            "text": "Yes",
-                        },
-                        {
-                            "value": "1",
-                            "text": "No"
-                        }
-                    ]
-                }
-            ]
-        }
+        // {
+        //     questions: [
+        //         {
+        //             name: "Q25",
+        //             type: "radiogroup",
+        //             title: "Did you wear your armband for most of the day?",
+        //             isRequired: true,
+        //             colCount: 1,
+        //             choices: [
+        //                 {
+        //                     "value": "0",
+        //                     "text": "Yes",
+        //                 },
+        //                 {
+        //                     "value": "1",
+        //                     "text": "No"
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // },
+        // {
+        //     questions: [
+        //         {
+        //             name: "Q26",
+        //             type: "radiogroup",
+        //             title: "Did you put your armband on the charger?",
+        //             isRequired: true,
+        //             colCount: 1,
+        //             choices: [
+        //                 {
+        //                     "value": "0",
+        //                     "text": "Yes",
+        //                 },
+        //                 {
+        //                     "value": "1",
+        //                     "text": "No"
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // }
     ]
 };
 
