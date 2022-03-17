@@ -104,7 +104,7 @@ return(filtered.join('_'))
      .onUpdateQuestionCssClasses
      .add(function (survey, options) {
          var classes = options.cssClasses
-         classes.item = "sq-item";
+         //classes.item = "sq-item";
          classes.label = "sq-label";
 
      });
