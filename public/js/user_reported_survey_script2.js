@@ -16,7 +16,7 @@ var time="Self-reported";
 
 console.log( idJSON); 
 console.log( surveynameJSON ); 
-console.log( timeJSON ); 
+//console.log( timeJSON ); 
 console.log( qlistJSON );
 console.log(questionList);
 
