@@ -48,7 +48,7 @@ function savequestionlist(datatmp) {
     let surveyQlist=json.elements[0].choices;
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e))
-             a.push(qeustionnames_save[i]);
+             a.push(qeustionnames_save[surveyQlist.findIndex(e)]);
          return a;
     }, []);
      return(usersurveyQlist);
@@ -57,6 +57,7 @@ function savequestionlist(datatmp) {
 
 
 function generate_keys(questionlist){
+    console.log("aq",questionlist);
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
 //let questionlist=["Q26","Q4"]
 let questionlist2=questionlist.sort()
