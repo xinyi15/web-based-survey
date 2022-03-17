@@ -93,11 +93,11 @@ return(filtered.join('_'))
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
-        window.location = url
+        //window.location = url
 
-        //   document
-        //       .querySelector('#surveyResult')
-        //     .textContent = "Result JSON:\n" + JSON.stringify(url, null, 3);
+           document
+              .querySelector('#surveyResult')
+             .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3);
         
      })
 
