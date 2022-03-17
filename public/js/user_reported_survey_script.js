@@ -99,7 +99,7 @@ return(filtered.join('_'))
 
           document
               .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify( qeustionnames_save, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify( json.elements[0].choices, null, 3);
         
      })
 
