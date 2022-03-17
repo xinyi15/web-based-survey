@@ -70,6 +70,7 @@ let size = 8;
 Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
   chunked.push(input.slice(i * size, i * size + size))
 })
+console.log("ss",chunked);
 let str=""
 let res = chunked.map(x =>str+x);
 console.log("ss",res);
