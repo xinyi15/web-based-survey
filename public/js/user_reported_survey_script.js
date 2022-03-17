@@ -1,6 +1,6 @@
 //const  ql_ref  = require('../../UniqueQeuestionList.json');
 //const  uncTeenSurvey  = require('../../UniqueQeuestionList.json');
-import * as data from '/js/UniqueQeuestionList.json' assert { type: "json" };
+import * as data from '/js/UniqueQeuestionList.json' ;
 //console.log(ql_ref)
 const {ql_ref} = data;
 import {uncTeenSurvey} from "/js/surveylist.js";
