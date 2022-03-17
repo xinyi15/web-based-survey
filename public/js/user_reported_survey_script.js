@@ -109,4 +109,4 @@ return(filtered.join('_'))
 
      });
 
-     $("#surveyElement").Survey({model: survey,  css: myCss});
+     $("#surveyElement").Survey({model: survey});
