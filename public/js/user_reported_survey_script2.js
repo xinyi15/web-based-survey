@@ -56,7 +56,7 @@ $("#surveyContainer").Survey({
 //     });
 
  function sendDataToTheServer(isComplete, data) {
-        // var text = isComplete ? "The survey is completed" : "The survey is not completed";
+        var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
          document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/self_reported_answer";
