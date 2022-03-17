@@ -950,7 +950,7 @@ export const uncTeenSurvey =
                     ]
                 }
             ]
-        },
+        }
         // {
         //     questions: [
         //         {
