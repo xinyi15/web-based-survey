@@ -1,8 +1,4 @@
-//import * as utils from "../utils.js";
-//var ql_ref = await utils.loadJSON("/js/surveylist.js");
-//import * as data from '/js/UniqueQeuestionList.json'  assert { type: `json` };
-//console.log(ql_ref)
-//const {ql_ref} = data;
+
 import {uncTeenSurvey} from "/js/surveylist.js";
 import qlref from '/js/UniqueQeuestionList.js';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
