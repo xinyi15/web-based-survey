@@ -8,3 +8,7 @@ export function GetSurvey(surveyName) {
     } else if (surveyref[surveyName] === "uncTeen") {
     }
 };
+
+export function GetSurveyname(surveyName) {
+    return(surveyref[surveyName]);
+ };

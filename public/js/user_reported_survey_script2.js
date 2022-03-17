@@ -4,14 +4,14 @@ import {uncTeenSurvey} from "/js/surveylist.js";
 //let questionList = ["Q1", "Q2"]; // Fetch question list from the database
 
 var idJSON = JSON.parse($('#idJSON').text());
-var timeJSON = JSON.parse($('#timeJSON').text());
+//var timeJSON = JSON.parse($('#timeJSON').text());
 var surveynameJSON = JSON.parse($('#surveynameJSON').text());
 var qlistJSON = JSON.parse($('#qlistJSON').text());
 
 var surveyName=surveynameJSON;
 var id=idJSON;
 var questionList=qlistJSON;
-var time=timeJSON;
+var time="Self-reported";
 
 
 console.log( idJSON); 
