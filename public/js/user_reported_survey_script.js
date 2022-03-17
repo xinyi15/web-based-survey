@@ -16,7 +16,7 @@ var json = {
             "name": "userreportedsurvey",
             "title": "Please create custom question survey.",
             "isRequired": true,
-            "hasNone": true,
+            "hasNone": false,
             "colCount": 1,
             "choices": []
         }
@@ -90,8 +90,6 @@ return(filtered.join('_'))
         let questionlist_=savequestionlist(sender.data);//sender
         ///var parameter = $(this).val();
         let keys=generate_keys(questionlist_);
-        let questions = GetSurvey(surveyName);
-        let qeustionnames_save=insertQuestions(questions);
         //survey.showCompletedPage = false;
         let url="https://web-based-survey.herokuapp.com/survey/"+id+"/"+ surveyName+"/"+
         keys;
@@ -99,7 +97,7 @@ return(filtered.join('_'))
 
           document
               .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify( json.elements[0].choices, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(questionlist_, null, 3);
         
      })
 
