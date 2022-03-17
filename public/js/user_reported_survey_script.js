@@ -1,7 +1,7 @@
 //const  ql_ref  = require('../../UniqueQeuestionList.json');
 //const  uncTeenSurvey  = require('../../UniqueQeuestionList.json');
 import * as ql_ref from '/js/UniqueQeuestionList.json' assert { type: "json" };
-
+console.log(ql_ref)
 import {uncTeenSurvey} from "/js/surveylist.js";
 //import ql_ref from '../../UniqueQeuestionList.json';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
@@ -82,7 +82,15 @@ function savequestionlist(datatmp) {
      return( usersurveyQlist );
 }
 
- 
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+}
+
 function generate_keys(questionlist){
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
 //let questionlist=["Q26","Q4"]
@@ -103,14 +111,6 @@ let str=""
 //   "SNVYC815187": 64,
 //   "HMIOG946604": 2
 // }
-Object.prototype.getKeyByValue = function( value ) {
-    for( var prop in this ) {
-        if( this.hasOwnProperty( prop ) ) {
-             if( this[ prop ] === value )
-                 return prop;
-        }
-    }
-}
 let res = chunked.map(x =>str+x);
 let y=res.map(x =>ql_ref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
 let filtered = y.filter(x => x !== undefined);
