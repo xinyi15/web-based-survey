@@ -1,10 +1,5 @@
-
-import { readFile } from 'fs/promises';
-const ql_ref = JSON.parse(
-  await readFile(
-    new URL('/js/UniqueQeuestionList.json', import.meta.url)
-  )
-);
+import * as utils from "../utils.js";
+var ql_ref = await utils.loadJSON("/js/surveylist.js");
 //import * as data from '/js/UniqueQeuestionList.json'  assert { type: `json` };
 //console.log(ql_ref)
 //const {ql_ref} = data;
