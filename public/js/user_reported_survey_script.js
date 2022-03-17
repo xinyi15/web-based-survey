@@ -124,8 +124,13 @@ return(filtered.join('_'))
     survey
     .onUpdateQuestionCssClasses
     .add(function (survey, options) {
-        var classes = options.css
-       // classes.label = "sq-label";
+        var classes = options.cssClasses
+
+        classes.mainRoot += " sv_qstn";
+        classes.root = "sq-root";
+        classes.title += " sq-title"
+        classes.item += " sq-item";
+        classes.label += " sq-label";
        console.log(classes)
 
     });
