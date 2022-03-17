@@ -67,6 +67,7 @@ let num=questionlist2.reduce(function(a, e, i) {
 let input = arr;
 let chunked = []
 let size = 8;
+console.log("rr",arr);
 Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
   chunked.push(input.slice(i * size, i * size + size))
 })
