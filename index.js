@@ -43,10 +43,18 @@ const client = await pool.connect();
  client.release();
  res.send('Success'); 
  });
+/*create a new survey tablr*/
 
 
+app.post('/self_reported_answer',async (req,res)=>{
+  console.log('INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("'+ req.body.id+'","'+ req.body.time+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.answer+'","'+req.body.date+'")');
+ const client = await pool.connect();
+  var result = await client.query("INSERT INTO answer (id, time, survey, question, answer, date) VALUES ("+ req.body.id+",'"+ req.body.time+"','"+req.body.survey+"','"+req.body.question +"','"+req.body.answer+"','"+req.body.date+"')"
+  );
+  client.release();
+  res.send('Success'); 
+  });
 
- 
  function is_expired(start_,end_){
   let start=hour_ref[start_];
   let end=hour_ref[end_];
@@ -75,7 +83,6 @@ function pading(num){
 var str=binaryStr.split('');
 return  str;
 }
-
 
   function translate_ql(qlistJSON){
     let questionList=qlistJSON.split("_");
@@ -108,6 +115,22 @@ let resultx= x.map(el => 'Q' + el)
          id: id_ref[req.params.id],
         surveyname: surveyname_,
         time: time_,
+        qlist:qlist_
+       });
+     }  
+  });
+
+
+  app.get('/self-report-surveys/:id/:surveyname/:qlist', function(req, res){
+    let surveyname_=survey_ref[req.params.surveyname];
+    let qlist_=translate_ql(req.params.qlist);
+    console.log(qlist_);
+     if (is_expired(req.params.start,req.params.end)) {
+    res.send('Sorry your link has expired');
+     }else{
+      res.render('pages/user_reported_survey2',{
+        id: id_ref[req.params.id],
+        surveyname: surveyname_,
         qlist:qlist_
        });
      }  

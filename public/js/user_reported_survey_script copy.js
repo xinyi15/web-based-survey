@@ -1,7 +1,6 @@
+
 import {uncTeenSurvey} from "/js/surveylist.js";
 import qlref from '/js/UniqueQeuestionList.js';
-import { GetSurvey } from '/js/helper.js';
-
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
@@ -10,20 +9,48 @@ let id=10;
 //var surveyName=surveynameJSON;
 //var id=idJSON;
 
+
+
 var json = {
-    "elements": [
+    "checkErrorsMode": "onValueChanged",
+    "pages": [
         {
-            "type": "checkbox",
-            "name": "userreportedsurvey",
-            "title": "Please create custom question survey.",
-            "isRequired": true,
-            "hasNone": true,
-            "colCount": 1,
-            "choices": []
+            "name": "page1",
+            "elements": [
+                {
+                    "type": "matrixdynamic",
+                    "name": "userreportedsurvey",
+                    "title": "Please create custom question survey.",
+                    "columns": [
+                        {
+                            "name":  "QuestionsType",
+                            "title": "Questions",
+                            "cellType": "dropdown",
+                            "isRequired": true,
+                            "choices": []
+                        }
+                    ],
+                    "detailPanelMode": "underRow",
+                    "rowCount": 1,
+                    "addRowText": "Add a questions",
+                    "removeRowText": "Remove the question"
+                }
+            ]
         }
     ]
 };
 
+function getTime(){
+    let date_ob = new Date();
+    let hours = date_ob.getHours();
+  //console.log(Time.zone.now );
+  if((hours>=9) & (hours<=11)){
+    hours=hours-4
+   }else if((hours>=11) & (hours<=12)){
+     hours=24-(4-hours)
+   } 
+return(hours)
+}
 function insertQuestions(questions) {
     let qeustiondescriptions = [];
     let qeustionnames = [];
@@ -31,28 +58,37 @@ function insertQuestions(questions) {
         qeustiondescriptions.push(questions.pages[i].questions[0].title);
         qeustionnames.push(questions.pages[i].questions[0].name);
     }
-    json.elements[0].choices = qeustiondescriptions;
-   // console.log(json)
+    json.pages[0].elements[0].columns[0].choices = qeustiondescriptions;
+    console.log(json)
   return(qeustionnames)
 }
 
-    var questions = GetSurvey(surveyName);
+if (surveyName === "uncTeenSurvey") {
+    var questions = uncTeenSurvey;
     var qeustionnames_save=insertQuestions(questions);
+} else if (surveyName === "uncTeen") {
+}
+
+
 
 Survey
     .StylesManager
-    .applyTheme("modern");//"defaultV2"
+    .applyTheme("modern");
 
 window.survey = new Survey.Model(json);
 
 function savequestionlist(datatmp) {
-    let surveyQlist=json.elements[0].choices;
+    let surveyQlist=json.pages[0].elements[0].columns[0].choices;
+    //let surveyQlist = surveyQlist2.reduce(function(a, e, i) {
+ //a.push(e.value)
+ /// return a;
+//}, []);
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
-        if (surveyQlist.includes(e.checkbox))
+        if (surveyQlist.includes(e.QuestionsType))
              a.push(qeustionnames_save[i]);
          return a;
     }, []);
-     return(usersurveyQlist);
+     return( usersurveyQlist );
 }
 
 
@@ -71,7 +107,13 @@ Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
   chunked.push(input.slice(i * size, i * size + size))
 })
 let str=""
+//c={
+//   "FRXHC099559": 16,
+//   "SNVYC815187": 64,
+//   "HMIOG946604": 2
+// }
 let res = chunked.map(x =>str+x);
+
 Object.prototype.getKeyByValue = function( value ) {
     for( var prop in this ) {
         if( this.hasOwnProperty( prop ) ) {
@@ -82,6 +124,7 @@ Object.prototype.getKeyByValue = function( value ) {
 }
 let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
 let filtered = y.filter(x => x !== undefined);
+//console.log(filtered.join('_'));
 return(filtered.join('_'))
 }
 
@@ -98,8 +141,27 @@ return(filtered.join('_'))
 
           document
               .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify( questionlist_, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify( url, null, 3);
         
      })
 
-     ReactDOM.render(<SurveyReact.Survey model={survey}/>, document.getElementById("surveyElement"));
+
+function onAngularComponentInit() {
+    Survey
+        .SurveyNG
+        .render("surveyElement", {model: survey});
+}
+var HelloApp = ng
+    .core
+    .Component({selector: 'ng-app', template: '<div id="surveyContainer" class="survey-container contentcontainer codecontainer"><div id="surveyElement"></div></div> '})
+    .Class({
+        constructor: function () {},
+        ngOnInit: function () {
+            onAngularComponentInit();
+        }
+    });
+document.addEventListener('DOMContentLoaded', function () {
+    ng
+        .platformBrowserDynamic
+        .bootstrap(HelloApp);
+});
