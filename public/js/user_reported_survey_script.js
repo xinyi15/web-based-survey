@@ -111,10 +111,11 @@ return(filtered.join('_'))
 
 
     survey
-    .onUpdateQuestionCssClasses
+    .onUpdateChoiceItemCss 
     .add(function (survey, options) {
-        var classes = options.cssClasses
-        classes.label = "sq-label";
+        var classes = options.css
+       // classes.label = "sq-label";
+       console.log(classes)
 
     });
 
