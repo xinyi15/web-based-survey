@@ -1,6 +1,10 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const ql_ref= require("/js/UniqueQeuestionList.json");
+
+import { readFile } from 'fs/promises';
+const ql_ref = JSON.parse(
+  await readFile(
+    new URL('/js/UniqueQeuestionList.json', import.meta.url)
+  )
+);
 //import * as data from '/js/UniqueQeuestionList.json'  assert { type: `json` };
 //console.log(ql_ref)
 //const {ql_ref} = data;
