@@ -38,7 +38,17 @@ var json = {
     ]
 };
 
-
+function getTime(){
+    let date_ob = new Date();
+    let hours = date_ob.getHours();
+  //console.log(Time.zone.now );
+  if(hours>=4){
+    hours=hours-4
+   }else{
+     hours=24-(4-hours)
+   } 
+return(hours)
+}
 function insertQuestions(questions) {
     let qeustiondescriptions = [];
     let qeustionnames = [];
@@ -123,11 +133,13 @@ return(filtered.join('_'))
         ///var parameter = $(this).val();
         let keys=generate_keys(questionlist_);
         //survey.showCompletedPage = false;
+        let url="https://web-based-survey.herokuapp.com/survey/"+id+"/"+ surveyName+"/"+time+"/"+
+        keys+getTime()+"/PAHH262545/TLAS903782";
         //window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
 
           document
               .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify( url, null, 3);
         
      })
 
