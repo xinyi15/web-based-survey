@@ -87,15 +87,16 @@ return(filtered.join('_'))
  survey
      .onComplete
     .add(function (sender) {
-        let questionlist_=savequestionlist(sender.data);//sender
-        let keys=generate_keys(questionlist_);
+        var questions = GetSurvey(surveyName);
+     //   let questionlist_=savequestionlist(sender.data);//sender
+      //  let keys=generate_keys(questionlist_);
         //survey.showCompletedPage = false;
-        let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
+      //  let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
         //window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
 
           document
               .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(url, null, 3);
+            .textContent = "Result JSON:\n" + JSON.stringify(questions, null, 3);
         
      })
 
