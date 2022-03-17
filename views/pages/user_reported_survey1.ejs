@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Custom Survey</title><meta name="viewport" content="width=device-width"/>
-        <script src="https://npmcdn.com/zone.js"></script>
-        <script src="https://npmcdn.com/core-js@2.6.5/client/shim.min.js"></script>
-        <script src="https://npmcdn.com/rxjs@5.0.0-beta.6/bundles/Rx.umd.js"></script>
-        <script src="https://npmcdn.com/@angular/core@2.0.0-rc.5/bundles/core.umd.js"></script>
-        <script src="https://npmcdn.com/@angular/common@2.0.0-rc.5/bundles/common.umd.js"></script>
-        <script src="https://npmcdn.com/@angular/compiler@2.0.0-rc.5/bundles/compiler.umd.js"></script>
-        <script src="https://npmcdn.com/@angular/platform-browser@2.0.0-rc.5/bundles/platform-browser.umd.js"></script>
-        <script src="https://npmcdn.com/@angular/platform-browser-dynamic@2.0.0-rc.5/bundles/platform-browser-dynamic.umd.js"></script>
-        <script src="https://unpkg.com/survey-angular@1.9.19/survey.angular.min.js"></script>
-        <link href="https://unpkg.com/survey-core@1.9.19/modern.min.css" type="text/css" rel="stylesheet"/>
-        <style>
-          body {
-            background: #D3D3D3;
-          }
-          
-          .content {
-            max-width: 550px;
-            margin: auto;
-            background:white;
-            padding: 10px;
-          }
-      </style>
-    <body>
-      <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
-      <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
-      
-        <ng-app></ng-app>
-        <div id="surveyResult"></div>
-        <script src="/js/user_reported_survey_script.js" type="module"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based Survey</title>
+
+    <link rel="stylesheet" href="/css/styles.css" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/survey-jquery"></script>
+    <link href="https://unpkg.com/survey-jquery/survey.min.css" type="text/css" rel="stylesheet"/>
+
+    <style>
+        body {
+          background: #D3D3D3;
+        }
+        
+        .content {
+          max-width: 550px;
+          margin: auto;
+          background:white;
+          padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+  <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
+  <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
+
+    <div class="content">
+    <script src="/js/user_reported_survey_script.js" type="module"></script>
+    <div id="surveyResults"></div>
+    <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
+   <!-- -- <div id="surveyResult"></div> -->
+    </div>
+</body>
 </html>
