@@ -1,5 +1,5 @@
 import {uncTeenSurvey} from "/js/surveylist.js";
-
+const ql_ref= require('../UniqueQeuestionList.json');
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
@@ -78,46 +78,56 @@ function savequestionlist(datatmp) {
      return( usersurveyQlist );
 }
 
+ 
+function generate_keys(questionlist){
+let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
+//let questionlist=["Q26","Q4"]
+let questionlist2=questionlist.sort()
+let num=questionlist2.reduce(function(a, e, i) {
+    tmp=parseInt(e.split("Q")[1])-1
+     arr[tmp]=1
+}, []);   // [0, 3, 5]
+let input = arr;
+let chunked = []
+let size = 8;
+Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
+  chunked.push(input.slice(i * size, i * size + size))
+})
+str=""
+//c={
+//   "FRXHC099559": 16,
+//   "SNVYC815187": 64,
+//   "HMIOG946604": 2
+// }
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+}
+let res = chunked.map(x =>str+x);
+let y=res.map(x =>ql_ref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
+var filtered = y.filter(x => x !== undefined);
+//console.log(filtered.join('_'));
+return(filtered)
+}
 
  survey
      .onComplete
     .add(function (sender) {
-        let cc=savequestionlist(sender.data);//sender
+        let questionlist_=savequestionlist(sender.data);//sender
         ///var parameter = $(this).val();
-        survey.showCompletedPage = false;
-        window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
+        let keys=generate_keys(questionlist_);
+        //survey.showCompletedPage = false;
+        //window.location = "https://web-based-survey.herokuapp.com/test"// + parameter;
 
-        //  document
-        //      .querySelector('#surveyResult')
-        //    .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
+          document
+              .querySelector('#surveyResult')
+            .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3);
         
-     });
-
-// survey
-//     .onComplete
-//     .add(function (sender) {
-//         let cc=savequestionlist(sender.data);//sender
-//         document
-//             .querySelector('#surveyResult')
-//             .textContent = "Result JSON:\n" + JSON.stringify(cc, null, 3);
-        
-//     });
-
-    // survey.onComplete.add(function(survey) {
-    //     console.log(survey.pages[0].elements[0].columns[0].choices);
-    //     savequestionlist(survey, survey.data);
-    // });
-
-// survey.data = {
-//     'relatives': [
-//         {
-//             'relativeType': 'father'
-//         }, {
-//             'relativeType': 'mother'
-//         }
-//     ]
-// };
-
+     })
 
 
 function onAngularComponentInit() {
