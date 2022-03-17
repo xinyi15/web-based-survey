@@ -1,9 +1,10 @@
-const  ql_ref  = require('/js/UniqueQeuestionList.json');
-const  uncTeenSurvey  = require( "/js/surveylist.js");
-//import * as data from '/js/UniqueQeuestionList.json' ;
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const ql_ref= require("/js/UniqueQeuestionList.json");
+//import * as data from '/js/UniqueQeuestionList.json'  assert { type: `json` };
 //console.log(ql_ref)
 //const {ql_ref} = data;
-//import {uncTeenSurvey} from "/js/surveylist.js";
+import {uncTeenSurvey} from "/js/surveylist.js";
 //import ql_ref from '../../UniqueQeuestionList.json';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
