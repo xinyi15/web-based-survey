@@ -1,7 +1,8 @@
 //const  ql_ref  = require('../../UniqueQeuestionList.json');
 //const  uncTeenSurvey  = require('../../UniqueQeuestionList.json');
-import * as ql_ref from '/js/UniqueQeuestionList.json' assert { type: "json" };
-console.log(ql_ref)
+import * as data from '/js/UniqueQeuestionList.json' assert { type: "json" };
+//console.log(ql_ref)
+const {ql_ref} = data;
 import {uncTeenSurvey} from "/js/surveylist.js";
 //import ql_ref from '../../UniqueQeuestionList.json';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
