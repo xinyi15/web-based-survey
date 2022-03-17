@@ -1,13 +1,13 @@
 import qlref from '/js/UniqueQeuestionList.js';
-import { GetSurvey } from '/js/helper.js';
+import {GetSurvey} from '/js/helper.js';
 
-let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
-let id=10;
+//let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
+//let id=10;
 
-//var idJSON = JSON.parse($('#idJSON').text());
-//var surveynameJSON = JSON.parse($('#surveynameJSON').text());
-//var surveyName=surveynameJSON;
-//var id=idJSON;
+var idJSON = JSON.parse($('#idJSON').text());
+var surveynameJSON = JSON.parse($('#surveynameJSON').text());
+var surveyName=surveynameJSON;
+var id=idJSON;
 
 var json = {
     "elements": [

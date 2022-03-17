@@ -25,6 +25,9 @@
           }
       </style>
     <body>
+      <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
+      <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
+      
         <ng-app></ng-app>
         <div id="surveyResult"></div>
         <script src="/js/user_reported_survey_script.js" type="module"></script>

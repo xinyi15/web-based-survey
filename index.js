@@ -32,7 +32,10 @@ app.set('view engine', 'ejs')
 
 
 app.get('/',async (req,res)=>{
-  res.render('pages/user_reported_survey1');
+  res.render('pages/user_reported_survey1',{
+    id:"MP411220",
+   surveyname:"EUK039766"
+  });
 });
 
  app.post('/answer',async (req,res)=>{
@@ -88,16 +91,13 @@ return  str;
     let questionList=qlistJSON.split("_");
     let result = questionList.map(x => ql_ref[x]);
     let arrays = result.map(num => pading(num));
-  //  console.log( arrays);
-var merged = [].concat.apply([], arrays);
-//console.log(merged);
-let x= merged.reduce(function(a, e, i) {
+    var merged = [].concat.apply([], arrays);
+    let x= merged.reduce(function(a, e, i) {
     if (e == 1)
         a.push(i+1);
-    return a;
-}, []);
+    return a;}, []);
 //console.log("sss",x);
-let resultx= x.map(el => 'Q' + el)
+    let resultx= x.map(el => 'Q' + el)
     return resultx;
 }
 
@@ -106,10 +106,13 @@ let resultx= x.map(el => 'Q' + el)
     let surveyname_=survey_ref[req.params.surveyname];
     let time_=time_ref[req.params.time];
     let qlist_=translate_ql(req.params.qlist);
-    
     console.log(qlist_);
+
      if (is_expired(req.params.start,req.params.end)) {
-    res.send('Sorry your link has expired');
+      res.render('pages/user_reported_survey1',{
+        id:req.params.id,
+       surveyname: req.params.surveyname
+      });
      }else{
       res.render('pages/survey',{
          id: id_ref[req.params.id],
@@ -125,15 +128,11 @@ let resultx= x.map(el => 'Q' + el)
     let surveyname_=survey_ref[req.params.surveyname];
     let qlist_=translate_ql(req.params.qlist);
     console.log(qlist_);
-     if (is_expired(req.params.start,req.params.end)) {
-    res.send('Sorry your link has expired');
-     }else{
-      res.render('pages/user_reported_survey2',{
+   res.render('pages/user_reported_survey2',{
         id: id_ref[req.params.id],
         surveyname: surveyname_,
         qlist:qlist_
-       });
-     }  
+       }); 
   });
 
   
