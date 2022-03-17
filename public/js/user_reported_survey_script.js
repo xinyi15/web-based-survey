@@ -97,7 +97,7 @@ let size = 8;
 Array.from({length: Math.ceil(input.length / size)}, (val, i) => {
   chunked.push(input.slice(i * size, i * size + size))
 })
-str=""
+let str=""
 //c={
 //   "FRXHC099559": 16,
 //   "SNVYC815187": 64,
@@ -113,7 +113,7 @@ Object.prototype.getKeyByValue = function( value ) {
 }
 let res = chunked.map(x =>str+x);
 let y=res.map(x =>ql_ref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
-var filtered = y.filter(x => x !== undefined);
+let filtered = y.filter(x => x !== undefined);
 //console.log(filtered.join('_'));
 return(filtered)
 }
