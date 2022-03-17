@@ -122,7 +122,7 @@ return(filtered.join('_'))
 
 
     survey
-    .onUpdateChoiceItemCss 
+    .onUpdateQuestionCssClasses
     .add(function (survey, options) {
         var classes = options.css
        // classes.label = "sq-label";
