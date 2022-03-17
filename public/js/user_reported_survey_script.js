@@ -40,7 +40,7 @@ function insertQuestions(questions) {
 
 Survey
     .StylesManager
-    .applyTheme("defaultV2");//"defaultV2"
+    .applyTheme("modern");//"defaultV2"
 
 window.survey = new Survey.Model(json);
 
