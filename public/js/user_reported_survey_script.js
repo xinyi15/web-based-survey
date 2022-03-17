@@ -54,11 +54,7 @@ function savequestionlist(datatmp) {
      return(usersurveyQlist);
 }
 
-function pading(num){
-    var binaryStr = num.toString(2);
-    while(binaryStr.length < 8) {
-      binaryStr = "0" + binaryStr;
-  }
+
 
 function generate_keys(questionlist){
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
@@ -88,7 +84,7 @@ Object.prototype.getKeyByValue = function( value ) {
 
 console.log(res);
 console.log(res.map(x =>(parseInt(x.replaceAll(",",""),2))));
-let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
+let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)));
 
 let filtered = y.filter(x => x !== undefined);
 return(filtered.join('_'))
