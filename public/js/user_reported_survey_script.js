@@ -88,6 +88,8 @@ return(filtered.join('_'))
      .onComplete
     .add(function (sender) {
         let questionlist_=savequestionlist(sender.data);//sender
+        console.log(sender.data);
+        console.log(questionlist_);
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
