@@ -57,9 +57,7 @@ function savequestionlist(datatmp) {
 
 
 function generate_keys(questionlist){
-    12/13
-15161718
-22212324
+
 if(questionlist.includes("Q12")|questionlist.includes("Q13")){
     questionlist.push("Q12","Q13");
     questionlist =  [...new Set(questionlist)]  
