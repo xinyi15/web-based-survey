@@ -48,7 +48,7 @@ function savequestionlist(datatmp) {
     let surveyQlist=json.elements[0].choices;
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e))
-             a.push(qeustionnames_save[surveyQlist.findIndex(e)]);
+             a.push(qeustionnames_save[surveyQlist.indexOf(e)]);
          return a;
     }, []);
      return(usersurveyQlist);
