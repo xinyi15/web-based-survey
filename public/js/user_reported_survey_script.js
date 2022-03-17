@@ -113,7 +113,7 @@ Object.prototype.getKeyByValue = function( value ) {
 let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
 let filtered = y.filter(x => x !== undefined);
 //console.log(filtered.join('_'));
-return(filtered)
+return(filtered.join('_'))
 }
 
  survey
