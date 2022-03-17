@@ -47,18 +47,18 @@ $("#surveyContainer").Survey({
     css: myCss
 });
 
-survey
-    .onComplete
-    .add(function (sender) {
-        document
-            .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
-    });
+// survey
+//     .onComplete
+//     .add(function (sender) {
+//         document
+//             .querySelector('#surveyResult')
+//             .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+//     });
 
  function sendDataToTheServer(isComplete, data) {
         // var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
-        // document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
+         document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
         var url="https://web-based-survey.herokuapp.com/self_reported_answer";
         let timeNow = new Date();
         let  timeNow1 = new Date();
