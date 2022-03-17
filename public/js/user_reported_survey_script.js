@@ -101,4 +101,13 @@ return(filtered.join('_'))
      })
 
 
-     $("#surveyElement").Survey({model: survey});
+     var myCss = {
+        matrix: {root: "table table-striped matrixtable"},
+    };
+    
+    $("#surveyContainer").Survey({
+        model: survey,
+        css: myCss
+    });
+    
+     //$("#surveyElement").Survey({model: survey});
