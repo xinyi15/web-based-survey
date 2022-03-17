@@ -9,17 +9,8 @@ var surveynameJSON = JSON.parse($('#surveynameJSON').text());
 var surveyName=surveynameJSON;
 var id=idJSON;
 
-var json ={
-    title: "UNC Teen Survey",
-    showProgressBar: "bottom",
-    goNextPageAutomatic: false, // true
-    showNavigationButtons: true, // false
-    showQuestionNumbers: "off",
-    sendResultOnPageNext : true,
-    focusFirstQuestionAutomatic: false,
-    clearInvisibleValues: "onHidden",
-    pages: [
-        { questions: [
+var json = {
+    "elements": [
         {
             "type": "checkbox",
             "name": "userreportedsurvey",
@@ -30,7 +21,6 @@ var json ={
             "choices": []
         }
     ]
-}]
 };
 
 function insertQuestions(questions) {
@@ -40,50 +30,22 @@ function insertQuestions(questions) {
         qeustiondescriptions.push(questions.pages[i].questions[0].title);
         qeustionnames.push(questions.pages[i].questions[0].name);
     }
-    json.pages[0].questions[0].choices = qeustiondescriptions;
-    console.log( json.pages[0].questions[0].choices)
+    json.elements[0].choices = qeustiondescriptions;
+    console.log( json.elements[0])
   return(qeustionnames)
 }
 
     var questions = GetSurvey(surveyName);
     var qeustionnames_save=insertQuestions(questions);
 
-    window.survey = new Survey.Model(json);
-    
-var myCss = {
-    matrix: {root: "table table-striped matrixtable"},
-};
-
-$("#surveyContainer").Survey({
-    model: survey,
-    css: myCss
-});
-
-// Survey
-//     .StylesManager
-//     .applyTheme("modern");//"defaultV2"
-
-    var defaultThemeColors = Survey
-    .StylesManager
-    .ThemeColors["default"];
-defaultThemeColors["$main-color"] = "#4B9CD3";
-defaultThemeColors["$main-hover-color"] = "#4B9CD3";
-defaultThemeColors["$text-color"] = "#4a4a4a";
-defaultThemeColors["$header-color"] = "#4B9CD3";
-
-defaultThemeColors["$header-background-color"] = "#4a4a4a";
-defaultThemeColors["$body-container-background-color"] = "#f8f8f8";
-
 Survey
     .StylesManager
-    .applyTheme();
+    .applyTheme("modern");//"defaultV2"
 
-$(".sv_prev_btn").remove(); // hide the previous button
-
-
+window.survey = new Survey.Model(json);
 
 function savequestionlist(datatmp) {
-    let surveyQlist=json.pages[0].questions[0].choices;
+    let surveyQlist=json.elements[0].choices;
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
         if (surveyQlist.includes(e))
              a.push(qeustionnames_save[i]);
@@ -139,4 +101,4 @@ return(filtered.join('_'))
 
 
 
-    // $("#surveyElement").Survey({model: survey});
+     $("#surveyElement").Survey({model: survey});
