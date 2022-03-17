@@ -100,5 +100,13 @@ return(filtered.join('_'))
      })
 
 
+     survey
+     .onUpdateQuestionCssClasses
+     .add(function (survey, options) {
+         var classes = options.cssClasses
+         classes.item = "sq-item";
+         classes.label = "sq-label";
 
-     $("#surveyElement").Survey({model: survey});
+     });
+
+     $("#surveyElement").Survey({model: survey,  css: myCss});
