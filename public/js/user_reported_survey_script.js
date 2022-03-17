@@ -31,7 +31,7 @@ function insertQuestions(questions) {
         qeustionnames.push(questions.pages[i].questions[0].name);
     }
     json.elements[0].choices = qeustiondescriptions;
-    console.log(json)
+    console.log(eustiondescriptions)
   return(qeustionnames)
 }
 
