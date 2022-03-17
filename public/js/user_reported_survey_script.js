@@ -4,7 +4,7 @@
 //console.log(ql_ref)
 //const {ql_ref} = data;
 import {uncTeenSurvey} from "/js/surveylist.js";
-import ql_ref from '/js/UniqueQeuestionList.js';
+import qlref from '/js/UniqueQeuestionList.js';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
@@ -113,7 +113,7 @@ let str=""
 //   "HMIOG946604": 2
 // }
 let res = chunked.map(x =>str+x);
-let y=res.map(x =>ql_ref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
+let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
 let filtered = y.filter(x => x !== undefined);
 //console.log(filtered.join('_'));
 return(filtered)

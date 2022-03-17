@@ -1,6 +1,6 @@
-export const ql_ref  = {
-  "FRXHC099559": 0,
-  "SNVYC815187": 1,
+export const qlref  = {
+   "FRXHC099559": 0,
+   "SNVYC815187": 1,
   "HMIOG946604": 2,
   "FKXOV912635": 3,
   "XSFFD063664": 4,
