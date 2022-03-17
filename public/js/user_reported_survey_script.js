@@ -1,5 +1,6 @@
+
 import {uncTeenSurvey} from "/js/surveylist.js";
-const ql_ref= require('../UniqueQeuestionList.json');
+import ql_ref from '../UniqueQeuestionList.json';
 let surveyName = "uncTeenSurvey"; // Get surveyname from table Question in the database
 let id=10;
 
