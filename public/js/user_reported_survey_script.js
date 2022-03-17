@@ -88,7 +88,7 @@ let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
 //let questionlist=["Q26","Q4"]
 let questionlist2=questionlist.sort()
 let num=questionlist2.reduce(function(a, e, i) {
-    tmp=parseInt(e.split("Q")[1])-1
+  let  tmp=parseInt(e.split("Q")[1])-1
      arr[tmp]=1
 }, []);   // [0, 3, 5]
 let input = arr;
