@@ -55,7 +55,7 @@ function insertQuestions(questions) {
 }
 
 if (surveyName === "uncTeenSurvey") {
-    let questions = uncTeenSurvey;
+    var questions = uncTeenSurvey;
     var qeustionnames_save=insertQuestions(questions);
 } else if (surveyName === "uncTeen") {
 }
