@@ -79,14 +79,6 @@ function savequestionlist(datatmp) {
      return( usersurveyQlist );
 }
 
-Object.prototype.getKeyByValue = function( value ) {
-    for( var prop in this ) {
-        if( this.hasOwnProperty( prop ) ) {
-             if( this[ prop ] === value )
-                 return prop;
-        }
-    }
-}
 
 function generate_keys(questionlist){
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
@@ -109,6 +101,15 @@ let str=""
 //   "HMIOG946604": 2
 // }
 let res = chunked.map(x =>str+x);
+
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+}
 let y=res.map(x =>qlref.getKeyByValue(parseInt(x.replaceAll(",",""),2)))
 let filtered = y.filter(x => x !== undefined);
 //console.log(filtered.join('_'));
