@@ -47,7 +47,7 @@ window.survey = new Survey.Model(json);
 function savequestionlist(datatmp) {
     let surveyQlist=json.elements[0].choices;
     let usersurveyQlist = datatmp.userreportedsurvey.reduce(function(a, e, i) {
-        if (surveyQlist.includes(e.checkbox))
+        if (surveyQlist.includes(e))
              a.push(qeustionnames_save[i]);
          return a;
     }, []);
