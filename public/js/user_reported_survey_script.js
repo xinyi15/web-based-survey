@@ -149,4 +149,13 @@ return(filtered.join('_'))
 
     });
 
+    function doOnCurrentPageChanged(survey) {
+        document
+            .getElementById('surveyComplete')
+            .style
+            .display = survey.isLastPage
+                ? "inline"
+                : "none";
+    }
+    doOnCurrentPageChanged(survey);
      $("#surveyElement").Survey({model: survey});

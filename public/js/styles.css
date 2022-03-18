@@ -12,3 +12,11 @@
 .sq-title {
   font-size: 40px;
 }
+
+#surveyComplete,
+#surveyNext,
+#surveyPrev {
+    color: #1ab312;
+    font-size: 40px;
+    cursor: pointer;
+}
