@@ -134,8 +134,8 @@ return  str;
        const client3= await pool.connect();
        var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
        "and  survey="+   time_+ " and question="+ qlist_ +"and date="+ timeNow) ;
-      // client3.release();
-      // console.log(result3.rowCount);
+      client3.release();
+      console.log(result3.rowCount);
       res.render('pages/survey',{
          id: id_ref[req.params.id],
         surveyname: surveyname_,
