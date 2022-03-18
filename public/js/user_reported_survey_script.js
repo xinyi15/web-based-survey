@@ -61,17 +61,18 @@ function savequestionlist(datatmp) {
 
 function generate_keys(questionlist){
 
-if(questionlist.includes("Q12")|questionlist.includes("Q13")){
-    questionlist.push("Q12","Q13");
-    questionlist =  [...new Set(questionlist)]  
+    if(questionlist.includes("Q3")){
+        questionlist.push("Q4");
+    }
+if(questionlist.includes("Q11")){
+    questionlist.push("Q12");
+ //   questionlist =  [...new Set(questionlist)]  
 }
-if(questionlist.includes("Q15")|questionlist.includes("Q16")|questionlist.includes("Q17")|questionlist.includes("Q18")){
-    questionlist.push("Q15","Q16","Q17","Q18");
-    questionlist =  [...new Set(questionlist)]  
+if(questionlist.includes("Q14")){
+    questionlist.push("Q15","Q16","Q17"); 
 }
-if(questionlist.includes("Q21")|questionlist.includes("Q22")|questionlist.includes("Q23")|questionlist.includes("Q24")){
+if(questionlist.includes("Q20")){
     questionlist.push("Q21","Q22","Q23","Q24");
-    questionlist =  [...new Set(questionlist)]  
 }
 
 let arr = Array(Math.ceil(questions.pages.length/8)*8).fill(0);
