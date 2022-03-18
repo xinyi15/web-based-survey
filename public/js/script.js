@@ -79,7 +79,8 @@ survey
         console.log(response);
         if(isComplete===true){
             console.log("complete")
-            const response2 = await  fetch("https://web-based-survey.herokuapp.com/complete",{
+            var url2="https://web-based-survey.herokuapp.com/complete"
+            const response2 = await  fetch(url2,{
                 method:'post',
                 body: JSON.stringify({
                     id:id,
