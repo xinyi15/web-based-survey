@@ -85,7 +85,7 @@ survey
                 body: JSON.stringify({
                     id:id,
                      survey: time, 
-                     question:"s",//qlistJSON 
+                     question: qlistJSON ,
                      date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
                 }),
                 headers:{'Content-Type':'application/json'}
