@@ -113,7 +113,7 @@ return  str;
     return resultx;
 }
 
-  app.get('/survey/:id/:surveyname/:time/:qlist/:start/:end', function(req, res){
+  app.get('/survey/:id/:surveyname/:time/:qlist/:start/:end', async function(req, res){
 
     let surveyname_=survey_ref[req.params.surveyname];
     let time_=time_ref[req.params.time];
@@ -126,10 +126,12 @@ return  str;
        surveyname: req.params.surveyname
       });
      }else{
-
+      let timeNow = new Date();
+      let  timeNow1 = new Date();
+      let date_=timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
       const client3= await pool.connect();
       var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
-      "and  surveyname="+  surveyname_+"and time=" + time_+ " and qlist="+ qlist_ ) ;
+      "and  surveyname="+  surveyname_+"and time=" + time_+ " and qlist="+ qlist_ +"and date="+date_) ;
       client3.release();
       console.log(result3.rowCount);
       res.render('pages/survey',{
