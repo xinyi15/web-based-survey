@@ -41,11 +41,11 @@ app.get('/',async (req,res)=>{
 
 app.post('/complete',async (req,res)=>{
 console.log('INSERT INTO complete (id, survey, question,  date) VALUES ("'+ req.body.id+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.date+'")');
-  const client1 = await pool.connect();
-  var result = await client1.query('INSERT INTO complete (id, survey, question,  date) VALUES ("'+ req.body.id+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.date+'")'
-  );
-  client1.release();
-  res.send('Success'); 
+  // const client1 = await pool.connect();
+  // var result = await client1.query('INSERT INTO complete (id, survey, question,  date) VALUES ("'+ req.body.id+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.date+'")'
+  // );
+  // client1.release();
+  res.send('Success INSERT INTO complete (id, survey, question,  date) VALUES ("'+ req.body.id+'","'+req.body.survey+'","'+req.body.question +'","'+req.body.date+'")'); 
   });
  /*create a new survey tablr*/
 
