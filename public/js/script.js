@@ -86,7 +86,7 @@ survey
                     id:id,
                      survey: time, 
                      question:"s",//qlistJSON 
-                    // date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
+                     date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
                 }),
                 headers:{'Content-Type':'application/json'}
             });
