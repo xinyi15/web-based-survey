@@ -135,8 +135,8 @@ return(filtered.join('_'))
 
 
     survey
-     .onUpdatePageCssClasses 
-    //.onUpdateQuestionCssClasses
+    // .onUpdatePageCssClasses 
+    .onUpdateQuestionCssClasses
     .add(function (survey, options) {
         var classes = options.cssClasses
         console.log(classes)
