@@ -13,9 +13,8 @@
   font-size: 40px;
 }
 
-#surveyComplete,
-#surveyNext,
-#surveyPrev {
+#surveyComplete
+ {
     color: #1ab312;
     font-size: 40px;
     cursor: pointer;
