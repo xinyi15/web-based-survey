@@ -9,31 +9,31 @@ export const uncTeenSurvey =
     focusFirstQuestionAutomatic: false,
     clearInvisibleValues: "onHidden",
     pages: [
+        // {
+        //     questions: [
+        //         {
+        //             name: "Q1",
+        //             type: "radiogroup",
+        //             title: "Have you put on your armband on today?",
+        //             isRequired: true,
+        //             colCount: 1,
+        //             choices: [
+        //                 {
+        //                     "value": "0",
+        //                     "text": "Yes",
+        //                 },
+        //                 {
+        //                     "value": "1",
+        //                     "text": "No"
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // },
         {
             questions: [
                 {
                     name: "Q1",
-                    type: "radiogroup",
-                    title: "Have you put on your armband on today?",
-                    isRequired: true,
-                    colCount: 1,
-                    choices: [
-                        {
-                            "value": "0",
-                            "text": "Yes",
-                        },
-                        {
-                            "value": "1",
-                            "text": "No"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            questions: [
-                {
-                    name: "Q2",
                     type: "text",
                     title: "About what time did you fall asleep last night?",
                     inputType: "time",
@@ -44,7 +44,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q3",
+                    name: "Q2",
                     type: "radiogroup",
                     title: "About how long did it take you to fall asleep?",
                     isRequired: true,
@@ -77,7 +77,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q4",
+                    name: "Q3",
                     type: "radiogroup",
                     title: "Did you go to bed at about your usual time?",
                     isRequired: true,
@@ -97,7 +97,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q5",
+                    name: "Q4",
                     type: "dropdown",
                     title: "You did not go to bed at your usual time, so was it...Scroll down to select options.",
                     visibleIf: "{Q4} = '1'",
@@ -134,7 +134,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {   
-                    name: "Q6",
+                    name: "Q5",
                     type: "text",
                     title: "What time did you wake up?",
                     inputType: "time",
@@ -145,7 +145,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q7",
+                    name: "Q6",
                     type: "radiogroup",
                     title: "How many times did you wake up in the night?",
                     isRequired: true,
@@ -182,7 +182,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q8",
+                    name: "Q7",
                     type: "radiogroup",
                     title: "How well did you sleep?",
                     isRequired: true,
@@ -230,7 +230,7 @@ export const uncTeenSurvey =
                 //     ]
                 // }
                 {
-                    name: "Q9",
+                    name: "Q8",
                     type: "radiogroup",
                     title: "Where are you right now?",
                     isRequired: true,
@@ -255,10 +255,10 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "Q9A",
+                    name: "Q8A",
                     type: "text",
                     title: "Somewhere else, please state.",
-                    visibleIf: "{Q9} = '3'",
+                    visibleIf: "{Q8} = '3'",
                     isRequired: true
                 }
             ]
@@ -266,7 +266,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q10",
+                    name: "Q9",
                     type: "checkbox",
                     title: "Who are you with right now? Check all that apply.",
                     isRequired: true,
@@ -306,7 +306,7 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "Q10A",
+                    name: "Q9A",
                     type: "text",
                     title: "Other, please state.",
                     visibleIf: "{Q10} contains '7'",
@@ -317,7 +317,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q11",
+                    name: "Q10",
                     type: "dropdown",
                     title: "In the last 3 hours, how many caffeinated beverages (like soda, energy drinks, coffee, or tea) have you had? Scroll down for choices.",
                     isRequired: true,
@@ -329,7 +329,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {   
-                    name: "Q12",
+                    name: "Q11",
                     type: "checkbox",
                     title: "How are you feeling right now? Check all that apply.",
                     isRequired: true,
@@ -395,10 +395,10 @@ export const uncTeenSurvey =
                 },
                 {
                     
-                    name: "Q12A",
+                    name: "Q11A",
                     type: "text",
                     title: "What is the other feeling?",
-                    visibleIf: "{Q12} contains '13'",
+                    visibleIf: "{Q11} contains '13'",
                     isRequired: true
                 }
             ]
@@ -407,9 +407,9 @@ export const uncTeenSurvey =
             questions: [
                 {
                     type: "matrix",
-                    name: "Q13",
+                    name: "Q12",
                     title: "How much are you feeling...?",
-                    visibleIf: "{Q12.length} > 0",
+                    visibleIf: "{Q11.length} > 0",
                     rowsVisibleIf: "{Q12} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
@@ -492,7 +492,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q14",
+                    name: "Q13",
                     type: "dropdown",
                     title: 'On a scale of 1 to 10, where 1 means you have "little or no stress" and 10 means you have "a great deal of stress," how would you rate your stress in the last hour? Scroll down to select.',
                     isRequired: true,
@@ -504,7 +504,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {   
-                    name: "Q15",
+                    name: "Q14",
                     type: "checkbox",
                     title: "What have you felt stressed about? Check all that apply. Something with...",
                     isRequired: true,
@@ -566,10 +566,10 @@ export const uncTeenSurvey =
             questions: [
                 {
                     type: "matrix",
-                    name: "Q16",
+                    name: "Q15",
                     title: "To what extent did...make you stressed?",
-                    visibleIf: "{Q15} contains '0' or {Q15} contains '1' or {Q15} contains '2' or {Q15} contains '3' or {Q15} contains '4' or {Q15} contains '5' or {Q15} contains '6' or {Q15} contains '7' or {Q15} contains '8' or {Q15} contains '9'",
-                    rowsVisibleIf: "{Q15} contains {item}",
+                    visibleIf: "{Q14} contains '0' or {Q14} contains '1' or {Q14} contains '2' or {Q14} contains '3' or {Q14} contains '4' or {Q14} contains '5' or {Q14} contains '6' or {Q14} contains '7' or {Q14} contains '8' or {Q14} contains '9'",
+                    rowsVisibleIf: "{Q14} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
                     columns: [
@@ -635,16 +635,53 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q17",
+                    name: "Q16",
                     type: "text",
                     title: "What activity outside of school were you doing when you felt stressed?",
-                    visibleIf: "{Q15} contains '10'",
+                    visibleIf: "{Q14} contains '10'",
+                    isRequired: true
+                },
+                {
+                    name: "Q16A",
+                    type: "radiogroup",
+                    title: "To what extent did doing an activity outside of school make you stressed?",
+                    visibleIf: "{Q16} notempty",
+                    isRequired: true,
+                    colCount: 1,
+                    choices: [
+                        {
+                            value: "S0",
+                            text: "Not at all",
+                        },
+                        {
+                            value: "S1",
+                            text: "Just a little",
+                        },
+                        {
+                            value: "S2",
+                            text: "Somewhat",
+                        },
+                        {
+                            value: "S3",
+                            text: "A lot"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    name: "Q17",
+                    type: "text",
+                    title: "What was the something else that you were doing that made you feel stressed?",
+                    visibleIf: "{Q14} contains '11'",
                     isRequired: true
                 },
                 {
                     name: "Q17A",
                     type: "radiogroup",
-                    title: "To what extent did doing an activity outside of school make you stressed?",
+                    title: "To what extent did doing something else make you stressed?",
                     visibleIf: "{Q17} notempty",
                     isRequired: true,
                     colCount: 1,
@@ -673,43 +710,6 @@ export const uncTeenSurvey =
             questions: [
                 {
                     name: "Q18",
-                    type: "text",
-                    title: "What was the something else that you were doing that made you feel stressed?",
-                    visibleIf: "{Q15} contains '11'",
-                    isRequired: true
-                },
-                {
-                    name: "Q18A",
-                    type: "radiogroup",
-                    title: "To what extent did doing something else make you stressed?",
-                    visibleIf: "{Q18} notempty",
-                    isRequired: true,
-                    colCount: 1,
-                    choices: [
-                        {
-                            value: "S0",
-                            text: "Not at all",
-                        },
-                        {
-                            value: "S1",
-                            text: "Just a little",
-                        },
-                        {
-                            value: "S2",
-                            text: "Somewhat",
-                        },
-                        {
-                            value: "S3",
-                            text: "A lot"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            questions: [
-                {
-                    name: "Q19",
                     type: "checkbox",
                     title: "How has your stress affected you? Check all that apply. I have...",
                     isRequired: true,
@@ -761,7 +761,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q20",
+                    name: "Q19",
                     type: "radiogroup",
                     title: "How hard has it been to manage your stress?",
                     isRequired: true,
@@ -790,7 +790,7 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q21",
+                    name: "Q20",
                     type: "radiogroup",
                     title: "Did you do anything that helped you feel better?",
                     isRequired: true,
@@ -811,10 +811,10 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q22",
+                    name: "Q21",
                     type: "checkbox",
                     title: "Did you do any of the following? Check all that apply. I...",
-                    visibleIf: "{Q21} = '0'",
+                    visibleIf: "{Q20} = '0'",
                     isRequired: true,
                     colCount: 1,
                     choices: [
@@ -845,10 +845,10 @@ export const uncTeenSurvey =
                     ]
                 },
                 {
-                    name: "Q22A",
+                    name: "Q21A",
                     type: "text",
                     title: "What was the something else that you tried as a strategy?",
-                    visibleIf: "{Q22} contains '5'",
+                    visibleIf: "{Q21} contains '5'",
                     isRequired: true
                 }
             ]
@@ -856,12 +856,12 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q23",
+                    name: "Q22",
                     type: "checkbox",
                     title: "When I tried to change how I was thinking I... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{Q22} contains '2'",
+                    visibleIf: "{Q21} contains '2'",
                     choices: [
                         {
                             "value": "0",
@@ -890,12 +890,12 @@ export const uncTeenSurvey =
         {
             questions: [
                 {
-                    name: "Q23A",
+                    name: "Q23",
                     type: "checkbox",
                     title: "When I did something to calm myself down I... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{Q22} contains '3'",
+                    visibleIf: "{Q21} contains '3'",
                     choices: [
                         {
                             "value": "0",
@@ -929,7 +929,7 @@ export const uncTeenSurvey =
                     title: "I got support from... (Check all that apply)",
                     isRequired: true,
                     colCount: 1,
-                    visibleIf: "{Q22} contains '4'",
+                    visibleIf: "{Q21} contains '4'",
                     choices: [
                         {
                             "value": "0",
