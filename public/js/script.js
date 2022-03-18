@@ -14,21 +14,21 @@ var questionList=qlistJSON;
 var time=timeJSON;
 
 
-        if(questionlist.includes("Q3")){
-        questionlist.push("Q4");
-        questionlist =  [...new Set(questionlist)]  
+        if(questionList.includes("Q3")){
+        questionList.push("Q4");
+        questionList =  [...new Set(questionList)]  
     }
-if(questionlist.includes("Q11")){
-    questionlist.push("Q12");
-    questionlist =  [...new Set(questionlist)]  
+if(questionList.includes("Q11")){
+    questionList.push("Q12");
+    questionList =  [...new Set(questionList)]  
 }
-if(questionlist.includes("Q14")){
-    questionlist.push("Q15","Q16","Q17"); 
-    questionlist =  [...new Set(questionlist)]  
+if(questionList.includes("Q14")){
+    questionList.push("Q15","Q16","Q17"); 
+    questionList =  [...new Set(questionList)]  
 }
-if(questionlist.includes("Q20")){
-    questionlist.push("Q21","Q22","Q23","Q24");
-    questionlist =  [...new Set(questionlist)]  
+if(questionList.includes("Q20")){
+    questionList.push("Q21","Q22","Q23","Q24");
+    questionList =  [...new Set(questionList)]  
 }
 
 console.log( idJSON ); 
