@@ -126,9 +126,10 @@ return  str;
        surveyname: req.params.surveyname
       });
      }else{
-      let aa=timeNow1.getMonth()+ 1 ;
+
       let timeNow = new Date();
       let  timeNow1 = new Date();
+      let aa=timeNow1.getMonth()+ 1 ;
       let date_=timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
       const client3= await pool.connect();
       var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
