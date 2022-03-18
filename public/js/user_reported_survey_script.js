@@ -164,8 +164,7 @@ return(filtered.join('_'))
     function doOnCurrentPageChanged(survey) {
             var complete = document
                 .getElementById('surveyComplete');
-            complete && complete.style
-            .display = (survey.isLastPage ? "inline": "none");
+            complete.style.display = (survey.isLastPage ? "inline": "none");
         }
 
      $("#surveyElement").Survey({model: survey,onCurrentPageChanged: doOnCurrentPageChanged});
