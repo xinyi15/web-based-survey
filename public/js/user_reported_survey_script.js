@@ -165,5 +165,6 @@ return(filtered.join('_'))
             complete.display = (survey.isLastPage ? "inline": "none");
         }
 
+        survey.showNavigationButtons=false;
      $("#surveyElement").Survey({model: survey,onCurrentPageChanged: doOnCurrentPageChanged});
      //$("#surveyElement").Survey({model: survey, onCurrentPageChanged: doOnCurrentPageChanged});
