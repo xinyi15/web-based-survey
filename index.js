@@ -129,8 +129,8 @@ return  str;
 
       let timeNow = new Date();
       let  timeNow1 = new Date();
-      timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' })
-      timeNow1=timeNow1.toLocaleString('en-US', { timeZone: 'America/New_York' })
+      //timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
+      //timeNow1=timeNow1.toLocaleString('en-US', { timeZone: 'America/New_York' });
       let aa=timeNow1.getMonth()+ 1 ;
       let date_=timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString();
       // const client3= await pool.connect();
