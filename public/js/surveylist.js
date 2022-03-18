@@ -100,7 +100,7 @@ export const uncTeenSurvey =
                     name: "Q4",
                     type: "dropdown",
                     title: "You did not go to bed at your usual time, so was it...Scroll down to select options.",
-                    visibleIf: "{Q4} = '1'",
+                    visibleIf: "{Q3} = '1'",
                     isRequired: true,
                     choices: [
                         {
@@ -309,7 +309,7 @@ export const uncTeenSurvey =
                     name: "Q9A",
                     type: "text",
                     title: "Other, please state.",
-                    visibleIf: "{Q10} contains '7'",
+                    visibleIf: "{Q9} contains '7'",
                     isRequired: true
                 }
             ]
@@ -410,7 +410,7 @@ export const uncTeenSurvey =
                     name: "Q12",
                     title: "How much are you feeling...?",
                     visibleIf: "{Q11.length} > 0",
-                    rowsVisibleIf: "{Q12} contains {item}",
+                    rowsVisibleIf: "{Q11} contains {item}",
                     isRequired: true,
                     isAllRowRequired: true,
                     columns: [
