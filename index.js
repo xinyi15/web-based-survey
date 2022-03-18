@@ -128,7 +128,6 @@ return  str;
      }else{
 
       let timeNow = new Date();
-      let  timeNow = new Date();
       timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
       timeNow=timeNow.split(",")[0];
        const client3= await pool.connect();
