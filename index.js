@@ -128,14 +128,12 @@ return  str;
      }else{
 
       let timeNow = new Date();
-      let  timeNow1 = new Date();
-      //timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
-      //timeNow1=timeNow1.toLocaleString('en-US', { timeZone: 'America/New_York' });
-      let aa=timeNow1.getMonth()+ 1 ;
-      let date_=timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString();
-      // const client3= await pool.connect();
-      // var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
-      // "and  survey="+   time_+ " and question="+ qlist_ +"and date="+date_) ;
+      let  timeNow = new Date();
+      timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
+      timeNow=timeNow.split(",")[0];
+       const client3= await pool.connect();
+       var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
+       "and  survey="+   time_+ " and question="+ qlist_ +"and date="+ timeNow) ;
       // client3.release();
       // console.log(result3.rowCount);
       res.render('pages/survey',{
