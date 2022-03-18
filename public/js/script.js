@@ -50,9 +50,9 @@ $("#surveyContainer").Survey({
 survey
     .onComplete
     .add(function (sender) {
-        document
-            .querySelector('#surveyResult')
-            .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
+        // document
+        //     .querySelector('#surveyResult')
+        //     .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
     });
 
  function sendDataToTheServer(isComplete, data) {
