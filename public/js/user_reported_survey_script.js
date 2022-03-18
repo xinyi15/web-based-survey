@@ -125,19 +125,9 @@ return(filtered.join('_'))
      })
 
 
-    //  survey
-    //  .onUpdateQuestionCssClasses
-    //  .add(function (survey, options) {
-    //      var classes = options.cssClasses
-    //      //classes.item = "sq-item";
-    //      classes.label = "sq-label";
-
-    //  });
-
 
     survey
-    .onUpdatePageCssClasses 
-    //.onUpdateQuestionCssClasses
+    .onUpdateQuestionCssClasses
     .add(function (survey, options) {
         var classes = options.cssClasses
         console.log(classes)
@@ -150,13 +140,6 @@ return(filtered.join('_'))
 
     });
 
-    // function doOnCurrentPageChanged(survey) {
-    // var complete = document
-    // .getElementById('surveyComplete');
-    // complete && complete.style
-    // .display = (survey.isLastPage ? "inline": "none");
-    // }
-    // doOnCurrentPageChanged(survey);
 
     function doOnCurrentPageChanged(survey) {
             var complete = document
