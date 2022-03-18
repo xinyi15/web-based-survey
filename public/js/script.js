@@ -29,6 +29,21 @@ if (surveyName === "uncTeenSurvey") {
 
 function insertQuestions(questions) {
     let newPages = [];
+
+    if(questionlist.includes("Q3")){
+        questionlist.push("Q4");
+    }
+if(questionlist.includes("Q11")){
+    questionlist.push("Q12");
+ //   questionlist =  [...new Set(questionlist)]  
+}
+if(questionlist.includes("Q14")){
+    questionlist.push("Q15","Q16","Q17"); 
+}
+if(questionlist.includes("Q20")){
+    questionlist.push("Q21","Q22","Q23","Q24");
+}
+
     for (let i = 0; i < questions.pages.length; i++) {
         if (questionList.includes(questions.pages[i].questions[0].name)) {
             newPages.push(questions.pages[i]);
