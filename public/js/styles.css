@@ -13,9 +13,13 @@
   font-size: 40px;
 }
 
-#surveyComplete
- {
-    color: #1ab312;
-    font-size: 40px;
-    cursor: pointer;
+
+#surveyComplete {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: lightgray;
 }

@@ -115,7 +115,7 @@ return(filtered.join('_'))
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
         document
-        .getElementsByClassName("navigation-bar")[1]
+        .getElementsByClassName("navigation-bar")[0]
         .style
         .display = "none";
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
@@ -160,4 +160,13 @@ return(filtered.join('_'))
     // .display = (survey.isLastPage ? "inline": "none");
     // }
     // doOnCurrentPageChanged(survey);
-     $("#surveyElement").Survey({model: survey});
+
+    function doOnCurrentPageChanged(survey) {
+            var complete = document
+                .getElementById('surveyComplete');
+            complete && complete.style
+            .display = (survey.isLastPage ? "inline": "none");
+        }
+
+     $("#surveyElement").Survey({model: survey,onCurrentPageChanged: doOnCurrentPageChanged});
+     //$("#surveyElement").Survey({model: survey, onCurrentPageChanged: doOnCurrentPageChanged});
