@@ -13,6 +13,12 @@
   font-size: 40px;
 }
 
+#surveyComplete,
+#surveyNext,
+#surveyPrev {
+    color: #1ab394;
+    cursor: pointer;
+}
 
 #surveyComplete {
   display: inline-block;
