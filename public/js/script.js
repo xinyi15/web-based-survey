@@ -55,7 +55,7 @@ survey
         //     .textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
     });
 
- function sendDataToTheServer(isComplete, data) {
+    async function sendDataToTheServer(isComplete, data) {
         // var text = isComplete ? "The survey is completed" : "The survey is not completed";
         var a=Object.keys(data);
         // document.querySelector('#surveyResults').innerHTML = text + ", result: " + JSON.stringify(data);
@@ -64,7 +64,7 @@ survey
         let  timeNow1 = new Date();
         console.log( timeNow );
         let aa=timeNow1.getMonth()+ 1 ;
-         fetch(url,{
+        const response = await  fetch(url,{
             method:'post',
             body: JSON.stringify({
                 id:id,
@@ -76,10 +76,10 @@ survey
             }),
             headers:{'Content-Type':'application/json'}
         });
-       
+        console.log(response);
         if(isComplete===true){
             console.log("complete")
-            fetch("https://web-based-survey.herokuapp.com/complete",{
+            const response2 = await  fetch("https://web-based-survey.herokuapp.com/complete",{
                 method:'post',
                 body: JSON.stringify({
                     id:id,
@@ -90,7 +90,7 @@ survey
                 headers:{'Content-Type':'application/json'}
             });
 
-
+            console.log(response2);
         }
     }
 
