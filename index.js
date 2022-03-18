@@ -131,9 +131,10 @@ return  str;
       timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
       timeNow=timeNow.split(",")[0];
        const client3= await pool.connect();
-      //  var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id]+
-      //  "and  survey="+   time_+ " and question="+ qlist_ +"and date="+ timeNow) ;
-      // client3.release();
+        var result3 = await client3.query("Select * from complete where id=" +  id_ref[req.params.id])
+       
+      //  + "and  survey="+   time_+ " and question="+ qlist_ +"and date="+ timeNow) ;
+       client3.release();
       // console.log(result3.rowCount);
       res.render('pages/survey',{
          id: id_ref[req.params.id],
