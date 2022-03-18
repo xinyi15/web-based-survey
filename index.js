@@ -130,18 +130,25 @@ return  str;
       let timeNow = new Date();
       timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
       timeNow=timeNow.split(",")[0];
-      time_="ss"
+      //time_="ss"
        const client3= await pool.connect();
         var result3 = await client3.query("Select id from complete where id=" +"'" +  id_ref[req.params.id]+"'"   + "and survey="+"'" +  time_+"'" + " and question="+"'"+ qlist_ +"'"+"and date="+"'"+ timeNow+"'") ;
        client3.release();
       console.log(result3.rowCount);
+      if(result3.rowCount>0){
+        res.render('pages/user_reported_survey1',{
+          id:req.params.id,
+         surveyname: req.params.surveyname
+        });
+      }else{
       res.render('pages/survey',{
          id: id_ref[req.params.id],
         surveyname: surveyname_,
         time: time_,
         qlist:qlist_
        });
-     }  
+     }
+    }  
   });
 
 
