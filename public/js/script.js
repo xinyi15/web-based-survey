@@ -14,11 +14,30 @@ var questionList=qlistJSON;
 var time=timeJSON;
 
 
+        if(questionlist.includes("Q3")){
+        questionlist.push("Q4");
+        questionlist =  [...new Set(questionlist)]  
+    }
+if(questionlist.includes("Q11")){
+    questionlist.push("Q12");
+    questionlist =  [...new Set(questionlist)]  
+}
+if(questionlist.includes("Q14")){
+    questionlist.push("Q15","Q16","Q17"); 
+    questionlist =  [...new Set(questionlist)]  
+}
+if(questionlist.includes("Q20")){
+    questionlist.push("Q21","Q22","Q23","Q24");
+    questionlist =  [...new Set(questionlist)]  
+}
+
 console.log( idJSON ); 
 console.log( surveynameJSON ); 
 console.log( timeJSON ); 
 console.log( qlistJSON );
 console.log(questionList);
+
+
 
 
 if (surveyName === "uncTeenSurvey") {
@@ -30,22 +49,6 @@ if (surveyName === "uncTeenSurvey") {
 function insertQuestions(questions) {
     let newPages = [];
 
-//         if(questionlist.includes("Q3")){
-//         questionlist.push("Q4");
-//         questionlist =  [...new Set(questionlist)]  
-//     }
-// if(questionlist.includes("Q11")){
-//     questionlist.push("Q12");
-//     questionlist =  [...new Set(questionlist)]  
-// }
-// if(questionlist.includes("Q14")){
-//     questionlist.push("Q15","Q16","Q17"); 
-//     questionlist =  [...new Set(questionlist)]  
-// }
-// if(questionlist.includes("Q20")){
-//     questionlist.push("Q21","Q22","Q23","Q24");
-//     questionlist =  [...new Set(questionlist)]  
-// }
     for (let i = 0; i < questions.pages.length; i++) {
         if (questionList.includes(questions.pages[i].questions[0].name)) {
             newPages.push(questions.pages[i]);
