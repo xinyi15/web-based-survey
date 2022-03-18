@@ -84,8 +84,8 @@ survey
                 body: JSON.stringify({
                     id:id,
                      survey: time, 
-                     question:questionList,
-                     date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
+                     question:"s",
+                    // date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
                 }),
                 headers:{'Content-Type':'application/json'}
             });
