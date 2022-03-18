@@ -126,6 +126,7 @@ return  str;
        surveyname: req.params.surveyname
       });
      }else{
+      let aa=timeNow1.getMonth()+ 1 ;
       let timeNow = new Date();
       let  timeNow1 = new Date();
       let date_=timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
