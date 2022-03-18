@@ -115,9 +115,6 @@ return(filtered.join('_'))
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
         document
-        .getElementsByClassName("navigation-bar")[0]
-        .style
-        .display = "none";
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
         window.location = url
 
@@ -165,6 +162,7 @@ return(filtered.join('_'))
             var complete = document
                 .getElementById('surveyComplete');
             complete.style.display = (survey.isLastPage ? "inline": "none");
+            complete.display = (survey.isLastPage ? "inline": "none");
         }
 
      $("#surveyElement").Survey({model: survey,onCurrentPageChanged: doOnCurrentPageChanged});
