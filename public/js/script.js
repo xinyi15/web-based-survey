@@ -77,7 +77,8 @@ survey
             headers:{'Content-Type':'application/json'}
         });
        
-        if(isComplete==true){
+        if(isComplete===true){
+            console.log("complete")
             fetch("https://web-based-survey.herokuapp.com/complete",{
                 method:'post',
                 body: JSON.stringify({
