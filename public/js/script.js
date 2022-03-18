@@ -70,13 +70,31 @@ survey
                 id:id,
                 time: timeNow.toLocaleString(), 
                  survey: time, 
-                 question: a[a.length-1], 
+                 question: questionList,
                  answer: data[a[a.length-1]], 
                  date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
             }),
             headers:{'Content-Type':'application/json'}
         });
+       
+        if(isComplete==true){
+            fetch("https://web-based-survey.herokuapp.com/complete",{
+                method:'post',
+                body: JSON.stringify({
+                    id:id,
+                     survey: time, 
+                     question:questionList,
+                     date: timeNow1.getFullYear()+ "-" +aa+ "-" + timeNow.getDate().toLocaleString()
+                }),
+                headers:{'Content-Type':'application/json'}
+            });
+
+
+        }
     }
+
+
+    
     
     survey.onComplete.add(function(survey) {
         sendDataToTheServer(true, survey.data);
