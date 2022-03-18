@@ -114,6 +114,10 @@ return(filtered.join('_'))
         console.log(questionlist_);
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
+        document
+        .getElementsByClassName("navigation-bar")[0]
+        .style
+        .display = "none";
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
         window.location = url
 
