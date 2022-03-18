@@ -27,7 +27,7 @@ function insertQuestions(questions) {
     let qeustiondescriptions = [];
     let qeustionnames = [];
     for (let i = 0; i < questions.pages.length; i++) {
-        if(![11,12,14,15,16,17,,20,21,22,23].includes(i)){
+        if(![12,15,16,17,21,22,23].includes(i)){
         qeustiondescriptions.push(questions.pages[i].questions[0].title);
         qeustionnames.push(questions.pages[i].questions[0].name);
         }
