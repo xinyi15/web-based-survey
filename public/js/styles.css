@@ -29,10 +29,10 @@
 
 #surveyComplete {
   display: inline-block;
-  width: 90px;
+  width: 200px;
   height: 90px;
   line-height: 90px;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
   background-color:  #1ab394;
 }
