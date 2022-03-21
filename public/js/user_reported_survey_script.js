@@ -144,13 +144,13 @@ survey.showCompletedPage = false;
     });
 
 
-    survey
-    .onUpdateQuestionCssClasses
-    .add(function (survey, options) {
-        var classes = options.cssClasses
-        classes.item += " sq-item";
-        classes.label += " sq-label";
-    });
+    // survey
+    // .onUpdateQuestionCssClasses
+    // .add(function (survey, options) {
+    //     var classes = options.cssClasses
+    //     classes.item += " sq-item";
+    //     classes.label += " sq-label";
+    // });
 
     // var myCss = {
     //      navigation: {
