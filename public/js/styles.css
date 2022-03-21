@@ -1,10 +1,15 @@
 .sq-item {
-/* # margin-left: 30px;
-  margin-bottom:200px; */
+ margin-left: 30px;
+  margin-bottom:100px; 
   width: 35px;
   height: 35px;
 }
 
+.checkbox {
+  width: 35px;
+  height: 35px;
+}
+}
 .sq-label {
   font-size: 35px;
 }
