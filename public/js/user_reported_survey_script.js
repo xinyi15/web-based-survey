@@ -145,14 +145,9 @@ return(filtered.join('_'))
     });
 
 
-    function doOnCurrentPageChanged(survey) {
-            var complete = document
-                .getElementById('surveyComplete');
-            complete.style.display = (survey.isLastPage ? "inline": "none");
-            complete.display = (survey.isLastPage ? "inline": "none");
-        }
+
 
      survey.showNavigationButtons=false;
      survey.showCompletedPage = false;
-     $("#surveyElement").Survey({model: survey,onCurrentPageChanged: doOnCurrentPageChanged});
+     $("#surveyElement").Survey({model: survey});
      //$("#surveyElement").Survey({model: survey, onCurrentPageChanged: doOnCurrentPageChanged});
