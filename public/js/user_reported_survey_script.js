@@ -141,7 +141,7 @@ survey.showCompletedPage = false;
         classes.item += " sq-item";
         classes.label += "sq-label";
         if (options.question.getType() === "checkbox") {
-            classes.item += " sq-item-cb"; 
+            classes.item += " checkbox"; 
         }
 
     });
