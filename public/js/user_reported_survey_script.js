@@ -119,9 +119,9 @@ survey.showCompletedPage = false;
         console.log(questionlist_);
         let keys=generate_keys(questionlist_);
         survey.showCompletedPage = false;
-        document
-        let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
-        window.location = url
+        // document
+        // let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
+        // window.location = url
         //    document
         //      .querySelector('#surveyResult')
         //      .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3); 
