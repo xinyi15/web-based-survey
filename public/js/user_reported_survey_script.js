@@ -162,7 +162,7 @@ survey.showCompletedPage = false;
     // //    navigationButton: "button btn-lg"
     // }
 
-    Survey.defaultBootstrapCss.navigationButton = "btn btn-green btn-lg";
+    Survey.defaultBootstrapCss.navigationButton = "btn  btn-lg btn-green";
 
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
