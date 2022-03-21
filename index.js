@@ -120,7 +120,7 @@ return  str;
     let qlist_=translate_ql(req.params.qlist);
     console.log(qlist_);
 
-     if (!is_expired(req.params.start,req.params.end)) {
+     if (is_expired(req.params.start,req.params.end)) {
       res.render('pages/user_reported_survey1',{
         id:req.params.id,
        surveyname: req.params.surveyname
