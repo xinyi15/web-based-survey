@@ -135,10 +135,10 @@ survey.showCompletedPage = false;
         var classes = options.cssClasses
         console.log(classes)
         classes.mainRoot += " sv_qstn";
-        classes.root = "sq-root";
-        classes.title += "sq-title"
-        classes.item += "sq-item";
-        classes.label += "sq-label";
+        classes.root = " sq-root";
+        classes.title += " sq-title"
+        classes.item += " sq-item";
+        classes.label += "s q-label";
       
 
     });
