@@ -133,6 +133,8 @@ return  str;
       //time_="ss"
       console.log(id_ref[req.params.id]);
       console.log(timeNow);
+      console.log(time_);
+      console.log(qlist_);
        const client3= await pool.connect();
         var result3 = await client3.query("Select id from complete where id=" +"'" +  id_ref[req.params.id]+"'"   + "and survey="+"'" +  time_+"'" + " and question="+"'"+ qlist_ +"'"+"and date="+"'"+ timeNow+"'") ;
        client3.release();
