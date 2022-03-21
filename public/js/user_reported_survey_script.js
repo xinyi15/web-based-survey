@@ -146,7 +146,6 @@ return(filtered.join('_'))
 
 
 
-
      survey.showNavigationButtons=false;
      survey.showCompletedPage = false;
      $("#surveyElement").Survey({model: survey});
