@@ -152,7 +152,6 @@ survey.showCompletedPage = false;
         classes.label += " sq-label";
     });
 
-
     var myCss = {
         // navigation: {
         //   complete: "sv_complete_btn",
