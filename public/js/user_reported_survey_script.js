@@ -163,7 +163,7 @@ survey.showCompletedPage = false;
         // navigation: {
         //   complete: "sv_complete_btn",
         // }
-        navigationButton: "button btn-default"
+        navigationButton: "button btn-red btn-lg"
     }
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
