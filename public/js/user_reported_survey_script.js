@@ -160,9 +160,10 @@ survey.showCompletedPage = false;
 
 
     var myCss = {
-        navigation: {
-          complete: "sv_complete_btn",
-        }
+        // navigation: {
+        //   complete: "sv_complete_btn",
+        // }
+        navigationButton: "button btn-lg"
     }
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
