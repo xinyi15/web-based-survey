@@ -144,6 +144,6 @@ survey.showCompletedPage = false;
     });
 
     survey.showCompletedPage = false;
-     survey.showNavigationButtons=false;
+    // survey.showNavigationButtons=false;
      $("#surveyElement").Survey({model: survey});
     

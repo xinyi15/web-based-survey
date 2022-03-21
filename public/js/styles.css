@@ -14,7 +14,7 @@
 }
 
 
-.sv-btn .sv-footer__complete-btn{
+.sv-btn .sv_complete_btn .sv-footer__complete-btn{
   border: none;
   color: white;
   padding: 15px 32px;
@@ -25,6 +25,8 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+
 
 
 #surveyComplete {
