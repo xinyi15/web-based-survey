@@ -150,8 +150,6 @@ survey.showCompletedPage = false;
         var classes = options.cssClasses
         classes.item += " sq-item";
         classes.label += " sq-label";
-      
-
     });
 
 
