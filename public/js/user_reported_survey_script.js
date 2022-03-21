@@ -134,8 +134,8 @@ survey.showCompletedPage = false;
     .add(function (survey, options) {
         var classes = options.cssClasses
         console.log(classes)
-        classes.mainRoot += " sv_qstn";
-        classes.root = " sq-root";
+        // classes.mainRoot += " sv_qstn";
+        // classes.root = " sq-root";
         classes.title += " sq-title"
         classes.item += " sq-item";
         classes.label += "s q-label";
