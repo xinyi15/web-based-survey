@@ -44,6 +44,7 @@ function insertQuestions(questions) {
 Survey
     .StylesManager
     .applyTheme("bootstrap");//("modern");//"defaultV2"
+    Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
 
 window.survey = new Survey.Model(json);
 
