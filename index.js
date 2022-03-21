@@ -131,6 +131,8 @@ return  str;
       timeNow=timeNow.toLocaleString('en-US', { timeZone: 'America/New_York' });
       timeNow=timeNow.split(",")[0];
       //time_="ss"
+      console.log(id_ref[req.params.id]);
+      console.log(timeNow);
        const client3= await pool.connect();
         var result3 = await client3.query("Select id from complete where id=" +"'" +  id_ref[req.params.id]+"'"   + "and survey="+"'" +  time_+"'" + " and question="+"'"+ qlist_ +"'"+"and date="+"'"+ timeNow+"'") ;
        client3.release();
