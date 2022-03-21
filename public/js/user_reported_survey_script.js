@@ -158,6 +158,8 @@ survey.showCompletedPage = false;
          }
     //    navigationButton: "button btn-lg"
     }
+
+    Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
      $("#surveyElement").Survey({model: survey, css:myCss});
