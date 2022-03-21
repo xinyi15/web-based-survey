@@ -136,7 +136,7 @@ return  str;
       console.log(time_);
       console.log(qlist_);
        const client3= await pool.connect();
-        var result3 = await client3.query("Select id from complete where id=" +"'" +  id_ref[req.params.id]+"'"   + "and survey="+"'" +  time_+"'" + " and question="+"'"+ qlist_ +"'"+"and date="+"'"+ timeNow+"'") ;
+        var result3 = await client3.query("Select id from complete where id=" +"'" +  id_ref[req.params.id]+"'"   + "and survey="+"'" +  time_+"'" +"'"+"and date="+"'"+ timeNow+"'") ;//+ " and question="+"'"+ qlist_ 
        client3.release();
       console.log(result3.rowCount);
       if(result3.rowCount>0){
