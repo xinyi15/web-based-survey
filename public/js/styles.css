@@ -16,7 +16,7 @@
 .sq-title {
   font-size: 40px;
 }
- .btn-lg{
+ /* .btn-lg{
 	background-color:#44c767;
 	border-radius:28px;
 	border:1px solid #18ab29;
@@ -28,7 +28,7 @@
 	padding:28px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
-}
+} */
 
 /* #surveyComplete {
   display: inline-block;
@@ -41,6 +41,7 @@
 } */
 
 .btn-green {
+  font-size:30px; 
   background-color: #1ab394;
   color: #fff;
   border-radius: 20px;
