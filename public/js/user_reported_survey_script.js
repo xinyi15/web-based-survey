@@ -136,9 +136,9 @@ survey.showCompletedPage = false;
         console.log(classes)
         classes.mainRoot += " sv_qstn";
         classes.root = "sq-root";
-        classes.title += " sq-title"
-        classes.item += " sq-item";
-        classes.label += " sq-label";
+        classes.title += "sq-title"
+        classes.item += "sq-item";
+        classes.label += "sq-label";
       
 
     });

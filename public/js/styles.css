@@ -1,10 +1,10 @@
-.sv-item {
+.sq-item {
   margin-left: 30px;
   margin-bottom:300px;
   font-size: 35px;
 }
 
-.sv-checkbox{
+.sq-checkbox{
   width: 35px;
   height: 35px;
 }
@@ -13,7 +13,7 @@
   font-size: 40px;
 }
 
-.sv-btn .sv_complete_btn .sv-footer__complete-btn{
+.sv-btn .sv_complete_btn .sv-footer__complete-btn .btn-lg{
 	background-color:#44c767;
 	border-radius:28px;
 	border:1px solid #18ab29;
