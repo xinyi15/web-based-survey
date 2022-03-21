@@ -4,7 +4,7 @@
   font-size: 35px;
 }
 
-.sq-checkbox{
+.sq-checkbox .checkboxsq-item .sv_q_checkbox_inline{ 
   width: 35px;
   height: 35px;
 }
