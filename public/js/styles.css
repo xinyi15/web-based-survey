@@ -2,16 +2,13 @@
   margin-left: 30px;
   margin-bottom:200px;
   font-size: 35px;
-}
-
-.sv-checkbox {
-  background-color: red;
   width: 35px;
   height: 35px;
 }
 
-.checkbox-material .checkboxsq-item .sv_q_checkbox_inline{ 
-  width: 35px;
+.sq-lable {
+  background-color: red;
+    width: 35px;
   height: 35px;
 }
 
