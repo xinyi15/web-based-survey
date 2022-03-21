@@ -4,6 +4,10 @@
   font-size: 35px;
 }
 
+.sv_qstn .sq-root-cb {
+  border-left: 4px solid orange;
+}
+
 .sq-checkbox .checkboxsq-item .sv_q_checkbox_inline{ 
   width: 35px;
   height: 35px;

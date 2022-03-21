@@ -136,11 +136,13 @@ survey.showCompletedPage = false;
         var classes = options.cssClasses
         console.log(classes)
         // classes.mainRoot += " sv_qstn";
-        // classes.root = " sq-root";
+        classes.root = " sq-root";
         classes.title += " sq-title"
         classes.item += " sq-item";
         classes.label += "sq-label";
-      
+        if (options.question.getType() === "checkbox") {
+            classes.root += " sq-root-cb";
+        }
 
     });
 
