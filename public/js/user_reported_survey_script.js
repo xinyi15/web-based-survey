@@ -152,15 +152,16 @@ survey.showCompletedPage = false;
         classes.label += " sq-label";
     });
 
-    var myCss = {
-         navigation: {
-           complete: "sv_complete_btn",
-         }
-    //    navigationButton: "button btn-lg"
-    }
+    // var myCss = {
+    //      navigation: {
+    //        complete: "sv_complete_btn",
+    //      }
+    // //    navigationButton: "button btn-lg"
+    // }
 
     Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
-     $("#surveyElement").Survey({model: survey, css:myCss});
+     $("#surveyElement").Survey({model: survey})// css:myCss});
     
