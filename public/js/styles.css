@@ -4,7 +4,7 @@
   font-size: 35px;
 }
 
-.sv-radio--checked .sv-radio__svg {
+.sv-checkbox-checked .sv-checkbox__svg {
   background-color: red;
 }
 
