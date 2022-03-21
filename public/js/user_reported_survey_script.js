@@ -138,7 +138,7 @@ survey.showCompletedPage = false;
         // classes.root = " sq-root";
         classes.title += " sq-title"
         classes.item += " sq-item";
-        classes.label += "s q-label";
+        classes.label += "sq-label";
       
 
     });
