@@ -15,7 +15,7 @@
 
 
 .sv-btn .sv_complete_btn .sv-footer__complete-btn{
-  border: none;
+  /* border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -23,7 +23,12 @@
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
+  cursor: pointer; */
+
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    font-size: 15px;
 }
 
 
