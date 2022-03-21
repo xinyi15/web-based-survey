@@ -43,7 +43,7 @@ function insertQuestions(questions) {
 
 Survey
     .StylesManager
-    .applyTheme("modern");//"defaultV2"
+    .applyTheme("bootstrap");//("modern");//"defaultV2"
 
 window.survey = new Survey.Model(json);
 
@@ -153,10 +153,10 @@ survey.showCompletedPage = false;
     });
 
     var myCss = {
-        // navigation: {
-        //   complete: "sv_complete_btn",
-        // }
-        navigationButton: "button btn-lg"
+         navigation: {
+           complete: "sv_complete_btn",
+         }
+    //    navigationButton: "button btn-lg"
     }
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
