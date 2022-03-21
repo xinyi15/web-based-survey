@@ -110,6 +110,7 @@ let filtered = y.filter(x => x !== undefined);
 return(filtered.join('_'))
 }
 
+survey.showCompletedPage = false;
  survey
      .onComplete
     .add(function (sender) {
@@ -121,11 +122,9 @@ return(filtered.join('_'))
         document
         let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
         window.location = url
-
         //    document
-        //       .querySelector('#surveyResult')
-        //      .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3);
-        
+        //      .querySelector('#surveyResult')
+        //      .textContent = "Result JSON:\n" + JSON.stringify( keys, null, 3); 
      })
 
 
@@ -144,8 +143,7 @@ return(filtered.join('_'))
 
     });
 
-
-
+    survey.showCompletedPage = false;
      survey.showNavigationButtons=false;
      $("#surveyElement").Survey({model: survey});
-     //$("#surveyElement").Survey({model: survey, onCurrentPageChanged: doOnCurrentPageChanged});
+    
