@@ -122,10 +122,10 @@ survey.showCompletedPage = false;
         survey.showCompletedPage = false;
         // document
          let url="https://web-based-survey.herokuapp.com/self-report-surveys/"+id+"/"+ surveyName+"/"+ keys;
-         #window.location.href = url
+         //window.location.href = url
          let uagent = navigator.userAgent.toLowerCase();
-if(/safari/.test(uagent) && !/chrome/.test(uagent)) {
-    window.location.href = url;
+         if(/safari/.test(uagent) && !/chrome/.test(uagent)) {
+             window.location.href = url;
 }
         //    document
         //      .querySelector('#surveyResult')
