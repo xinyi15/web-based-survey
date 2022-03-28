@@ -5,6 +5,10 @@
   height: 35px;
 }
 
+.sq_checkbox  {
+	width:150%;
+}
+
 .checkbox {
   width: 35px;
   height: 35px;
