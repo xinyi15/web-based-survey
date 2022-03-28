@@ -150,7 +150,7 @@ survey.showCompletedPage = false;
               }
     
         }
-    });
+    );
 
 
     // survey
