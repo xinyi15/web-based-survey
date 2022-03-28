@@ -147,7 +147,6 @@ survey.showCompletedPage = false;
         if (options.question.getType() === "checkbox") {
             classes.item += " checkbox"; 
         }
-
     });
 
 
