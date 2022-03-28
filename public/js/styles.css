@@ -5,8 +5,8 @@
   height: 300px;
 }
 
-.sq_checkbox  {
-	width:150%;
+.sq_checkbox .sq-root-cb {
+	width:450%;
 }
 
 .sq-item_checkbox  {

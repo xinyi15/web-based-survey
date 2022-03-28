@@ -143,9 +143,12 @@ survey.showCompletedPage = false;
         classes.root = " sq-root";
         classes.title += " sq-title"
         classes.item += " sq-item";
-        classes.label += "sq-label";
+        classes.label += " sq-label";
         if (options.question.getType() === "checkbox") {
-            classes.item += "checkbox"; 
+            classes.item += " checkbox"; 
+            classes.root += " sq-root-cb";
+              }
+    
         }
     });
 
