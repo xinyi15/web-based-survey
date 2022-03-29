@@ -22,9 +22,10 @@
         <body>
       <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
       <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
-        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+      <script src="/js/user_reported_survey_script.js" type="module"></script>
+      <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
         <div id="surveyResult"></div>
         <!-- <br><button type="button" id="surveyComplete"  onclick="survey.completeLastPage();">Complete</button><br/> -->
-        <script src="/js/user_reported_survey_script.js" type="module"></script>
+
     </body>
 </html>

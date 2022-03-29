@@ -170,5 +170,5 @@ survey.showCompletedPage = false;
 
     survey.showCompletedPage = false;
     // survey.showNavigationButtons=false;
-     $("#surveyElement").Survey({model: survey})// css:myCss});
+     $("#surveyContainer").Survey({model: survey})// css:myCss});
     
