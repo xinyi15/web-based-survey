@@ -26,13 +26,22 @@
   width: 20;
 }
 
-.sq-label {
+
+
+.checkbox input {
+  position: absolute;
+opacity: 50;
+cursor: pointer;
+height: 50;
+width: 50;
+}
+/* .sq-label {
   font-size: 35px;
 }
 
 .sq-title {
   font-size: 40px;
-} 
+}  */
 
 .btn-green {
   font-size:30px; 
