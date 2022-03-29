@@ -1,9 +1,9 @@
-.sq-item {
+/* .sq-item {
  margin-left: 30px;
  margin-bottom:50px; 
   width: 300px;
   height: 300px;
-}
+} */
 
 .sv_q_checkbox {
   display: block;
@@ -16,7 +16,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+}}
+
 .sv_q_checkbox input {
     position: absolute;
   opacity: 0;
