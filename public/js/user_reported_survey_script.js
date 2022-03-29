@@ -134,22 +134,22 @@ survey.showCompletedPage = false;
 
 
 
-    // survey
-    // .onUpdateQuestionCssClasses
-    // .add(function (survey, options) {
-    //     var classes = options.cssClasses
-    //     console.log(classes)
-    //     // classes.mainRoot += " sv_qstn";
-    //     classes.root = " sq-root";
-    //     classes.title += " sq-title"
-    //     classes.item += " sq-item";
-    //     classes.label += " sq-label";
-    //     if (options.question.getType() === "checkbox") {
-    //         classes.item += " checkbox"; 
-    //         classes.root += "sq-root sq-root-cb";
-    //           }
-    //     }
-    // );
+    survey
+    .onUpdateQuestionCssClasses
+    .add(function (survey, options) {
+        var classes = options.cssClasses
+        console.log(classes)
+        // classes.mainRoot += " sv_qstn";
+        classes.root = " sq-root";
+        classes.title += " sq-title"
+        classes.item += " sq-item";
+        classes.label += " sq-label";
+        // if (options.question.getType() === "checkbox") {
+        //     classes.item += " checkbox"; 
+        //     classes.root += "sq-root sq-root-cb";
+        //       }
+        }
+    );
 
     // survey
     // .onUpdateQuestionCssClasses
