@@ -19,9 +19,20 @@
   user-select: none;
 }
 
+.sv_q_checkbox {
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-
-/* .checkbox {
+ .checkbox {
 
   position: absolute;
   top: 0;
@@ -29,7 +40,7 @@
   height: 40px;
   width: 40px;
   background-color: #eee;
-  border-radius: 50%; */
+  border-radius: 50%; 
 
   /* display: block;
   position: relative;
@@ -42,7 +53,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; */
-/* } */
+ } 
 
 /* .checkbox input {
     position: absolute;
