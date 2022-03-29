@@ -9,10 +9,10 @@
 .sq-item {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
-  font-size: 220px;
+  font-size: 30px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -20,13 +20,8 @@
 }
 
 
-.sq-item input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
 
-.checkbox {
+/* .checkbox {
 
   position: absolute;
   top: 0;
@@ -34,7 +29,7 @@
   height: 40px;
   width: 40px;
   background-color: #eee;
-  border-radius: 50%;
+  border-radius: 50%; */
 
   /* display: block;
   position: relative;
@@ -47,15 +42,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; */
-}
+/* } */
 
-.checkbox input {
+/* .checkbox input {
     position: absolute;
   opacity: 30;
   cursor: pointer;
   height: 20;
   width: 20;
-} 
+}  */
 
 
 
