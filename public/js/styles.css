@@ -5,18 +5,25 @@
   height: 300px;
 }
 
-.sq_checkbox .sq-root-cb {
-  width: 500px;
+.sv_q_checkbox {
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 35px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-.sq-item_checkbox  {
-	width:150%;
+.sv_q_checkbox input {
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
-
-.checkbox {
-  width: 350px;
-  height: 35px;
-} 
 
 .sq-label {
   font-size: 35px;

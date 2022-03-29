@@ -146,12 +146,10 @@ survey.showCompletedPage = false;
         classes.label += " sq-label";
         if (options.question.getType() === "checkbox") {
             classes.item += " checkbox"; 
-            classes.root += " sq-root-cb";
+            classes.root += "sq-root sq-root-cb";
               }
-    
         }
     );
-
 
     // survey
     // .onUpdateQuestionCssClasses
