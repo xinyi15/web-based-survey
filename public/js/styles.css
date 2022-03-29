@@ -17,23 +17,23 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+/* 
 .sv_q_checkbox input {
     position: absolute;
   opacity: 20;
   cursor: pointer;
   height: 20;
   width: 20;
-}
+} */
 
 
 
 .checkbox input {
   position: absolute;
-opacity: 50;
+opacity: 500;
 cursor: pointer;
-height: 50;
-width: 50;
+height: 500;
+width: 500;
 }
 /* .sq-label {
   font-size: 35px;
