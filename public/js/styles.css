@@ -32,7 +32,7 @@
   user-select: none;
 }
 
- .checkbox {
+ /* .checkbox {
 
   position: absolute;
   top: 0;
@@ -42,18 +42,7 @@
   background-color: #eee;
   border-radius: 50%; 
 
-  /* display: block;
-  position: relative;
-  padding-left: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  height: 220px;
-  width: 225px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; */
- } 
+ }  */
 
 /* .checkbox input {
     position: absolute;
