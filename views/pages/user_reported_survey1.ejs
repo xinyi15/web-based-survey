@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based Survey</title>
+
+    <link rel="stylesheet" href="/css/styles.css" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/survey-jquery"></script>
+    <link href="https://unpkg.com/survey-jquery/survey.min.css" type="text/css" rel="stylesheet"/>
+
+    <style>
         body {
           background: #D3D3D3;
         }
@@ -13,19 +22,17 @@
           padding: 10px;
         }
     </style>
-   
-       <title>Web-based Survey</title>
-        <script src="https://unpkg.com/jquery"></script>
-        <script src="https://unpkg.com/survey-jquery@1.9.20/survey.jquery.min.js"></script>
-        <link href="https://unpkg.com/survey-core@1.9.20/modern.min.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="/js/styles.css"></head>
-        <body>
-      <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
-      <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
-      <script src="/js/user_reported_survey_script.js" type="module"></script>
-      <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
-        <div id="surveyResult"></div>
-        <!-- <br><button type="button" id="surveyComplete"  onclick="survey.completeLastPage();">Complete</button><br/> -->
+</head>
 
-    </body>
+<body>
+  <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
+  <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
+  
+
+    <div class="content">
+    <script src="/js/user_reported_survey_script.js" type="module"></script>
+    <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
+    <div id="surveyResults"></div>
+    </div>
+</body>
 </html>

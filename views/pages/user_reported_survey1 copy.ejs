@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+        body {
+          background: #D3D3D3;
+        }
+        
+        .content {
+          max-width: 550px;
+          margin: auto;
+          background:white;
+          padding: 10px;
+        }
+    </style>
+   
+       <title>Web-based Survey</title>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.9.20/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-core@1.9.20/modern.min.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/js/styles.css"></head>
+        <body>
+      <span id='idJSON' hidden><%=JSON.stringify(id); %></span>
+      <span id='surveynameJSON' hidden><%=JSON.stringify(surveyname); %></span>
+      <script src="/js/user_reported_survey_script.js" type="module"></script>
+      <div id="surveyContainer" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        <!-- <br><button type="button" id="surveyComplete"  onclick="survey.completeLastPage();">Complete</button><br/> -->
+
+    </body>
+</html>
