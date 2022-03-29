@@ -5,14 +5,34 @@
   height: 300px;
 } */
 
-.checkbox {
 
+.sq-item {
   display: block;
   position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 220px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.sq-item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+
+  position: absolute;
   top: 0;
   left: 0;
-  height: 220px;
-  width: 225px;
+  height: 40px;
+  width: 40px;
   background-color: #eee;
   border-radius: 50%;
 
