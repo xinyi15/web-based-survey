@@ -187,6 +187,7 @@ return  str;
   //          qlist:  result2.rows[0].q_list
   //        });
   //      } 
+  
   // });
 
   app.get('/test', (req, res) => 
